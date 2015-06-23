@@ -9,13 +9,14 @@
 
     <!-- Bootstrap -->
     <link href="dep/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="src/css/main.css" rel="stylesheet">
 
-    <script src="dep/react/build/react.js"></script>
-    <script src="dep/require.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="dep/jquery/1.9.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="dep/bootstrap/js/bootstrap.min.js"></script>
+    <script src="dep/react/build/react.js"></script>
+    <script src="dep/require.js"></script>
     <script src="src/config.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,10 +36,15 @@
         document.createElement('figure');
         document.createElement('figcaption');
     </script>
-    <h1>Hello, world!</h1>
+    <div class="container activity-form-add">
+        <div class="row">
+            <div class="field-name col-lg-2">活动分类</div>
+            <div class="field-value col-lg-8">
+            </div>
+        </div>
+    </div>
 
     <header id="header"></header>
-    <div id="main"></div>
     <script src="build/main.js"></script>
 
 </body>
