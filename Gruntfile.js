@@ -19,10 +19,6 @@ module.exports = function(grunt) {
                     options: {
                         debounceDelay: 250
                     }
-                },
-                react: {
-                    files: 'src/jsx/*.jsx',
-                    tasks: ['react']
                 }
             },
             less: {
@@ -34,19 +30,6 @@ module.exports = function(grunt) {
                     files: {
                         'src/css/main.css': 'src/css/main.less'
                     }
-                }
-            },
-            react: {
-                jsx: {
-                    files: [
-                        {
-                            expand: true,
-                            cwd: './src/jsx',
-                            src: ['*.jsx'],
-                            dest: 'build',
-                            ext: '.js'
-                        }
-                    ]
                 }
             }
         }
@@ -60,8 +43,7 @@ module.exports = function(grunt) {
      *
      * $ grunt
      */
-    grunt.registerTask('default', ['watch', 'react']);
+    grunt.registerTask('default', ['watch']);
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-react');
     grunt.loadNpmTasks('grunt-contrib-less');
 };
