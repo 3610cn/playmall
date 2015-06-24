@@ -92,7 +92,16 @@
                 <div class="field-name"></div>
                 <div class="field-value time-detail" style="height:auto;">
                     <p class="time-label">活动日期</p>
+                     <div data-ui-type="RangeCalendar" data-ui-name="date" data-ui-endless-check="false" data-ui-is-endless="true" data-ui-showed-short-cut="昨天,最近7天,上周"></div>
                     <p class="time-label">活动时间</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="field-name">活动详情</div>
+                <div class="field-value detail" style="height:auto;">
+                    <!-- 加载编辑器的容器 -->
+                    <script id="editor" name="content" type="text/plain"></script>
                 </div>
             </div>
 
@@ -132,6 +141,10 @@
         </div>
     </div>
 
+    <!-- 配置文件 -->
+    <script type="text/javascript" src="dep/ueditor/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="dep/ueditor/ueditor.all.js"></script>
     <script>
         require(['main']);
     </script>

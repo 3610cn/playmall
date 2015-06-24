@@ -7401,11 +7401,14 @@ dl {
 .container .ui-tokenfield-input input[type="text"] {
   height: 2.5em;
 }
+#editor {
+  line-height: 1.4em;
+}
 .time-detail {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
   border: 1px solid #5cb85c;
-  padding: 30px;
+  padding: 10px 30px;
   width: 650px;
 }

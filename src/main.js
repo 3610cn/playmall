@@ -5,6 +5,8 @@ define(
         require('esui/TextBox');
         require('esui/BoxGroup');
         require('ub-ria-ui/TokenField');
+        require('esui/RangeCalendar');
         ui.init();
+        var ue = UE.getEditor('editor');
     }
 );
