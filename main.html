@@ -39,6 +39,7 @@
             <h2>发布展示活动</h2>
         </div>
     </div>
+
     <div class="container">
         <ul class="crumb">
             <li class="crumb-active">
@@ -80,20 +81,41 @@
             <div class="row">
                 <div class="field-name">活动时间</div>
                 <div class="field-value">
-                    <select data-ui-type="Select" data-ui-id="time" data-ui-width="200" name="time" data-ui-selected-index="1">
-                        <option value="1">单场活动</option>
-                        <option value="2">每周举行</option>
-                        <option value="3">自定义时间</option>
-                    </select>
+                    <div data-ui-type="Calendar" data-ui-name="date"></div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="field-name"></div>
-                <div class="field-value time-detail" style="height:auto;">
-                    <p class="time-label">活动日期</p>
-                     <div data-ui-type="RangeCalendar" data-ui-name="date" data-ui-endless-check="false" data-ui-is-endless="true" data-ui-showed-short-cut="昨天,最近7天,上周"></div>
-                    <p class="time-label">活动时间</p>
+                <div class="field-name">活动图片</div>
+                <div class="field-value" style="height:auto;">
+                    <img id="previewDefault" src="src/images/uploader-default.png" />
+                    <div class="uploader-detail">
+                        <input type="file"
+                            data-ui-id="uploader" data-ui-type="Uploader"
+                            data-ui-action="/upload"
+                            data-ui-file-type="auto"
+                            data-ui-name="file"
+                            data-ui-text="&lt;span class='ui-icon-upload'&gt;&lt;/span&gt; 上传文件"
+                            title="上传图片或Flash"
+                            accept=".gif,.jpg,.png,.swf"
+                            />
+                        <p class="uploader-desc">
+                            1.图片尺寸不低于200*300，推荐600*800
+                            <br>
+                            2.单张图片大小不超过1MB
+                         </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="field-name">活动地点</div>
+                <div class="field-value">
+                    <select data-ui-type="Select" data-ui-id="address" data-ui-width="200" name="address" data-ui-selected-index="1">
+                        <option value="1">长泰广场</option>
+                        <option value="2">世贸大厦</option>
+                        <option value="3">古北路菜场</option>
+                    </select>
                 </div>
             </div>
 
@@ -106,39 +128,21 @@
             </div>
 
             <div class="row">
-                <div class="field-name">活动费用</div>
-                <div class="field-value">
-                    <div data-ui-type="BoxGroup" data-ui-id="fee" data-ui-name="fee" data-ui-box-type="radio" data-ui-box-class="ui-radio-custom">
-                        <ul>
-                            <li>
-                                <input type="radio" id="fee-free" name="fee" value="0">
-                                <label for="fee-free">免费</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="fee-charge" name="fee" value="1" checked="checked">
-                                <label for="fee-charge">收费</label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="field-name"></div>
-                <div class="field-value fee-detail" style="height:auto;">
-                    <p class="time-label">活动日期</p>
-                    <p class="time-label">活动时间</p>
-                </div>
-            </div>
-
-            <div class="row">
                 <div class="field-name">活动标签</div>
                 <div class="field-value fee-detail" style="height:auto;">
                     <input data-ui-type="TokenField" data-ui-tokens="" data-ui-limit="30" data-ui-delimiter="," data-ui-width="600">
                 </div>
             </div>
-
         </div>
+    </div>
+    <p class="submit">
+        <button data-ui="type:Button;variants:danger;data-ui-id:submit;" class="ui-large"><span class="ui-icon-check"></span>确认提交</button>
+    </p>
+    <div class="footer">
+        <ul>
+            <li>版权所有 玩猫  Copyright2015  All Rights Reserved</li>
+            <li>上海玩猫商业地产咨询公司</li>
+        </ul>
     </div>
 
     <!-- 配置文件 -->
