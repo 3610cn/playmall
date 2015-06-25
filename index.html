@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Play Mall</title>
+
+        <link href="src/css/main.css" rel="stylesheet">
+
+        <script src="dep/require.js"></script>
+        <script src="src/config.js"></script>
+    </head>
+<body>
+    <div class="topbar_new">
+        <div class="head_new">
+            <div class="logo_new"><img src="src/images/logo.png" width="203" height="60"></div>
+        </div>
+    </div>
+
+    <div class="login-wrapper">
+        <div class="login-container">
+            <ul>
+                <h2>登录玩猫</h2>
+                <li>
+                    <label for="username">用户名</label>
+                    <input id="username" data-ui-type="TextBox" data-ui-mode="text" data-ui-width="300" >
+                </li>
+                <li>
+                    <label for="username">密码</label>
+                    <input id="password" data-ui-type="TextBox" data-ui-mode="password" type="password" data-ui-width="300">
+                </li>
+            </ul>
+            <p>
+                <button data-ui="type:Button;variants:danger;data-ui-id:submit;" class="ui-large"><span class="ui-icon-user"></span>立即登录</button>
+            </p>
+        </div>
+
+        <div class="footer">
+            <ul>
+                <li>版权所有 玩猫  Copyright2015  All Rights Reserved</li>
+                <li>上海玩猫商业地产咨询公司</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        require(['login']);
+    </script>
+
+</body>
+</html>
+

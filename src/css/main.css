@@ -7449,9 +7449,39 @@ dl {
   text-align: center;
   padding: 30px 0;
   color: #FFF;
-  font-size: 15px;
+  font-size: 12px;
   line-height: 30px;
   position: relative;
   bottom: 0;
   z-index: 200;
+}
+.login-wrapper {
+  max-width: 100%;
+  min-width: 960px;
+  margin-top: 50px;
+  min-height: 350px;
+  background: #fff;
+  position: relative;
+}
+.login-wrapper .login-container {
+  width: 960px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  clear: both;
+  padding-bottom: 300px;
+}
+.login-wrapper .login-container h2,
+.login-wrapper .login-container li,
+.login-wrapper .login-container > p {
+  text-align: center;
+}
+.login-wrapper .login-container li {
+  width: 500px;
+  margin: 20px auto;
+}
+.login-wrapper .login-container li label {
+  width: 80px;
+  display: inline-block;
+  text-align: right;
 }
