@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <form data-ui-id="form" data-ui-type="Form" class="container">
         <ul class="crumb">
             <li class="crumb-active">
                 <span class="crumb-left"></span>
@@ -67,18 +67,17 @@
             <div class="row">
                 <div class="field-name">活动时间</div>
                 <div class="field-value">
-                    <div data-ui-type="Calendar" data-ui-name="date"></div>
+                    <div data-ui-type="Calendar" data-ui-id="date" data-ui-name="date"></div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="field-name">活动图片</div>
                 <div class="field-value" style="height:auto;">
-                    <img id="previewDefault" src="src/images/uploader-default.png" />
+                    <div id="previewContainer" class="preview"></div>
                     <div class="uploader-detail">
                         <input type="file"
                             data-ui-id="uploader" data-ui-type="Uploader"
-                            data-ui-action="/upload"
                             data-ui-file-type="auto"
                             data-ui-name="file"
                             data-ui-text="&lt;span class='ui-icon-upload'&gt;&lt;/span&gt; 上传文件"
@@ -116,10 +115,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 
     <p class="submit">
-        <button data-ui="type:Button;variants:danger;data-ui-id:submit;" class="ui-large"><span class="ui-icon-check"></span>确认提交</button>
+        <button data-ui="type:Button;variants:danger;id:submit;" class="ui-large"><span class="ui-icon-check"></span>确认提交</button>
     </p>
 
     <div class="footer">
