@@ -1,0 +1,49 @@
+{
+    "status": 0,
+    "message": "",
+    "data": {
+        "name": "横溪西瓜节",
+        "categoryList": [
+            {
+                "text": "胃口",
+                "value": "1"
+            },
+            {
+                "text": "美美",
+                "value": "2"
+            },
+            {
+                "text": "童趣",
+                "value": "3"
+            },
+            {
+                "text": "奢侈",
+                "value": "4"
+            },
+            {
+                "text": "化妆",
+                "value": "5"
+            },
+            {
+                "text": "教育",
+                "value": "6"
+            }
+        ],
+        "mallList": [
+            {
+                "text": "正大广场",
+                "value": "1"
+            },
+            {
+                "text": "世贸广场",
+                "value": "2"
+            },
+            {
+                "text": "长泰广场",
+                "value": "3"
+            }
+        ],
+        "tagList": ["好玩", "美女多", "吃的便宜"],
+        "content": "我们的祖国是花园"
+    }
+}
