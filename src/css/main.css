@@ -7507,3 +7507,9 @@ dl {
   padding: 15px 52px;
   float: left;
 }
+.list {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  min-height: 600px;
+}

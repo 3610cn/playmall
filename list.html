@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Play Mall</title>
+
+        <link href="src/css/main.css" rel="stylesheet">
+
+        <script src="dep/require.js"></script>
+        <script src="src/config.js"></script>
+    </head>
+<body>
+    <div class="topbar">
+        <div class="head">
+            <div class="logo"><a href="/"><img src="src/images/logo_new.png" width="202" height="60"></a></div>
+            <div class="user">
+                <ul>
+                    <li class="usernew">蛋蛋毛<span class="ml10 mr10">|</span> <a href="../LogOut.do">退出</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="title-wrapper">
+        <div class="title">
+            <h2>活动列表</h2>
+        </div>
+    </div>
+
+    <div class="container list">
+        <div data-ui="type:Table;id:list;"></div>
+    </div>
+
+    <div class="footer">
+        <ul>
+            <li>版权所有 玩猫  Copyright2015  All Rights Reserved</li>
+            <li>上海玩猫商业地产咨询公司</li>
+        </ul>
+    </div>
+
+    <script>
+        require(['list']);
+    </script>
+
+</body>
+</html>
