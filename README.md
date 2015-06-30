@@ -4,7 +4,7 @@
 
 ### 通用接口
 
-    :::javascript
+    ```
     {
         "status": 0, // 0成功，非0失败
         "message": ""
