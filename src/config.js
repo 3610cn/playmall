@@ -1,6 +1,8 @@
 require.config({
     'baseUrl': '../src',
-    'paths': {},
+    'paths': {
+        'css': 'common/esl-css'
+    },
     'packages': [
         {
             'name': 'jquery',
@@ -24,7 +26,7 @@ require.config({
         },
         {
             'name': 'etpl',
-            'location': '../dep/etpl/3.0.0/src',
+            'location': '../dep/etpl/3.0.1/src',
             'main': 'main'
         },
         {
@@ -36,6 +38,14 @@ require.config({
             'name': 'eicons',
             'location': '../dep/eicons/1.0.0-beta.1/src',
             'main': 'main.less'
+        },
+        {
+            'name': 'er',
+            'location': '../dep/er/3.1.0-rc.2/src'
+        },
+        {
+            'name': 'ef',
+            'location': '../dep/ef/3.1.0-beta.3/src'
         },
         {
             'name': 'esf',

@@ -280,7 +280,8 @@ define(
                 {
                     id: this.helper.getId('input'),
                     browseButton: this.viewContext.get(buttonId),
-                    name: this.name
+                    name: this.name,
+                    viewContext: this.viewContext
                 }
             );
             fileInput.appendTo(lib.g(inputContainerId));

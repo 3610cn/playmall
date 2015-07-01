@@ -53,22 +53,6 @@ define(
 
         // 初始化事件
         function initEvents() {
-            var uploader = ui.get('uploader');
-            uploader.on(
-                'complete',
-                function (e) {
-                    var files = e.data;
-                    if (files.length) {
-                        var file = files[0];
-                        var data = file.serverData.data;
-                        var $preview = $('#previewContainer');
-                        $preview.html(
-                            '<img src="' + data.url + '" />'
-                        );
-                    }
-                }
-            );
-
             var form = ui.get('form');
             form.on(
                 'submit',

@@ -8,6 +8,11 @@
 
         <link href="src/css/main.css" rel="stylesheet">
 
+        <!-- 配置文件 -->
+        <script type="text/javascript" src="dep/ueditor/ueditor.config.js"></script>
+        <!-- 编辑器源码文件 -->
+        <script type="text/javascript" src="dep/ueditor/ueditor.all.js"></script>
+
         <script src="dep/require.js"></script>
         <script src="src/config.js"></script>
     </head>
@@ -23,103 +28,8 @@
         </div>
     </div>
 
-    <div class="title-wrapper">
-        <div class="title">
-            <h2>发布展示活动</h2>
-        </div>
+    <div id="main" class="main">
     </div>
-
-    <form data-ui-id="form" data-ui-type="Form" class="container">
-        <ul class="crumb">
-            <li class="crumb-active">
-                <span class="crumb-left"></span>
-                <span class="crumb-text">Step1<br>填写基本信息</span>
-                <span class="crumb-right"></span>
-            </li>
-            <li>
-                <span class="crumb-left"></span>
-                <span class="crumb-text">Step2<br>活动审核</span>
-                <span class="crumb-right"></span>
-            </li>
-            <li>
-                <span class="crumb-left"></span>
-                <span class="crumb-text">Step3<br>活动上线</span>
-            </li>
-        </ul>
-        <div class="form">
-
-            <div class="row">
-                <div class="field-name">活动分类</div>
-                <div class="field-value">
-                    <div data-ui-type="Select" data-ui-id="category" data-ui-width="120" name="category">
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="field-name">活动名称</div>
-                <div class="field-value">
-                    <div class="ui-textbox" data-ui-id="name" data-ui-type="TextBox" data-ui-width="500">
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="field-name">活动时间</div>
-                <div class="field-value">
-                    <div data-ui-type="Calendar" data-ui-id="date" data-ui-name="date"></div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="field-name">活动图片</div>
-                <div class="field-value" style="height:auto;">
-                    <div id="previewContainer" class="preview"></div>
-                    <div class="uploader-detail">
-                        <input type="file"
-                            data-ui-id="uploader" data-ui-type="Uploader"
-                            data-ui-file-type="auto"
-                            data-ui-name="file"
-                            data-ui-text="&lt;span class='ui-icon-upload'&gt;&lt;/span&gt; 上传文件"
-                            title="上传图片或Flash"
-                            accept=".gif,.jpg,.png,.swf"
-                            />
-                        <p class="uploader-desc">
-                            1.图片尺寸不低于200*300，推荐600*800
-                            <br>
-                            2.单张图片大小不超过1MB
-                         </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="field-name">活动地点</div>
-                <div class="field-value">
-                    <div data-ui-type="Select" data-ui-id="mall" data-ui-width="200" name="mall"></div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="field-name">活动详情</div>
-                <div class="field-value detail" style="height:auto;">
-                    <!-- 加载编辑器的容器 -->
-                    <script id="editor" name="content" type="text/plain"></script>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="field-name">活动标签</div>
-                <div class="field-value fee-detail" style="height:auto;">
-                    <input data-ui-id="tags" data-ui-type="TokenField" data-ui-limit="30" data-ui-delimiter="," data-ui-width="600">
-                </div>
-            </div>
-        </div>
-    </form>
-
-    <p class="submit">
-        <button data-ui="type:Button;variants:danger;id:submit;" class="ui-large"><span class="ui-icon-check"></span>确认提交</button>
-    </p>
 
     <div class="footer">
         <ul>
@@ -128,12 +38,13 @@
         </ul>
     </div>
 
-    <!-- 配置文件 -->
-    <script type="text/javascript" src="dep/ueditor/ueditor.config.js"></script>
-    <!-- 编辑器源码文件 -->
-    <script type="text/javascript" src="dep/ueditor/ueditor.all.js"></script>
     <script>
-        require(['main']);
+        require(
+            ['common/main'],
+            function (main) {
+                main.init();
+            }
+        );
     </script>
 
 </body>
