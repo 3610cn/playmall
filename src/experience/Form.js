@@ -13,6 +13,11 @@ define(
         }
 
         function submitExperience(e) {
+            // var uploadData = uploader.getRawValue();
+            // if (uploadData) {
+            //     data.file = uploadData.data.id;
+            // }
+            // data.content = ue.getContent();
             this.model.save(e.experience).then(saveCallBack.bind(this));
         }
 

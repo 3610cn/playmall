@@ -23,7 +23,7 @@ define(
                         data,
                         function (data) {
                             if (data.status === 0) {
-                                location.href='/list.html';
+                                location.href='/main.html';
                             }
                         }
                     );
