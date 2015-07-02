@@ -8,7 +8,8 @@ define(
         require('esui/BoxGroup');
         require('ub-ria-ui/TokenField');
         require('esui/Calendar');
-        require('uploader/Uploader');
+        require('ui/uploader/Uploader');
+        require('ui/UMEditor');
 
         // css
         // require('css!./css/form.css');

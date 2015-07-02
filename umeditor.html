@@ -1,0 +1,38 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title> UMEditor </title>
+        <!-- 样式文件 -->
+        <link rel="stylesheet" href="./dep/umeditor/themes/default/css/umeditor.css">
+        <!-- 引用jquery -->
+        <script src="./dep/umeditor/third-party/jquery.min.js"></script>
+        <!-- 配置文件 -->
+        <script type="text/javascript" src="./dep/umeditor/umeditor.config.js"></script>
+        <!-- 编辑器源码文件 -->
+        <script type="text/javascript" src="./dep/umeditor/umeditor.js"></script>
+        <!-- 语言包文件 -->
+        <script type="text/javascript" src="./dep/umeditor/lang/zh-cn/zh-cn.js"></script>
+        <!-- 实例化编辑器代码 -->
+        <script type="text/javascript">
+            $(function(){
+                window.um = UM.getEditor('container', {
+                    /* 传入配置参数,可配参数列表看umeditor.config.js */
+                    // toolbar: ['undo redo | bold italic underline']
+                    imageUrl: '/pc/upload',
+                    imagePath: ''
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <!-- 加载编辑器的容器 -->
+        <script type="text/javascript" charset="utf-8">
+            var width = $(document).width() * 0.9;
+            var height = $(document).height() * 0.8;
+            document.write('<script id="container" name="content" type="text/plain" style="width:' + width + 'px;height:' + height + 'px;"><\/script>');
+        </script>
+    </body>
+</html>
+

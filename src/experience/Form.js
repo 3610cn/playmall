@@ -39,18 +39,6 @@ define(
             this.view.on('cancel', cancelSubmit.bind(this));
 
             var me = this;
-            this.on(
-                'entercomplete',
-                function () {
-                    var ue = UE.getEditor('editor');
-                    ue.ready(
-                        function () {
-                            var data = me.model.get('data');
-                            ue.setContent(data.content);
-                        }
-                    );
-                }
-            );
 
             this.view.on(
                 'upload1',

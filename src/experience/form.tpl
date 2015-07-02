@@ -81,8 +81,7 @@
             <div class="row">
                 <div class="field-name">活动详情</div>
                 <div class="field-value detail" style="height:auto;">
-                    <!-- 加载编辑器的容器 -->
-                    <script id="editor" name="content" type="text/plain"></script>
+                    <div data-ui="type:UMEditor;id:content;name:content;required:required;width:90%;height:600;content:@data.content;"></div>
                 </div>
             </div>
 
