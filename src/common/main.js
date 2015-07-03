@@ -11,6 +11,7 @@ define(
             require('esui/validator/RequiredRule');
             require('esui/validator/MaxRule');
 
+            require('common/ajax').enable();
             require('er').start();
         }
 
