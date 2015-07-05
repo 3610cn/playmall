@@ -3,6 +3,7 @@ define(
 
         var $ = require('jquery');
         var ui = require('esui');
+        var er = require('er');
 
         require('esui/Form');
         require('esui/TextBox');
@@ -18,24 +19,20 @@ define(
                 'submit',
                 function () {
                     var data = form.getData();
-                    $.post(
-                        '/mockup/login.json',
-                        data,
+                    require('er/ajax').request(
+                        {
+                            url: '/api/login',
+                            data: data,
+                            method: 'GET',
+                            dataType: 'json'
+                        }
+                    ).then(
                         function (data) {
                             if (data.status === 0) {
                                 location.href='/main.html';
                             }
                         }
                     );
-                }
-            );
-
-
-            var submit = ui.get('submit');
-            submit.on(
-                'click',
-                function () {
-                    form.validateAndSubmit();
                 }
             );
         }
