@@ -16,8 +16,8 @@
         <div class="head">
             <div class="logo"><a href="/"><img src="src/images/logo_new.png" width="202" height="60"></a></div>
             <div class="user">
-                <ul>
-                    <li class="usernew">蛋蛋毛<span class="ml10 mr10">|</span> <a href="../LogOut.do">退出</a></li>
+                <ul id="userInfo" style="display:none;">
+                    <li class="usernew"><span id="username"></span><span class="ml10 mr10">|</span> <a href="/logout">退出</a></li>
                 </ul>
             </div>
         </div>
@@ -37,7 +37,7 @@
         require(
             ['common/main'],
             function (main) {
-                main.init();
+                main.start();
             }
         );
     </script>

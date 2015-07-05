@@ -1,6 +1,8 @@
 {
-    "status": 0,
-    "message": "",
+    "status": 2,
+    "msg": {
+        "name": "名字重复了"
+    },
     "data": {
     }
 }

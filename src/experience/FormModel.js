@@ -1,54 +1,34 @@
 define(
     function (require) {
-        var UIModel = require('ef/UIModel');
+        var BaseFormModel = require('common/FormModel');
+        var Data = require('./Data');
         var datasource = require('er/datasource');
 
         function ExperienceFormModel() {
-            UIModel.apply(this, arguments);
+            BaseFormModel.apply(this, arguments);
+            this.addData(new Data());
 
-            var url = this.get('url');
-
-            this.datasource = {
-                detail: datasource.remote(
-                    '/api/getExperience',
-                    {
-                        method: 'GET',
-                        data: {
-                            id: url.getQuery('id'),
-                        }
-                    }
-                )
-            };
+            if (this.get('formType') === 'create') {
+                this.datasource = datasource.remote('/api/getExperience');
+            }
         }
 
         ExperienceFormModel.prototype.prepare = function () {
-            var data = this.get('detail').data;
-            data.tags = data.tagList.join(',');
+            BaseFormModel.prototype.prepare.call(this);
+            var data = this.get('data');
             data.uploadUrl1 = '/api/upload/1';
             data.uploadUrl2 = '/api/upload/2';
+            if (this.get('formType') === 'update') {
+                data.tags = data.tagList.join(',');
+            }
             this.set('data', data);
         }
 
         ExperienceFormModel.prototype.save = function(data) {
-            this.fill(data);
-
-            var postData = this.getPart.apply(this, Object.keys(data));
-            // update请求要多个id字段
-            if (this.get('formType') === 'update') {
-                var url = this.get('url');
-                postData.id = url.getQuery('id');
-            }
-
-            var ajax = require('er/ajax');
-            var url = '/api/addExperience';
-            return ajax.post(url, postData);
+            return BaseFormModel.prototype.save.apply(this, arguments);
         };
 
-        ExperienceFormModel.prototype.formatters = {
-            time: UIModel.formatters.time
-        };
-
-        require('er/util').inherits(ExperienceFormModel, UIModel);
+        require('er/util').inherits(ExperienceFormModel, BaseFormModel);
         return ExperienceFormModel;
     }
 );

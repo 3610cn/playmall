@@ -1,33 +1,16 @@
 define(
     function(require) {
-        var Action = require('er/Action');
+        var Action = require('common/FormAction');
 
         var $ = require('jquery');
 
         function ExperienceForm() {
             Action.apply(this, arguments);
+            this.entityName = 'experience';
         }
 
         function cancelSubmit() {
             this.redirect('/experience/list');
-        }
-
-        function submitExperience(e) {
-            // var uploadData = uploader.getRawValue();
-            // if (uploadData) {
-            //     data.file = uploadData.data.id;
-            // }
-            // data.content = ue.getContent();
-            this.model.save(e.experience).then(saveCallBack.bind(this));
-        }
-
-        function saveCallBack(response) {
-            if (response.status === 0) {
-                this.redirect('/experience/list');
-            }
-            else {
-                alert('出错啦！');
-            }
         }
 
         ExperienceForm.prototype.modelType = require('./FormModel');
@@ -35,8 +18,8 @@ define(
         ExperienceForm.prototype.viewType = require('./FormView');
 
         ExperienceForm.prototype.initBehavior = function() {
-            this.view.on('submit', submitExperience.bind(this));
-            this.view.on('cancel', cancelSubmit.bind(this));
+
+            Action.prototype.initBehavior.apply(this, arguments);
 
             var me = this;
 

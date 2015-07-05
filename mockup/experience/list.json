@@ -1,6 +1,6 @@
 {
-    "status": 1,
-    "message": "没有登录",
+    "status": 0,
+    "msg": "没有登录",
     "data": [
         {
             "id": "1",

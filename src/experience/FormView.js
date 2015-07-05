@@ -11,19 +11,15 @@ define(
         require('ui/uploader/Uploader');
         require('ui/UMEditor');
 
+        var u = require('underscore');
+
         // css
         // require('css!./css/form.css');
 
-        var UIView = require('ef/UIView');
+        var BaseFormView = require('common/FormView');
 
         function ExperienceFormView() {
-            UIView.apply(this, arguments);
-        }
-
-        function submit() {
-            var form = this.get('form');
-            var data = form.getData();
-            this.fire('submit', {experience: data});
+            BaseFormView.apply(this, arguments);
         }
 
         function cancel() {
@@ -33,12 +29,9 @@ define(
         ExperienceFormView.prototype.template = 'experienceForm';
 
         ExperienceFormView.prototype.enterDocument = function() {
-            UIView.prototype.enterDocument.apply(this, arguments);
+            BaseFormView.prototype.enterDocument.apply(this, arguments);
 
             var me = this;
-
-            var form = this.get('form');
-            form.on('submit', require('er/util').bind(submit, this));
 
             var uploader = this.get('uploader');
             uploader.on(
@@ -51,8 +44,23 @@ define(
             // cancelButton.on('click', require('er/util').bind(cancel, this))
         };
 
+        /**
+         * 从表单中获取实体数据
+         *
+         * @return {Object}
+         */
+        ExperienceFormView.prototype.getEntity = function () {
+            var entity = BaseFormView.prototype.getEntity.apply(this, arguments);
+            if (u.isObject(entity.upload1)) {
+                entity.upload1 = entity.upload1.data.id;
+            }
+            if (u.isObject(entity.upload2)) {
+                entity.upload2 = entity.upload2.data.id;
+            }
+            return entity;
+        };
 
-        require('er/util').inherits(ExperienceFormView, UIView);
+        require('er/util').inherits(ExperienceFormView, BaseFormView);
         return ExperienceFormView;
     }
 );

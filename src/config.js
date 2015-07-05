@@ -48,6 +48,10 @@ require.config({
             'location': '../dep/ef/3.1.0-beta.3/src'
         },
         {
+            'name': 'ub-ria',
+            'location': '../dep/ub-ria/src'
+        },
+        {
             'name': 'esf',
             'location': '../dep/esf/1.0.0-beta.1/src'
         },
@@ -63,6 +67,11 @@ require.config({
         {
             "name": "ub-ria-ui",
             "location": "../dep/ub-ria-ui/1.0.0-beta.1/src"
-        }
+        },
+        {
+            "name": "promise",
+            "location": "../dep/promise/src",
+            "main": "main"
+        },
     ]
 });

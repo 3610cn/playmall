@@ -105,7 +105,7 @@ define(
                     if (data.status === 1) {
                         fakeXHR.status = 403;
                     }
-                    throw data.message;
+                    throw data.msg;
                     return {};
                 }
                 return data;

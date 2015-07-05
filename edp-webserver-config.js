@@ -49,9 +49,9 @@ exports.getLocations = function () {
             ]
         },
         {
-            location: /^\/api\/js\/converts/,
+            location: /^\/api\/getExperience/,
             handler: [
-                file('./test/mockup/convertTool/search.json')
+                file('./mockup/getExperience.json')
             ]
         },
         {
