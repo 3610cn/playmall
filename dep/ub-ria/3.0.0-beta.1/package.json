@@ -1,0 +1,42 @@
+{
+    "name": "ub-ria",
+    "version": "3.0.0-beta.1",
+    "maintainers": [
+        {
+            "name": "otakustay",
+            "email": "otakustay@icloud.com"
+        }
+    ],
+    "contributors": [
+        {
+            "name": "DDDBear"
+        },
+        {
+            "name": "wangyaqiong"
+        }
+    ],
+    "main": "main",
+    "description": "联盟前端产品RIA基础库",
+    "homepage": "https://github.com/ecomfe/ub-ria",
+    "edp": {
+        "wwwroot": "/",
+        "depDir": "dep",
+        "srcDir": "src",
+        "loaderAutoConfig": "js,htm,html,tpl,vm,phtml",
+        "loaderUrl": "http://s1.bdstatic.com/r/www/cache/ecom/esl/1-8-2/esl.js",
+        "layout": "v2",
+        "dependencies": {
+            "er": ">=3.1.x",
+            "esui": ">=3.1.x",
+            "ef": ">=3.1.x",
+            "underscore": "1.5.x",
+            "mini-event": "1.x",
+            "etpl": "3.x",
+            "eoo": "0.x",
+            "eicons": "1.x",
+            "esf": "1.x",
+            "est": "1.x",
+            "moment": "2.x"
+        }
+    }
+}
