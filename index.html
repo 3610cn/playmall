@@ -18,18 +18,19 @@
         </div>
     </div>
 
-    <div class="login-wrapper">
+    <div class="login-wrapper hide">
         <form data-ui="type:Form;id:form;autoValidate:true;" class="login-container">
             <ul>
                 <h2>登录玩猫</h2>
                 <li>
                     <label for="username">用户名</label>
-                    <input id="username" data-ui-type="TextBox" data-ui-mode="text" data-ui-width="300" data-ui-required="required">
+                    <input id="username" name="username" data-ui="type:TextBox;mode:text;width:300;required:required;" />
                 </li>
                 <li>
                     <label for="username">密码</label>
-                    <input id="password" data-ui-type="TextBox" data-ui-mode="password" type="password" data-ui-width="300" data-ui-required="required">
+                    <input id="password" name="password" data-ui="type:TextBox;mode:password;width:300;required:required;" type="password" />
                 </li>
+                <li class="error hide"></li>
             </ul>
             <p>
                 <button data-ui="type:Button;variants:danger;id:submit;" class="ui-large"><span class="ui-icon-user"></span>立即登录</button>

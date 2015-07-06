@@ -217,13 +217,15 @@ define(
             if (supportMultiple) {
                 var me = this;
                 var input = lib.g(this.lastUid);
-                this.browseButton.on(
+                this.helper.addDOMEvent(
+                    this.browseButton.main,
                     'click',
                     function(e) {
                         if (input && !input.disabled) {
                             input.click();
                         }
                         e.preventDefault();
+                        e.stopPropagation();
                     }
                 );
                 input.onchange = function () {

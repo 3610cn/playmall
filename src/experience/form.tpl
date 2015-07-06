@@ -5,7 +5,7 @@
         </div>
     </div>
 
-    <form data-ui-id="form" data-ui-type="Form" data-ui-submit-button="submit" data-ui-auto-validate="true" class="container">
+    <div data-ui-id="form" data-ui-type="Form" data-ui-submit-button="submit" data-ui-auto-validate="true" class="container">
         <ul class="crumb">
             <li class="crumb-active">
                 <span class="crumb-left"></span>
@@ -44,6 +44,7 @@
                 <div class="field-name">活动时间</div>
                 <div class="field-value">
                     <div data-ui="type:Calendar;id:date;name:date;value:@data.date;"></div>
+                    <div data-ui="type:Select;id:time;width:140;datasource:@timeList;" name="time"></div>
                 </div>
             </div>
 
@@ -52,7 +53,7 @@
                 <div class="field-value" style="height:auto;">
                     <div id="previewContainer" class="preview"></div>
                     <div class="uploader-detail">
-                        <input type="file"
+                        <div type="file"
                             data-ui-id="uploader"
                             data-ui-type="Uploader"
                             data-ui-action="@data.uploadUrl1"
@@ -61,7 +62,7 @@
                             data-ui-text="&lt;span class='ui-icon-upload'&gt;&lt;/span&gt; 上传文件"
                             title="上传图片或Flash"
                             accept=".gif,.jpg,.png,.swf"
-                            />
+                        ></div>
                         <p class="uploader-desc">
                             1.图片尺寸不低于200*300，推荐600*800
                             <br>
@@ -96,4 +97,4 @@
         <p class="submit">
             <button data-ui="type:Button;variants:danger;id:submit;" class="ui-large"><span class="ui-icon-check"></span>确认提交</button>
         </p>
-    </form>
+    </div>

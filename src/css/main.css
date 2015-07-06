@@ -7272,6 +7272,9 @@ dl {
 .mr10 {
   margin-right: 10px;
 }
+.hide {
+  display: none;
+}
 .ui-uploader {
   position: relative;
   overflow: hidden;
@@ -7484,8 +7487,8 @@ dl {
   padding-bottom: 300px;
 }
 .login-wrapper .login-container h2,
-.login-wrapper .login-container li,
-.login-wrapper .login-container > p {
+.login-wrapper .login-container > p,
+.login-wrapper .login-container .error {
   text-align: center;
 }
 .login-wrapper .login-container li {
@@ -7497,6 +7500,9 @@ dl {
   display: inline-block;
   text-align: right;
   margin-right: 10px;
+}
+.error {
+  color: red;
 }
 .topbar-login {
   max-width: 100%;

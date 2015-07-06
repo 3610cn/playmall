@@ -1,6 +1,6 @@
 {
     "status": 0,
     "msg": {
-        "username": "用户名或密码错误"
+        "global": "你特么的出错了"
     }
 }

@@ -49,7 +49,7 @@ require.config({
         },
         {
             'name': 'ub-ria',
-            'location': '../dep/ub-ria/src'
+            'location': '../dep/ub-ria/2.0.0-beta.6/src'
         },
         {
             'name': 'esf',
@@ -70,7 +70,7 @@ require.config({
         },
         {
             "name": "promise",
-            "location": "../dep/promise/src",
+            "location": "../dep/promise/1.0.2/src",
             "main": "main"
         },
     ]

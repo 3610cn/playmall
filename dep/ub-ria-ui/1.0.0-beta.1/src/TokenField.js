@@ -66,7 +66,7 @@ define(
             // token创建成功，清空输入框
             input.setRawValue('');
         };
-        
+
         /**
          * TokenField
          *
