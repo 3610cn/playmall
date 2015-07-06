@@ -1,4 +1,0 @@
-/**
- * @namespace extension
- */
-var extension = {};
