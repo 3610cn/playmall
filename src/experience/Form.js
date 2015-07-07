@@ -23,20 +23,25 @@ define(
 
             var me = this;
 
-            this.view.on(
-                'upload1',
-                function (e) {
-                    var files = e.data;
-                    if (files.length) {
-                        var file = files[0];
-                        var data = file.serverData.data;
-                        var $preview = $('#previewContainer');
-                        $preview.html(
-                            '<img src="' + data.url + '" />'
-                        );
-                    }
-                }
-            );
+            for (var i = 1; i <= 2; i++) {
+                this.view.on(
+                    'upload' + i,
+                    (function (i) {
+                        console.log(i)
+                        return function (e) {
+                            var files = e.data;
+                            if (files.length) {
+                                var file = files[0];
+                                var data = file.serverData.data;
+                                var $preview = $('#preview' + i);
+                                $preview.html(
+                                    '<img src="' + data.url + '" />'
+                                );
+                            }
+                        };
+                    }(i))
+                );
+            }
 
         };
 

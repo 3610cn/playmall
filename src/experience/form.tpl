@@ -49,16 +49,40 @@
             </div>
 
             <div class="row">
-                <div class="field-name">活动图片</div>
+                <div class="field-name">活动图片(大图)</div>
                 <div class="field-value" style="height:auto;">
-                    <div id="previewContainer" class="preview"></div>
+                    <div id="preview1" class="preview"></div>
                     <div class="uploader-detail">
                         <div type="file"
-                            data-ui-id="uploader"
+                            data-ui-id="uploader1"
                             data-ui-type="Uploader"
                             data-ui-action="@data.uploadUrl1"
                             data-ui-file-type="auto"
                             data-ui-name="upload1"
+                            data-ui-text="&lt;span class='ui-icon-upload'&gt;&lt;/span&gt; 上传文件"
+                            title="上传图片或Flash"
+                            accept=".gif,.jpg,.png,.swf"
+                        ></div>
+                        <p class="uploader-desc">
+                            1.图片尺寸不低于200*300，推荐600*800
+                            <br>
+                            2.单张图片大小不超过1MB
+                         </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="field-name">活动图片(小图)</div>
+                <div class="field-value" style="height:auto;">
+                    <div id="preview2" class="preview"></div>
+                    <div class="uploader-detail">
+                        <div type="file"
+                            data-ui-id="uploader2"
+                            data-ui-type="Uploader"
+                            data-ui-action="@data.uploadUrl2"
+                            data-ui-file-type="auto"
+                            data-ui-name="upload2"
                             data-ui-text="&lt;span class='ui-icon-upload'&gt;&lt;/span&gt; 上传文件"
                             title="上传图片或Flash"
                             accept=".gif,.jpg,.png,.swf"

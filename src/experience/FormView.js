@@ -33,15 +33,17 @@ define(
 
             var me = this;
 
-            var uploader = this.get('uploader');
-            uploader.on(
-                'complete',
-                function (event) {
-                    me.fire('upload1', event);
-                }
-            );
-            // var cancelButton = this.get('cancel-button');
-            // cancelButton.on('click', require('er/util').bind(cancel, this))
+            for (var i = 1; i <= 2; i++) {
+                var uploader = this.get('uploader' + i);
+                uploader.on(
+                    'complete',
+                    (function (i) {
+                        return function (event) {
+                            me.fire('upload' + i, event);
+                        }
+                    }(i))
+                );
+            }
         };
 
         /**

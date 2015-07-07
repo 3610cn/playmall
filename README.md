@@ -5,8 +5,8 @@
 ### 通用接口
   ```
     {
-        "status": 0, // 0成功，非0失败
-        "message": ""
+        "status": 0, // 0成功，1登录超时或登录不成功，２其他业务错误
+        "msg": {} // msg为object, 对应每个字段的错误，全局错误用global字段
     }
 
   ```
@@ -23,7 +23,26 @@
   ```
     {
         status: 0,
-        message: "用户名密码不正确"
+        msg: {
+            "global": "用户名或者错误"
+        }
+    }
+  ```
+
+### 获取用户信息
+
+    * URL: /api/getUser
+    * METHOD: GET
+    * PARAM: 
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": {},
+        "data": {
+            "username": "dandanmao"
+        }
     }
   ```
 
@@ -38,7 +57,7 @@
   ```
     {
         "status": 0,
-        "message": "",
+        "msg": {},
         "data": [
             {
                 "id": "1",
@@ -82,8 +101,10 @@
 
   ```
     {
-        status: 0,
-        message: "删除成功"
+        "status": 0,
+        "msg": {
+            "global": "删除成功"
+        }
     }
   ```
 
@@ -96,7 +117,7 @@
   ```
     {
         "status": 0,
-        "message": "",
+        "msg": {},
         "data": {
             "name": "横溪西瓜节",
             "categoryList": [
@@ -169,10 +190,12 @@
 
   ```
     {
-        status: 0,
-        message: "添加成功",
-        data: {
-            id: 3
+        "status": 0,
+        "msg": {
+            "global": "添加成功"
+        },
+        "data": {
+            "id": 3
         }
     }
   ```
@@ -187,10 +210,12 @@
 
   ```
     {
-        status: 0,
-        message: "上传成功",
-        data: {
-            id: 123  // 上传成功后返回的id
+        "status": 0,
+        "msg": {
+            "global": "尺寸不符合要求"
+        },
+        "data": {
+            "id": 123  // 上传成功后返回的id
         }
     }
   ```
