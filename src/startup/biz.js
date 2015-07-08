@@ -1,0 +1,1 @@
+define('startup/biz', {});

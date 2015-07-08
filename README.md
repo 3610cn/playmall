@@ -22,8 +22,8 @@
 
   ```
     {
-        status: 0,
-        msg: {
+        "status": 0,
+        "msg": {
             "global": "用户名或者错误"
         }
     }
