@@ -3,7 +3,6 @@ define(
 
         var $ = require('jquery');
         var ui = require('esui');
-        var er = require('er');
 
         require('esui/Form');
         require('esui/TextBox');
@@ -24,20 +23,19 @@ define(
                 function () {
                     $('.error').hide();
                     var data = form.getData();
-                    require('er/ajax').request(
+                    $.ajax(
                         {
                             url: '/api/login',
                             data: data,
-                            method: 'GET',
-                            dataType: 'json'
-                        }
-                    ).then(
-                        function (data) {
-                            if (data.status === 0) {
-                                location.href='/main.html';
-                            }
-                            else {
-                                $('.error').html(data.msg.global || '用户名或密码错误').show();
+                            type: 'POST',
+                            dataType: 'json',
+                            success: function (data) {
+                                if (data.status === 0) {
+                                    location.href='/main.html';
+                                }
+                                else {
+                                    $('.error').html(data.msg.global || '用户名或密码错误').show();
+                                }
                             }
                         }
                     );
