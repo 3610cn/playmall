@@ -56,12 +56,14 @@ function generateModuleCombineConfig() {
     // 基础库包
     var basePackages = [
         '~eoo', '~etpl', '~mini-event',
-        '~underscore', 'moment', 'moment/moment', '~er'
+        '~underscore', 'moment', 'moment/moment',
+        '~jquery', 'promise'
     ];
 
     // esui很大，所以单独一个包
     var uiPackages = [
         '~esui',
+        '~ub-ria-ui',
         'ui/**'
     ];
 
@@ -82,13 +84,6 @@ function generateModuleCombineConfig() {
         'startup/ui': {
             files: [
                 uiPackages,
-
-                // 系统UI用到了这个组件，所以要一起加载进来
-                // report的lineChart内部有这个的依赖
-                // 'moment/lang/zh-cn',
-
-                // 有些东西要不得，废弃的控件
-                '!esui/customShim', '!esui/Sidebar',
 
                 // 排除干扰
                 negative(basePackages),
