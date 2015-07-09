@@ -3,6 +3,16 @@
     "msg": {},
     "data": {
         "name": "横溪西瓜节",
+        "columnList": [
+            {
+                "text": "体验",
+                "value": "1"
+            },
+            {
+                "text": "大咖",
+                "value": "2"
+            }
+        ],
         "categoryList": [
             {
                 "text": "胃口",
