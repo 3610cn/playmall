@@ -3,11 +3,14 @@ define(
         var actions = [
             {
                 path: '/',
-                type: 'experience/List',
-                args: { xxx: '111' }
+                type: 'experience/List'
             },
             {
                 path: '/experience/list',
+                type: 'experience/List'
+            },
+            {
+                path: '/bigshot/list',
                 type: 'experience/List'
             },
             {
@@ -16,7 +19,17 @@ define(
                 args: { formType: 'create' }
             },
             {
+                path: '/bigshot/create',
+                type: 'experience/Form',
+                args: { formType: 'create' }
+            },
+            {
                 path: '/experience/update',
+                type: 'experience/Form',
+                args: { formType: 'update' }
+            },
+            {
+                path: '/bigshot/update',
                 type: 'experience/Form',
                 args: { formType: 'update' }
             }

@@ -2,6 +2,7 @@
     "status": 0,
     "msg": {},
     "data": {
-        "username": "dandanmao"
+        "username": "dandanmao",
+        "role": "admin"
     }
 }

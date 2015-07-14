@@ -1,8 +1,7 @@
 <!-- target: experienceListPage -->
-    <!-- import: nav -->
     <div class="title-wrapper">
         <div class="title">
-            <h2>活动列表</h2>
+            <!-- import: nav -->
         </div>
     </div>
 

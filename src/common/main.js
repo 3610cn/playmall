@@ -4,6 +4,7 @@ define(
         var GlobalData = require('./GlobalData');
         var Deferred = require('er/Deferred');
         var $ = require('jquery');
+        var u = require('underscore');
 
         /**
          * 开始初始化系统常量和用户常量，此时已经获取用户的全部信息
@@ -65,6 +66,50 @@ define(
             var user = GlobalData.getInstance().getUser();
             $('#username').html(user['username'])
             $('#userInfo').show();
+
+
+            var controller = require('er/controller');
+            controller.getEventBus().on(
+                'enteraction',
+                function (event) {
+                    var action = event.action;
+                    action.on(
+                        'modelloaded',
+                        function (e) {
+                            this.model.set('user', user);
+                        }
+                    );
+                }
+            );
+            controller.getEventBus().on(
+                'enteractioncomplete',
+                function (event) {
+                    var action = event.action;
+                    var nav = action.view.get('nav');
+                    if (nav) {
+                        var url = action.model.get('url');
+                        var path = url.getPath();
+                        var splits = path.split('/');
+                        var type = splits[1] || 'experience';
+                        u.each(
+                            nav.tabs,
+                            function (tab) {
+                                if (u.contains(tab.classes, type)) {
+                                    nav.activate(tab);
+                                }
+                            }
+                        );
+                        nav.on(
+                            'activate',
+                            function (e) {
+                                var tab = this.getActiveTab();
+                                var type = tab.classes[0];
+                                require('er/locator').redirect('/' + type + '/list');
+                            }
+                        );
+                    }
+                }
+            );
         }
 
         return {
