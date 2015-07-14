@@ -3,7 +3,8 @@ define(
         var actions = [
             {
                 path: '/',
-                type: 'experience/List'
+                type: 'experience/List',
+                args: { xxx: '111' }
             },
             {
                 path: '/experience/list',

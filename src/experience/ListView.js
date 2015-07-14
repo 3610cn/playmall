@@ -1,6 +1,8 @@
 define(
     function (require) {
+        require('er/tpl!common/tpl/common.tpl');
         require('er/tpl!./list.tpl');
+        require('esui/Tab');
         require('esui/Button');
         require('esui/Table');
         require('esui/extension/Command');
