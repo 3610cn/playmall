@@ -46,10 +46,11 @@
     }
   ```
 
-### 体验列表
+### 体验列表 / 大咖列表
 
 
-    * URL: /api/getExperienceList
+    * URL: /api/getExperienceList (体验)
+    * URL: /api/getBigshotList (大咖)
     * METHOD: GET
     * PARAM: 
     * RESPONSE: 
@@ -91,9 +92,10 @@
     }
   ```
 
-### 删除体验
+### 删除体验 / 大咖
 
-    * URL: /api/deleteExperience
+    * URL: /api/deleteExperience (体验)
+    * URL: /api/deleteBigshot (大咖)
     * METHOD: POST
     * PARAM: 
         * id
@@ -110,7 +112,8 @@
 
 ### 获取某条体验
 
-    * URL: /api/getExperience/$id $id为空时表示新建，只给一些选项列表
+    * URL: /api/getExperience/$id $id为空时表示新建，只给一些选项列表 (体验)
+    * URL: /api/getBigshot/$id $id为空时表示新建，只给一些选项列表 (大咖)
     * METHOD: GET
     * RESPONSE: 
 
@@ -166,9 +169,10 @@
     }
   ```
 
-### 增加 / 编辑体验
+### 增加 / 编辑体验 / 大咖
 
-    * URL: /api/addExperience
+    * URL: /api/addExperience (体验)
+    * URL: /api/addBigshot (大咖)
     * METHOD: POST
     * PARAM: 
 
@@ -216,6 +220,152 @@
         },
         "data": {
             "id": 123  // 上传成功后返回的id
+        }
+    }
+  ```
+
+### 抢鲜列表
+
+
+    * URL: /api/getFreshList
+    * METHOD: GET
+    * PARAM: 
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": "",
+        "data": [
+            {
+                "id": "1",
+                "title": "快来抢免费更衣间",
+                "shop": "有衣裤",
+                "mall": "正大广场",
+                "count": "100人",
+                "startTime": "2015-03-08",
+                "endTime": "2015-03-08"
+            },
+            {
+                "id": "1",
+                "title": "快来抢免费更衣间",
+                "shop": "有衣裤",
+                "mall": "正大广场",
+                "count": "100人",
+                "startTime": "2015-03-08",
+                "endTime": "2015-03-08"
+            },
+            {
+                "id": "2",
+                "title": "一折甩卖破鞋",
+                "shop": "有衣裤",
+                "mall": "正大广场",
+                "count": "120人",
+                "startTime": "2015-03-08",
+                "endTime": "2015-03-08"
+            },
+            {
+                "id": "3",
+                "title": "快来抢免费更衣间",
+                "shop": "有衣裤",
+                "mall": "正大广场",
+                "count": "1000人",
+                "startTime": "2015-03-08",
+                "endTime": "2015-03-08"
+            },
+            {
+                "id": "4",
+                "title": "冰棍免费吃",
+                "shop": "口渴了",
+                "mall": "长泰广场",
+                "count": "1000人",
+                "startTime": "2015-03-08",
+                "endTime": "2015-03-08"
+            }
+        ]
+    }
+  ```
+
+### 删除抢鲜
+
+    * URL: /api/deleteFresh
+    * METHOD: POST
+    * PARAM: 
+        * id
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": {
+            "global": "删除成功"
+        }
+    }
+  ```
+
+### 获取某条抢鲜信息
+
+    * URL: /api/getFresh/$id $id为空时表示新建，只给选项列表: mallList
+    * METHOD: GET
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": {},
+        "data": {
+            "title": "快来抢更衣间特权",
+            "mallList": [
+                {
+                    "text": "正大广场",
+                    "value": "1"
+                },
+                {
+                    "text": "世贸广场",
+                    "value": "2"
+                },
+                {
+                    "text": "长泰广场",
+                    "value": "3"
+                }
+            ],
+            "mall": "3",
+            "shop": "口渴了",
+            "count": "100",
+            "content": "我们的祖国是花园",
+            "startTime": "2012-05-21 10:00",
+            "endTime": "2012-05-22 10:00"
+        }
+    }
+  ```
+
+### 增加 / 编辑抢鲜
+
+    * URL: /api/addFresh
+    * METHOD: POST
+    * PARAM: 
+
+  ```
+    "id": 2,
+    "title": "快来抢更衣间特权",
+    "mall": "3",
+    "shop": "口渴了",
+    "count": "100",
+    "content": "我们的祖国是花园",
+    "startTime": "2012-05-21 10:00",
+    "endTime": "2012-05-22 10:00"
+  ```
+
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": {
+            "global": "添加成功"
+        },
+        "data": {
+            "id": 3
         }
     }
   ```

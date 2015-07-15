@@ -25,14 +25,6 @@
         <div class="form">
 
             <div class="row">
-                <div class="field-name">栏目分类</div>
-                <div class="field-value">
-                    <div data-ui="type:Select;id:column;width:120;datasource:@data.columnList;" name="column">
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
                 <div class="field-name">活动分类</div>
                 <div class="field-value">
                     <div data-ui="type:Select;id:category;width:120;datasource:@data.categoryList;" name="category">

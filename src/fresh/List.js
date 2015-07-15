@@ -2,15 +2,15 @@ define(
     function (require) {
         var Action = require('er/Action');
 
-        function ExperienceList() {
+        function FreshList() {
             Action.apply(this, arguments);
         }
 
-        ExperienceList.prototype.modelType = require('./ListModel');
+        FreshList.prototype.modelType = require('./ListModel');
 
-        ExperienceList.prototype.viewType = require('./ListView');
+        FreshList.prototype.viewType = require('./ListView');
 
-        ExperienceList.prototype.initBehavior = function () {
+        FreshList.prototype.initBehavior = function () {
             var action = this;
             var type = this.model.get('entityName');
             this.view.on(
@@ -37,7 +37,7 @@ define(
             );
         };
 
-        require('er/util').inherits(ExperienceList, Action);
-        return ExperienceList;
+        require('er/util').inherits(FreshList, Action);
+        return FreshList;
     }
 );

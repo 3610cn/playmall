@@ -51,6 +51,7 @@ define(
         function initializeApplication() {
             require('er/Deferred').syncModeEnabled = true;
             require('../experience/config');
+            require('../fresh/config');
             // rule
             require('esui/validator/MaxRule');
             require('esui/validator/MinRule');

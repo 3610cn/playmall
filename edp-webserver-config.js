@@ -49,6 +49,18 @@ exports.getLocations = function () {
             ]
         },
         {
+            location: /^\/api\/getFresh/,
+            handler: [
+                file('./mockup/getFresh.json')
+            ]
+        },
+        {
+            location: /^\/api\/getBigshot/,
+            handler: [
+                file('./mockup/getBigshot.json')
+            ]
+        },
+        {
             location: /^\/api\/getExperience/,
             handler: [
                 file('./mockup/getExperience.json')

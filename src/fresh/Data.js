@@ -18,12 +18,12 @@ define(
          * @constructor
          * @extends ub-ria/mvc/RequestManager
          */
-        function ExperienceData(entityName) {
+        function FreshData(entityName) {
             RequestManager.call(this, entityName);
             this.setRequestStrategy(new RequestStrategy());
         }
 
-        util.inherits(ExperienceData, RequestManager);
+        util.inherits(FreshData, RequestManager);
 
         var requests = {
         };
@@ -33,9 +33,9 @@ define(
          *
          * @return {er.Promise}
          */
-        ExperienceData.prototype.search = function (query) {
+        FreshData.prototype.search = function (query) {
             return this.request(
-                'experience/list',
+                'fresh/list',
                 query,
                 {
                     method: 'GET',
@@ -49,12 +49,12 @@ define(
          *
          * @return {er.Promise}
          */
-        ExperienceData.prototype.findById = function (id) {
+        FreshData.prototype.findById = function (id) {
             var entityName = this.getEntityName();
             var pascalEntityName = entityName.charAt(0).toUpperCase() + entityName.slice(1);
             id = id ? '/' + id : '';
             return this.request(
-                'experience/detail',
+                'fresh/detail',
                 null,
                 {
                     method: 'GET',
@@ -69,11 +69,11 @@ define(
          * @param {entity} entity
          * @return {er.Promise}
          */
-        ExperienceData.prototype.update = function (entity) {
+        FreshData.prototype.update = function (entity) {
             var entityName = this.getEntityName();
             var pascalEntityName = entityName.charAt(0).toUpperCase() + entityName.slice(1);
             return this.request(
-                'experience/update',
+                'fresh/update',
                 entity,
                 {
                     method: 'POST',
@@ -87,7 +87,7 @@ define(
          * @param {entity} entity
          * @return {er.Promise}
          */
-        ExperienceData.prototype.save = function (entity) {
+        FreshData.prototype.save = function (entity) {
             return this.update(entity);
         };
 
@@ -97,11 +97,11 @@ define(
          * @param {Number} id
          * @return {er.Promise}
          */
-        ExperienceData.prototype.deleteById = function (id) {
+        FreshData.prototype.deleteById = function (id) {
             var entityName = this.getEntityName();
             var pascalEntityName = entityName.charAt(0).toUpperCase() + entityName.slice(1);
             return this.request(
-                'experience/delete',
+                'fresh/delete',
                 {
                     id: id
                 },
@@ -117,10 +117,10 @@ define(
             requests,
             function (config) {
                 var RequestManager = require('ub-ria/mvc/RequestManager');
-                RequestManager.register(ExperienceData, config.name, config);
+                RequestManager.register(FreshData, config.name, config);
             }
         );
 
-        return ExperienceData;
+        return FreshData;
     }
 );

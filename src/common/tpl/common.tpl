@@ -7,7 +7,7 @@
         <li class="experience">体验</li>
 
         <!-- if: ${user.role} === 'admin' || ${user.role} === 'shop' -->
-        <li class="spot">抢鲜</li>
+        <li class="fresh">抢鲜</li>
         <!-- /if -->
 
         <!-- if: ${user.role} === 'admin' -->

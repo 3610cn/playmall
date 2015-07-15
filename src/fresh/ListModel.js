@@ -4,7 +4,7 @@ define(
         var Data = require('./Data');
         var datasource = require('er/datasource');
 
-        function ExperienceListModel() {
+        function FreshListModel() {
             Model.apply(this, arguments);
             var entityName = this.getUrlType();
             this.addData(new Data(entityName));
@@ -20,7 +20,7 @@ define(
             };
         }
 
-        require('er/util').inherits(ExperienceListModel, Model);
-        return ExperienceListModel;
+        require('er/util').inherits(FreshListModel, Model);
+        return FreshListModel;
     }
 );

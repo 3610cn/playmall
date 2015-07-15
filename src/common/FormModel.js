@@ -21,8 +21,6 @@ define(
 
         util.inherits(FormModel, BaseFormModel);
 
-        var baseDefaultDatasource = BaseFormModel.prototype.defaultDatasource;
-
         /**
          * 数据源配置
          *
@@ -30,17 +28,47 @@ define(
          * @override
          */
         FormModel.prototype.defaultDatasource = {
-            /*
-             * 日期起始时间
-             */
-            dateRange: function (model) {
-                var rangeStart = moment().format('YYYY-MM-DD');
-                var rangeEnd = '2030-12-31';
-                return [rangeStart, rangeEnd].join(',');
+            base: {
+                retrieve: function(model) {
+                    var url = model.get('url');
+                    // var query = url.getQuery();
+                    // query = u.purify(query, null, true);
+
+                    var path = url.getPath();
+                    var splits = path.split('/');
+                    var type = splits[1] || 'experience';
+                    return {
+                        entityName: type,
+                        pascalEntityName: type.charAt(0).toUpperCase() + type.slice(1)
+                    }
+                },
+                dump: true
+            },
+            timeList: {
+                retrieve: function(model) {
+                    var timeList = [];
+                    var start = moment('2000-01-01 23:30:00');
+                    for (var i = 0; i < 48; i++) {
+                        var time = start.add(30, 'm').format('hh:mm A');
+                        timeList.push(
+                            {
+                                text: time,
+                                value: time
+                            }
+                        );
+                    }
+                    return timeList;
+                }
             }
+
         };
 
-        u.extend(FormModel.prototype.defaultDatasource, baseDefaultDatasource);
+        FormModel.prototype.getDatasource = function () {
+            return u.extend(
+                this.defaultDatasource,
+                this.datasource
+            );
+        };
 
         /**
          * 对数据源进行预处理
@@ -124,6 +152,17 @@ define(
          */
         FormModel.prototype.fillEntity = function (entity) {
             return entity;
+        };
+
+        FormModel.prototype.getUrlType = function (pascalType) {
+            var url = this.get('url');
+            var path = url.getPath();
+            var splits = path.split('/');
+            var type = splits[1] || 'experience';
+            if (pascalType) {
+                type = type.charAt(0).toUpperCase() + type.slice(1);
+            }
+            return type;
         };
 
         return FormModel;

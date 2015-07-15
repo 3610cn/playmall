@@ -6,11 +6,6 @@ define(
 
         function ExperienceForm() {
             Action.apply(this, arguments);
-            this.entityName = 'experience';
-        }
-
-        function cancelSubmit() {
-            this.redirect('/experience/list');
         }
 
         ExperienceForm.prototype.modelType = require('./FormModel');

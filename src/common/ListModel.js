@@ -105,6 +105,17 @@ define(
             return this.data().deleteById(id);
         }
 
+        ListModel.prototype.getUrlType = function (pascalType) {
+            var url = this.get('url');
+            var path = url.getPath();
+            var splits = path.split('/');
+            var type = splits[1] || 'experience';
+            if (pascalType) {
+                type = type.charAt(0).toUpperCase() + type.slice(1);
+            }
+            return type;
+        };
+
         return ListModel;
     }
 );
