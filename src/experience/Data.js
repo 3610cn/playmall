@@ -3,7 +3,7 @@
  * Copyright 2014 Baidu Inc. All rights reserved.
  *
  * @ignore
- * @file 用户模块数据类
+ * @file 体验、大咖模块数据类
  * @author maoquan(maoquan0515@163.com)
  */
 define(
@@ -14,13 +14,12 @@ define(
         var u = require('underscore');
 
         /**
-         * 健康资讯模块数据类
          *
          * @constructor
          * @extends ub-ria/mvc/RequestManager
          */
-        function ExperienceData() {
-            RequestManager.call(this, 'experience');
+        function ExperienceData(entityName) {
+            RequestManager.call(this, entityName);
             this.setRequestStrategy(new RequestStrategy());
         }
 
@@ -30,7 +29,7 @@ define(
         };
 
         /**
-         * 获取健康资讯类别列表
+         * 获取列表
          *
          * @return {er.Promise}
          */
@@ -40,45 +39,49 @@ define(
                 query,
                 {
                     method: 'GET',
-                    url: '/experience/list'
+                    url: '/api/' + this.getEntityName() + '/list'
                 }
             );
         };
 
         /**
-         * 获取健康资讯类别详情
+         * 获取详情
          *
          * @return {er.Promise}
          */
         ExperienceData.prototype.findById = function (id) {
+            var entityName = this.getEntityName();
+            var pascalEntityName = entityName.charAt(0) + entityName.slice(1);
             return this.request(
                 'experience/detail',
                 null,
                 {
                     method: 'GET',
-                    url: '/api/getExperience/' + id
+                    url: '/api/get' + pascalEntityName + '/' + id
                 }
             );
         };
 
         /**
-         * 更新健康资讯类别
+         * 更新
          *
          * @param {entity} entity
          * @return {er.Promise}
          */
         ExperienceData.prototype.update = function (entity) {
+            var entityName = this.getEntityName();
+            var pascalEntityName = entityName.charAt(0) + entityName.slice(1);
             return this.request(
                 'experience/update',
                 entity,
                 {
                     method: 'POST',
-                    url: '/api/addExperience'
+                    url: '/api/add' + pascalEntityName
                 }
             );
         };
         /**
-         * 保存健康资讯类别
+         * 保存
          *
          * @param {entity} entity
          * @return {er.Promise}
@@ -88,52 +91,20 @@ define(
         };
 
         /**
-         * 停用指定类别
-         *
-         * @param {entity} entity
-         * @return {er.Promise}
-         */
-        ExperienceData.prototype.disableById = function (id) {
-            return this.request(
-                'experience/disable',
-                null,
-                {
-                    method: 'PUT',
-                    url: '/experience/' + id + '/1'
-                }
-            );
-        };
-
-        /**
-         * 恢复指定类别
-         *
-         * @param {Number} id
-         * @return {er.Promise}
-         */
-        ExperienceData.prototype.enableById = function (id) {
-            return this.request(
-                'experience/enable',
-                null,
-                {
-                    method: 'PUT',
-                    url: '/experience/' + id + '/0'
-                }
-            );
-        };
-
-        /**
-         * 删除指定类别
+         * 删除
          *
          * @param {Number} id
          * @return {er.Promise}
          */
         ExperienceData.prototype.deleteById = function (id) {
+            var entityName = this.getEntityName();
+            var pascalEntityName = entityName.charAt(0) + entityName.slice(1);
             return this.request(
                 'experience/delete',
                 null,
                 {
                     method: 'DELETE',
-                    url: '/experience/' + id
+                    url: '/api/delete' + pascalType + '/' + id
                 }
             );
         };

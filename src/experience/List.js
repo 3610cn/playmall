@@ -12,15 +12,16 @@ define(
 
         ExperienceList.prototype.initBehavior = function () {
             var action = this;
+            var type = this.model.get('entityName');
             this.view.on(
                 'modify',
                 function (e) {
-                    action.redirect('/experience/update~id=' + e.args);
+                    action.redirect('/' + type + '/update~id=' + e.args);
                 }
             );
             this.view.on(
                 'create',
-                this.redirect.bind(this, '/experience/create')
+                this.redirect.bind(this, '/' + type + '/create')
             );
             this.view.on(
                 'delete',
