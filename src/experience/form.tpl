@@ -41,10 +41,18 @@
             </div>
 
             <div class="row">
-                <div class="field-name">活动时间</div>
+                <div class="field-name">开始时间</div>
                 <div class="field-value">
-                    <div data-ui="type:Calendar;id:date;name:date;value:@data.date;"></div>
-                    <div data-ui="type:Select;id:time;width:140;datasource:@timeList;" name="time"></div>
+                    <div data-ui="type:Calendar;id:startDate;name:startDate;value:@data.startDate;"></div>
+                    <div data-ui="type:Select;id:startTime;width:140;datasource:@timeList;value:@data.startTime;" name="startTime"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="field-name">结束时间</div>
+                <div class="field-value">
+                    <div data-ui="type:Calendar;id:endDate;name:endDate;value:@data.endDate;"></div>
+                    <div data-ui="type:Select;id:endTime;width:140;datasource:@timeList;value:@data.endTime;" name="endTime"></div>
                 </div>
             </div>
 
@@ -113,7 +121,7 @@
             <div class="row">
                 <div class="field-name">活动标签</div>
                 <div class="field-value fee-detail" style="height:auto;">
-                    <input data-ui="id:tags;name:tags;type:TokenField;limit:30;delimiter:,;width:600;tokens:@data.tags;" />
+                    <input data-ui="id:tags;name:tags;type:TokenField;limit:30;delimiter:,;width:600;tokens:@data.tags;required:required;" />
                 </div>
             </div>
         </div>

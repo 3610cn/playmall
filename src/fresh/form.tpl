@@ -6,22 +6,6 @@
     </div>
 
     <div data-ui-id="form" data-ui-type="Form" data-ui-submit-button="submit" data-ui-auto-validate="true" class="container">
-        <ul class="crumb">
-            <li class="crumb-active">
-                <span class="crumb-left"></span>
-                <span class="crumb-text">Step1<br>填写基本信息</span>
-                <span class="crumb-right"></span>
-            </li>
-            <li>
-                <span class="crumb-left"></span>
-                <span class="crumb-text">Step2<br>活动审核</span>
-                <span class="crumb-right"></span>
-            </li>
-            <li>
-                <span class="crumb-left"></span>
-                <span class="crumb-text">Step3<br>活动上线</span>
-            </li>
-        </ul>
         <div class="form">
 
             <div class="row">
@@ -36,7 +20,7 @@
                 <div class="field-name">开始时间</div>
                 <div class="field-value">
                     <div data-ui="type:Calendar;id:startDate;name:startDate;value:@data.startDate;"></div>
-                    <div data-ui="type:Select;id:startTime;width:140;datasource:@timeList;value:@startTime;" name="startTime"></div>
+                    <div data-ui="type:Select;id:startTime;width:140;datasource:@timeList;value:@data.startTime;" name="startTime"></div>
                 </div>
             </div>
 
@@ -44,7 +28,7 @@
                 <div class="field-name">结束时间</div>
                 <div class="field-value">
                     <div data-ui="type:Calendar;id:endDate;name:endDate;value:@data.endDate;"></div>
-                    <div data-ui="type:Select;id:endTime;width:140;datasource:@timeList;value:@endTime;" name="endTime"></div>
+                    <div data-ui="type:Select;id:endTime;width:140;datasource:@timeList;value:@data.endTime;" name="endTime"></div>
                 </div>
             </div>
 

@@ -106,25 +106,13 @@ define(
          */
         FormAction.prototype.handleSubmitError = function (errors) {
             // 处理全局错误
-            if (u.isString(errors.error)) {
-                this.view.notifyGlobalError(errors.error);
+            if (u.isString(errors.fields)) {
+                this.view.notifyGlobalError(errors.fields);
                 return true;
             }
             // 处理model校验产生的错误信息，或者后端校验返回的错误信息
-            if (u.isObject(errors.error)) {
-                var fields = [];
-                u.each(
-                    errors.error,
-                    function (value, key) {
-                        fields.push(
-                            {
-                                field: key,
-                                message: value
-                            }
-                        );
-                    }
-                );
-                this.view.notifyErrors({fields: fields});
+            if (u.isObject(errors.fields)) {
+                this.view.notifyErrors(errors);
                 return true;
             }
 
@@ -147,6 +135,12 @@ define(
         FormAction.prototype.redirectAfterCancel = function () {
             var listPath = '/' + this.getEntityName() + '/list';
             this.back(listPath);
+        };
+
+        FormAction.prototype.getEntityName = function () {
+            var model = this.model;
+            var data = model.data();
+            return data.getEntityName();
         };
 
         return FormAction;

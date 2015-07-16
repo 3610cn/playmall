@@ -31,8 +31,6 @@ define(
             base: {
                 retrieve: function(model) {
                     var url = model.get('url');
-                    // var query = url.getQuery();
-                    // query = u.purify(query, null, true);
 
                     var path = url.getPath();
                     var splits = path.split('/');
@@ -79,13 +77,20 @@ define(
 
             }
             else if (this.get('formType') === 'update') {
-                // 设置发布日期
-                var date = moment(
-                    this.get('createTime'),
-                    'YYYYMMDD'
-                );
-                date = date.format('YYYY-MM-DD');
-                this.set('createTime', date);
+                var data = this.get('data');
+                var startTime = data.startTime;
+                if (startTime) {
+                    startTime = moment(startTime, 'YYYY-MM-DD hh:mm');
+                    data.startDate = startTime.format('YYYY-MM-DD');
+                    data.startTime = startTime.format('hh:mm A');
+                }
+
+                var endTime = data.endTime;
+                if (endTime) {
+                    endTime = moment(endTime, 'YYYY-MM-DD hh:mm');
+                    data.endDate = endTime.format('YYYY-MM-DD');
+                    data.endTime = endTime.format('hh:mm A');
+                }
             }
         };
 
@@ -96,24 +101,7 @@ define(
          * @return {Object[] | true} 返回`true`表示验证通过，否则返回错误字体
          */
         FormModel.prototype.validateEntity = function (entity) {
-            var errorMsg = [];
-
-            // 验证逻辑示例
-            if (entity.hasOwnProperty('test')) {
-                errorMsg.push(
-                    {
-                        field: '错误字段名',
-                        message: '错误信息'
-                    }
-                );
-            }
-
-            if (errorMsg.length > 0) {
-                return errorMsg;
-            }
-            else {
-                return true;
-            }
+            return true;
         };
 
         /**
@@ -151,6 +139,20 @@ define(
          * @return {Object} 补充完整的实体数据
          */
         FormModel.prototype.fillEntity = function (entity) {
+            var startDate = entity.startDate;
+            var startTime = entity.startTime;
+            if (startDate && startTime) {
+                startDate = moment(startDate).format('YYYY-MM-DD');
+                entity.startTime = moment(startDate + ' ' + startTime, 'YYYY-MM-DD hh:mm A').format('YYYY-MM-DD HH:mm');
+                entity.startDate = undefined;
+            }
+            var endDate = entity.endDate;
+            var endTime = entity.endTime;
+            if (endDate && endTime) {
+                endDate = moment(endDate).format('YYYY-MM-DD');
+                entity.endTime = moment(endDate + ' ' + endTime, 'YYYY-MM-DD hh:mm A').format('YYYY-MM-DD HH:mm');
+                entity.endDate = undefined;
+            }
             return entity;
         };
 

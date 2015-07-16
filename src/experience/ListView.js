@@ -33,19 +33,29 @@ define(
                 field: 'category' ,
                 sortable: true,
                 resizable : true,
-                width: 100,
+                width: 70,
                 content: function (item) {
                     return item.category;
                 }
             },
             {
-                title: '活动时间',
-                field: 'date' ,
+                title: '开始时间',
+                field: 'startTime' ,
                 sortable: true,
                 resizable : true,
                 width: 100,
                 content: function (item) {
-                    return item.date;
+                    return item.startTime;
+                }
+            },
+            {
+                title: '结束时间',
+                field: 'endTime' ,
+                sortable: true,
+                resizable : true,
+                width: 100,
+                content: function (item) {
+                    return item.endTime;
                 }
             },
             {

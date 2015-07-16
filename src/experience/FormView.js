@@ -22,10 +22,6 @@ define(
             BaseFormView.apply(this, arguments);
         }
 
-        function cancel() {
-            this.fire('cancel');
-        }
-
         ExperienceFormView.prototype.template = 'experienceForm';
 
         ExperienceFormView.prototype.enterDocument = function() {

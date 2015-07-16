@@ -4,6 +4,7 @@ define(
         var Data = require('./Data');
         var datasource = require('er/datasource');
         var m = require('moment');
+        var u = require('underscore');
 
         function ExperienceFormModel() {
             BaseFormModel.apply(this, arguments);
@@ -37,10 +38,32 @@ define(
             this.set('data', data);
         }
 
-        ExperienceFormModel.prototype.save = function(data) {
-            if (data.date) {
-                data.date = m(data.date).format('YYYYMMDD');
+        ExperienceFormModel.prototype.validateEntity = function (entity) {
+            var errorMsg = [];
+
+            // 验证逻辑示例
+            u.each(
+                ['upload1', 'upload2'],
+                function (item){
+                    if (!entity[item]) {
+                        errorMsg.push(
+                            {
+                                field: item,
+                                message: '请上传文件'
+                            }
+                        );
+                    }
+
+                }
+            );
+
+            if (errorMsg.length > 0) {
+                return errorMsg;
             }
+            return BaseFormModel.prototype.validateEntity.apply(this, arguments);
+        };
+
+        ExperienceFormModel.prototype.save = function(data) {
             return BaseFormModel.prototype.save.apply(this, arguments);
         };
 
