@@ -112,6 +112,18 @@ define(
             );
         };
 
+        FreshData.prototype.verify = function (entity) {
+            var entityName = this.getEntityName();
+            return this.request(
+                'fresh/verify',
+                entity,
+                {
+                    method: 'post',
+                    url: '/api/' + entityName + '/verify',
+                    dataType: 'json'
+                }
+            );
+        };
 
         u.each(
             requests,

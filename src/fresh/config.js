@@ -14,6 +14,10 @@ define(
                 path: '/fresh/update',
                 type: 'fresh/Form',
                 args: { formType: 'update' }
+            },
+            {
+                path: '/fresh/verify',
+                type: 'fresh/VerifyForm'
             }
         ];
 

@@ -123,6 +123,11 @@ define(
                 'click',
                 this.fire.bind(this, 'create')
             );
+
+            this.get('verifyButton').on(
+                'click',
+                this.fire.bind(this, 'verify')
+            );
         }
 
         require('er/util').inherits(FreshListView, UIView);

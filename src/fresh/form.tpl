@@ -60,3 +60,16 @@
             <button data-ui="type:Button;variants:danger;id:submit;" class="ui-large"><span class="ui-icon-check"></span>确认提交</button>
         </p>
     </div>
+
+<!-- target: verifyFreshForm -->
+    <div data-ui-id="form" data-ui-type="Form" data-ui-submit-button="submit" data-ui-auto-validate="true" class="container verify-container">
+        <div class="form">
+
+            <div class="row">
+                <div class="field-value">
+                    <div class="ui-textbox" data-ui="id:code;name:code;type:TextBox;width:500;required:required;placeholder:请输入验证码;"></div><span id="verifyMessage" class="verify-message"></span><button data-ui="type:Button;variants:danger;id:submit;" class="ui-large" style="margin-left: 30px;"><span class="ui-icon-check"></span>确定</button>
+                </div>
+            </div>
+        </div>
+
+    </div>

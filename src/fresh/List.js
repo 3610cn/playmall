@@ -19,10 +19,17 @@ define(
                     action.redirect('/' + type + '/update~id=' + e.args);
                 }
             );
+            // 新建
             this.view.on(
                 'create',
                 this.redirect.bind(this, '/' + type + '/create')
             );
+            // 核销抢鲜码
+            this.view.on(
+                'verify',
+                this.redirect.bind(this, '/' + type + '/verify')
+            );
+
             this.view.on(
                 'delete',
                 function (event) {
