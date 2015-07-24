@@ -40,7 +40,8 @@ function generateModuleCombineConfig() {
     var bizPackages = [
         // 基础类
         'common/**',
-        'experience/**'
+        'experience/**',
+        'fresh/**'
     ];
 
     // 3个启动脚本

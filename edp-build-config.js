@@ -48,6 +48,7 @@ exports.exclude = [
     'node_modules/**',
     'src/common/**',
     'src/experience/**',
+    'src/fresh/**',
     'src/ui/**',
     'tool',
     'doc/**',
