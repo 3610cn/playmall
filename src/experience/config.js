@@ -32,6 +32,16 @@ define(
                 path: '/bigshot/update',
                 type: 'experience/Form',
                 args: { formType: 'update' }
+            },
+            {
+                path: '/couple/update',
+                type: 'experience/CoupleForm',
+                args: { formType: 'update' }
+            },
+            {
+                path: '/couple/create',
+                type: 'experience/CoupleForm',
+                args: { formType: 'create' }
             }
         ];
 

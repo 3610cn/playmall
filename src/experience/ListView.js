@@ -73,7 +73,10 @@ define(
                 field: 'operate' ,
                 width: 60,
                 content: function (item) {
-                    return '<span class="list-link" data-command-args="' + item.id + '" data-command="delete">删除</a>';
+                    return [
+                        '<span class="list-link" data-command-args="' + item.id + '" data-command="delete">删除</a>',
+                        '<span class="list-link" data-command-args="' + item.id + '" data-command="bindCouple">添加优惠</a>'
+                    ].join('');
                 }
             }
         ];

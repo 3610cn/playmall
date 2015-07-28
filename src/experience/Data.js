@@ -112,6 +112,22 @@ define(
             );
         };
 
+        /**
+         * 获取优惠详情
+         *
+         * @return {er.Promise}
+         */
+        ExperienceData.prototype.findCoupleById = function (id) {
+            return this.request(
+                'couple/detail',
+                null,
+                {
+                    method: 'GET',
+                    url: '/api/getCouple?id=' + id
+                }
+            );
+        };
+
 
         u.each(
             requests,
