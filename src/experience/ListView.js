@@ -7,6 +7,8 @@ define(
         require('esui/Table');
         require('esui/extension/Command');
 
+        var u = require('underscore');
+
         var ExperienceType = require('./config').ExperienceType;
         var fields = [
             {
@@ -116,6 +118,36 @@ define(
                 'click',
                 this.fire.bind(this, 'create')
             );
+
+            var dialog;
+            this.on(
+                'bindCouple',
+                function (event) {
+                    var options = {
+                        url: '/couple/update~id=' + event.args
+                    };
+                    if (!dialog) {
+                        var ActionDialog = require('ef/ActionDialog');
+                        dialog = new ActionDialog(options);
+                    }
+                    else {
+                        dialog.setProperties(options);
+                    }
+
+                    dialog.appendTo(document.body);
+                    dialog.on('actionloaded', u.bind(bindCouple, this, dialog));
+                    return dialog;
+                },
+                this
+            );
+        }
+
+        /**
+         * 往子action上捆绑各种事件
+         *
+         */
+        function bindCouple(dialog, id) {
+            dialog.show();
         }
 
         require('er/util').inherits(ExperienceListView, UIView);

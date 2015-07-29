@@ -1,5 +1,8 @@
 @import "base.less";
-@import "Uploader.less";
+@import "ui/Uploader.less";
+@import "login.less";
+@import "list.less";
+@import "form.less";
 
 .loading {
     text-align: center;
@@ -50,6 +53,10 @@
     }
 }
 
+.main {
+    min-height: 600px;
+}
+
 .title-wrapper {
     margin: 0 auto;
     clear: both;
@@ -67,125 +74,17 @@
     }
 }
 
-.main {
-    min-height: 600px;
-}
-
 .container {
     width: 950px;
     margin: 0 auto;
     margin-bottom: 20px;
     padding: 10px 0;
-    .border-radius(10px);
+    // .border-radius(10px);
     border: 1px solid #e1e3e6;
-
-    .crumb {
-        position:relative;
-        z-index:2;
-        background:#f5f5f5;
-        margin-top:6px;
-        padding-left:124px;
-        border-bottom: 1px solid #e1e3e6;
-        padding: 5px 0 5px 80px;
-        height: 75px;
-
-        li {
-            float: left;
-        }
-    }
-
-    .crumb-active {
-
-        .crumb-left {
-            background-position: 0 0;
-        }
-        .crumb-text {
-            color: #fd5056;
-        }
-    }
-
-    .crumb-left {
-        width: 40px;
-        height: 40px;
-        background: url(../images/l-img-4.png) no-repeat 0 -40px;
-        display: inline-block;
-        float: left;
-        margin: 13px 5px 10px 5px;
-    }
-
-    .crumb-text {
-        float: left;
-        line-height: 23px;
-        margin: 10px 5px;
-        font-size: 16px;
-    }
-
-    .crumb-right {
-        width: 34px;
-        height: 65px;
-        background: url(../images/l-img-5.png) no-repeat 0 0;
-        display: inline-block;
-        padding-right: 5px;
-    }
-
-    .form {
-        margin-top: -4px;;
-        background: #FFF;
-        border-top: none;
-        padding-bottom: 20px;
-
-        .row {
-            padding: 28px 0 0 30px;
-            .field-name, .field-value {
-                height: 40px;
-                line-height: 40px;
-            }
-        }
-
-        .field-name {
-            float: left;
-            width: 140px;
-        }
-
-        .field-value {
-            margin-left: 100px;
-        }
-
-        .ui-validity {
-            padding-left: 5px;
-        }
-    }
-
-    .ui-tokenfield-input input[type="text"] {
-        height: 2.5em;
-    }
 }
 
 #editor {
     line-height: 1.4em;
-}
-
-.uploader-detail {
-    display: inline-block;
-    vertical-align: top;
-    padding: 30px;
-}
-
-.preview {
-    display: inline-block;
-    width: 164px;
-    height: 208px;
-    background: url(../images/uploader-default.png);
-
-    img {
-        width: 100%;
-    }
-}
-
-.submit {
-    width: 950px;
-    margin: 1em auto;
-    padding-left: 100px;
 }
 
 .footer {
@@ -204,81 +103,3 @@
     z-index: 200;
 }
 
-// login
-
-.login-wrapper {
-    max-width: 100%;
-    min-width: 960px;
-    margin-top: 50px;
-    min-height: 350px;
-    background: #fff;
-    position: relative;
-
-    .login-container {
-        width: 960px;
-        height: auto;
-        margin: 0 auto;
-        display: block;
-        clear: both;
-        padding-bottom: 300px;
-
-        h2, > p, .error {
-            text-align: center;
-        }
-
-        li {
-            width: 500px;
-            margin: 20px auto;
-
-            label {
-                width: 80px;
-                display: inline-block;
-                text-align: right;
-                margin-right: 10px;
-            }
-        }
-    }
-}
-
-.error {
-    color: red;
-}
-
-.topbar-login {
-    max-width: 100%;
-    min-width: 960px;
-    height: 85px;
-    background: #fff;
-}
-
-
-.logo-login {
-    width: 203px;
-    height: 60px;
-    padding: 15px 52px;
-    float: left;
-}
-
-// List
-.list {
-    .border-radius(0);
-    min-height: 600px;
-}
-
-.list-link {
-    color: #459ae9;
-    cursor: pointer;
-}
-
-.list-button-add {
-    margin: 10px;
-}
-
-.verify-container {
-    margin-top: 100px;
-}
-
-.verify-message {
-    margin-left: 5px;
-    color: green;
-}

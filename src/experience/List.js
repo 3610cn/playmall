@@ -35,62 +35,7 @@ define(
                     );
                 }
             );
-            this.view.on(
-                'bindCouple',
-                function (event) {
-                    var panel = this.getChild('couplePanel');
-                    var options = {
-                        url: '/creative/image/update~id=' + id
-                    };
-                    if (!panel) {
-                        var ActionPanel = require('ef/ActionPanel');
-                        panel = new ActionPanel(options);
-                        this.addChild(panel, 'couplePanel');
-                    }
-                    else {
-                        panel.setProperties(options);
-                    }
-
-                    panel.appendTo(document.body);
-                    panel.on('actionloaded', u.bind(bindCouple, this, action));
-                    return panel;
-                }
-            );
         };
-
-        /**
-         * 往子action上捆绑各种事件
-         *
-         */
-        function bindCouple(action, id) {
-            var coupleAction = ui.get('couple-action-wrapper');
-            if (coupleAction) {
-                coupleAction.destroy();
-            }
-            action.get('action').on(
-                'cancel',
-                function (e) {
-                    e.preventDefault();
-                    action.dispose();
-                }
-            );
-            var me = this;
-            action.get('action').on(
-                'entitysave',
-                function (e) {
-                    e.preventDefault();
-                    me.view.fire(
-                        'savecouple',
-                        {
-                            entity: e.entity
-                        }
-                    );
-                    action.dispose();
-                },
-                this
-            );
-        }
-
 
         require('er/util').inherits(ExperienceList, Action);
         return ExperienceList;
