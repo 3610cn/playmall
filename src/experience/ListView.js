@@ -76,8 +76,8 @@ define(
                 width: 60,
                 content: function (item) {
                     return [
-                        '<span class="list-link" data-command-args="' + item.id + '" data-command="delete">删除</a>',
-                        '<span class="list-link" data-command-args="' + item.id + '" data-command="bindCouple">添加优惠</a>'
+                        '<span class="list-link" data-command-args="' + item.id + '" data-command="delete">删除</a></span>',
+                        '<span class="list-link" data-command-args="' + item.id + '" data-command="bindCouple">优惠</a></span>'
                     ].join('');
                 }
             }
@@ -119,35 +119,6 @@ define(
                 this.fire.bind(this, 'create')
             );
 
-            var dialog;
-            this.on(
-                'bindCouple',
-                function (event) {
-                    var options = {
-                        url: '/couple/update~id=' + event.args
-                    };
-                    if (!dialog) {
-                        var ActionDialog = require('ef/ActionDialog');
-                        dialog = new ActionDialog(options);
-                    }
-                    else {
-                        dialog.setProperties(options);
-                    }
-
-                    dialog.appendTo(document.body);
-                    dialog.on('actionloaded', u.bind(bindCouple, this, dialog));
-                    return dialog;
-                },
-                this
-            );
-        }
-
-        /**
-         * 往子action上捆绑各种事件
-         *
-         */
-        function bindCouple(dialog, id) {
-            dialog.show();
         }
 
         require('er/util').inherits(ExperienceListView, UIView);

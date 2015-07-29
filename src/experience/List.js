@@ -1,5 +1,7 @@
 define(
     function (require) {
+        var u = require('underscore');
+
         var Action = require('er/Action');
 
         function ExperienceList() {
@@ -11,12 +13,12 @@ define(
         ExperienceList.prototype.viewType = require('./ListView');
 
         ExperienceList.prototype.initBehavior = function () {
-            var action = this;
+            var me = this;
             var type = this.model.get('entityName');
             this.view.on(
                 'modify',
                 function (e) {
-                    action.redirect('/' + type + '/update~id=' + e.args);
+                    me.redirect('/' + type + '/update~id=' + e.args);
                 }
             );
             this.view.on(
@@ -26,14 +28,55 @@ define(
             this.view.on(
                 'delete',
                 function (event) {
-                    action.model.data().deleteById(event.args).then(
+                    me.model.data().deleteById(event.args).then(
                         function (data) {
                             if (data.status === 0) {
-                                action.reload();
+                                me.reload();
                             }
                         }
                     );
                 }
+            );
+            this.view.on(
+                'bindCouple',
+                function (event) {
+                    var id = event.args;
+                    var items = me.model.get('list').data;
+                    var item = u.find(
+                        items,
+                        function (item) {
+                            return item.id == id;
+                        }
+                    );
+                    var url = '/couple/';
+                    if (item.coupleId) {
+                        url += 'update~id=' + item.coupleId;
+                    }
+                    else {
+                        url += 'create~eid=' + item.id;
+                    }
+
+                    var options = {
+                        url: url,
+                        title: '设置优惠信息'
+                    };
+
+                    var dialog = this.view.popActionDialog(options);
+                    dialog.on(
+                        'actionloaded',
+                        function () {
+                            // console.log(arguments);
+                        }
+                    );
+                    dialog.on(
+                        'action@entitysave',
+                        function () {
+                            // me.reload();
+                        }
+                    );
+                    return dialog;
+                },
+                this
             );
         };
 

@@ -12,7 +12,7 @@ define(
         FormModel.prototype.prepare = function () {
             BaseFormModel.prototype.prepare.call(this);
             var data = this.get('data');
-            this.set('data', data);
+            this.set('data', data || {});
         }
 
         FormModel.prototype.validateEntity = function (entity) {

@@ -114,6 +114,46 @@
     }
   ```
 
+### 体验 / 大咖绑定优惠信息
+
+
+    * URL: /api/addCouple
+    * METHOD: POST
+    * PARAM: 
+        * id // 可选，如果存在表示修改
+        * eid // 可选，如果存在表示体验 / 大咖的id
+        * content 优惠内容
+        * count 优惠名额
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": {
+            "global": "添加优惠成功"
+        }
+    }
+  ```
+
+### 获取体验 / 大咖优惠信息
+
+    * URL: /api/getCouple
+    * METHOD: GET
+    * PARAM: 
+        * id
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": {},
+        "data": {
+            "count": "100",
+            "content": "全场8折"
+        }
+    }
+  ```
+
 ### 获取某条体验
 
     * URL: /api/getExperience/$id $id为空时表示新建，只给一些选项列表 (体验)

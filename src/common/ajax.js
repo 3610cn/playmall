@@ -8,6 +8,7 @@
 define(
     function (require) {
         var u = require('underscore');
+        var $ = require('jquery');
         var ajax = require('er/ajax');
 
         /**
@@ -105,7 +106,28 @@ define(
                     if (data.status === 1) {
                         fakeXHR.status = 403;
                     }
-                    throw data.msg;
+                    else if (data.status === 2) {
+                        // fakeXHR.status = 409;
+                    }
+                    if (u.isString(data.msg)) {
+                        fakeXHR.message = data.msg;
+                    }
+                    else if (u.isObject(data.msg)) {
+                        var fields = [];
+                        u.each(
+                            data.msg,
+                            function (message, field) {
+                                fields.push(
+                                    {
+                                        field: field,
+                                        message: message
+                                    }
+                                );
+                            }
+                        );
+                        fakeXHR.fields = fields;
+                    }
+                    throw fakeXHR;
                     return {};
                 }
                 return data;

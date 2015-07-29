@@ -31,6 +31,10 @@ define(
          */
         FormView.prototype.getEntity = function () {
             var entity = BaseFormView.prototype.getEntity.apply(this, arguments);
+            var eid = this.model.get('eid');
+            if (eid) {
+                entity.eid = eid;
+            }
             return entity;
         };
 
