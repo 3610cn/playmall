@@ -48,6 +48,24 @@
             </div>
 
             <div class="row">
+                <div class="field-name">活动图片</div>
+                <div class="field-value" style="height:auto;">
+                    <div type="file"
+                        data-ui-id="uploader"
+                        data-ui-type="Uploader"
+                        data-ui-action="@data.uploadUrl"
+                        data-ui-file-type="auto"
+                        data-ui-name="upload"
+                        data-ui-text="&lt;span class='ui-icon-upload'&gt;&lt;/span&gt; 上传文件"
+                        title="上传图片"
+                        accept=".gif,.jpg,.png"
+                    ></div>
+                    <div class="fresh-image-list" data-ui="id:imageList;name:imageList;type:ImageList;datasource:@data.imageList;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
                 <div class="field-name">活动详情</div>
                 <div class="field-value detail" style="height:auto;">
                     <div data-ui="type:UMEditor;id:content;name:content;required:required;width:90%;height:600;content:@data.content;"></div>
@@ -57,7 +75,7 @@
         </div>
 
         <p class="submit">
-            <button data-ui="type:Button;variants:danger;id:submit;" class="ui-large"><span class="ui-icon-check"></span>确认提交</button>
+            <button data-ui="type:Button;variants:danger;id:submit;group:submit;" class="ui-large"><span class="ui-icon-check"></span>确认提交</button>
         </p>
     </div>
 

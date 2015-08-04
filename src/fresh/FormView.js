@@ -8,11 +8,13 @@ define(
         require('esui/BoxGroup');
         require('esui/Calendar');
         require('ui/UMEditor');
+        require('ui/uploader/Uploader');
+        require('ui/ImageList');
 
         var u = require('underscore');
 
         // css
-        // require('css!./css/form.css');
+        require('css!./css/form.less');
 
         var BaseFormView = require('common/FormView');
 
@@ -24,6 +26,14 @@ define(
 
         FreshFormView.prototype.enterDocument = function() {
             BaseFormView.prototype.enterDocument.apply(this, arguments);
+            var me = this;
+            var uploader = this.get('uploader');
+            uploader.on(
+                'complete',
+                function (event) {
+                    me.fire('upload', event);
+                }
+            );
         };
 
         /**

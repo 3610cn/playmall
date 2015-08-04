@@ -1,23 +1,40 @@
 define(
     function(require) {
-        var Action = require('common/FormAction');
+        var BaseForm = require('common/FormAction');
 
         var $ = require('jquery');
 
-        function ExperienceForm() {
-            Action.apply(this, arguments);
+        function Form() {
+            BaseForm.apply(this, arguments);
         }
 
-        ExperienceForm.prototype.modelType = require('./FormModel');
+        Form.prototype.modelType = require('./FormModel');
 
-        ExperienceForm.prototype.viewType = require('./FormView');
+        Form.prototype.viewType = require('./FormView');
 
-        ExperienceForm.prototype.initBehavior = function() {
-            Action.prototype.initBehavior.apply(this, arguments);
+        Form.prototype.initBehavior = function() {
+            BaseForm.prototype.initBehavior.apply(this, arguments);
+            var imageList = this.view.get('imageList');
+            this.view.on(
+                'upload',
+                function (event) {
+                    var files = event.data;
+                    if (files.length) {
+                        var file = files[0];
+                        var data = file.serverData.data;
+                        imageList.addItem(
+                            {
+                                content: '<img src="' + data.url + '" />',
+                                value: data.id
+                            }
+                        );
+                    }
+                }
+            );
         };
 
-        require('er/util').inherits(ExperienceForm, Action);
+        require('er/util').inherits(Form, BaseForm);
 
-        return ExperienceForm;
+        return Form;
     }
 );

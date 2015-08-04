@@ -252,7 +252,7 @@
 
 ### 上传接口
 
-    * URL: /api/upload/$type  $type取1,2,分别表示大图，小图,对应pic1,pic2
+    * URL: /api/upload/$type  $type取1,2,分别表示体验/大咖的大图，小图,对应pic1,pic2, $type取3表示抢鲜图片
     * METHOD: POST
     * PARAM: 
         * filename: 文件数据
@@ -375,6 +375,24 @@
                     "value": "3"
                 }
             ],
+            "imageList": [
+                {
+                    "url": "http://g.hiphotos.baidu.com/image/pic/item/1b4c510fd9f9d72aee889e1fd22a2834359bbbc0.jpg",
+                    "id": "12"
+                },
+                {
+                    "url": "http://image.tianjimedia.com/uploadImages/2011/253/5SGVFD0KYZW2.jpg",
+                    "id": "34"
+                },
+                {
+                    "url": "http://file.iqilu.com/upimg/userup/0810/2111313M4c.jpg",
+                    "id": "56"
+                },
+                {
+                    "url": "http://pic38.nipic.com/20140306/251960_131610098000_2.jpg",
+                    "id": "78"
+                }
+            ],
             "mall": "3",
             "shop": "口渴了",
             "count": "100",
@@ -399,7 +417,8 @@
     "count": "100",
     "content": "我们的祖国是花园",
     "startTime": "2012-05-21 10:00",
-    "endTime": "2012-05-22 10:00"
+    "endTime": "2012-05-22 10:00",
+    "imageList": "id1,id2,id3"
   ```
 
     * RESPONSE: 

@@ -1,0 +1,39 @@
+.@{ui-class-prefix}-imagelist {
+
+}
+
+.@{ui-class-prefix}-imagelist-item {
+    position: relative;
+    .inline-block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #b6b7bb;
+    margin: 4px 3px;
+    margin-right: 34px;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .close-button {
+        position: absolute;
+        cursor: pointer;
+        color: #999999;
+        z-index: 1;
+        .border-radius(500em);
+        width: 1.5em;
+        height: 1.5em;
+        line-height: 1.5em;
+        text-align: center;
+        background: white;
+        top: -0.75em;
+        right: -0.75em;
+        .box-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+
+        &:before {
+            content: "\f00d";
+        }
+    }
+}
+
