@@ -6,11 +6,11 @@
     <ul data-role="navigator">
         <li class="experience">体验</li>
 
-        <!-- if: ${user.role} === 'admin' || ${user.role} === 'shop' -->
+        <!-- if: ${role} === 'admin' || ${role} === 'shop' -->
         <li class="fresh">抢鲜</li>
         <!-- /if -->
 
-        <!-- if: ${user.role} === 'admin' -->
+        <!-- if: ${role} === 'admin' -->
         <li class="bigshot">大咖</li>
         <!-- /if -->
 

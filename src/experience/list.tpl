@@ -1,10 +1,4 @@
 <!-- target: experienceListPage -->
-    <div class="title-wrapper">
-        <div class="title">
-            <!-- import: nav -->
-        </div>
-    </div>
-
     <div class="container list">
         <button data-ui="type:Button;variants:primary;id:createButton;" class="ui-large list-button-add"><span class="ui-icon-plus"></span> 新增活动</button>
         <!-- import: experienceList -->

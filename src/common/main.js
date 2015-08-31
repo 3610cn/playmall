@@ -5,6 +5,10 @@ define(
         var Deferred = require('er/Deferred');
         var $ = require('jquery');
         var u = require('underscore');
+        var etpl = require('etpl');
+
+        require('etpl/tpl!common/tpl/common.tpl')
+
 
         /**
          * 开始初始化系统常量和用户常量，此时已经获取用户的全部信息
@@ -60,6 +64,8 @@ define(
             require('esui/validator/RequiredRule');
             require('esui/validator/MaxRule');
 
+            require('esui/Tab');
+
             require('common/ajax').enable();
             require('er').start();
 
@@ -68,47 +74,37 @@ define(
             $('#username').html(user['username'])
             $('#userInfo').show();
 
+            // 导航
+            var navHtml = etpl.render('nav', user);
+            $('#nav').html(navHtml);
+            var controls = require('esui').init(document.getElementById('nav'));
+            var nav = controls[0];
 
             var controller = require('er/controller');
-            controller.getEventBus().on(
-                'enteraction',
-                function (event) {
-                    var action = event.action;
-                    action.on(
-                        'modelloaded',
-                        function (e) {
-                            this.model.set('user', user);
-                        }
-                    );
-                }
-            );
             controller.getEventBus().on(
                 'enteractioncomplete',
                 function (event) {
                     var action = event.action;
-                    var nav = action.view.get('nav');
-                    if (nav) {
-                        var url = action.model.get('url');
-                        var path = url.getPath();
-                        var splits = path.split('/');
-                        var type = splits[1] || 'experience';
-                        u.each(
-                            nav.tabs,
-                            function (tab) {
-                                if (u.contains(tab.classes, type)) {
-                                    nav.activate(tab);
-                                }
+                    var url = action.model.get('url');
+                    var path = url.getPath();
+                    var splits = path.split('/');
+                    var type = splits[1] || 'experience';
+                    u.each(
+                        nav.tabs,
+                        function (tab) {
+                            if (u.contains(tab.classes, type)) {
+                                nav.activate(tab);
                             }
-                        );
-                        nav.on(
-                            'activate',
-                            function (e) {
-                                var tab = this.getActiveTab();
-                                var type = tab.classes[0];
-                                require('er/locator').redirect('/' + type + '/list');
-                            }
-                        );
-                    }
+                        }
+                    );
+                    nav.on(
+                        'activate',
+                        function (e) {
+                            var tab = this.getActiveTab();
+                            var type = tab.classes[0];
+                            require('er/locator').redirect('/' + type + '/list');
+                        }
+                    );
                 }
             );
         }
