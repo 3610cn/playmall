@@ -1,27 +1,13 @@
 <!-- target: experienceForm -->
-    <div class="title-wrapper">
-        <div class="title">
-            <h2>发布展示活动</h2>
-        </div>
+    <div class="crumb">
+        <span class="title">| 搜乐 > 发布活动</span>
+    </div>
+
+    <div class="wizard">
+        <img src="src/images/wizard.png" />
     </div>
 
     <div data-ui-id="form" data-ui-type="Form" data-ui-submit-button="submit" data-ui-auto-validate="true" class="container">
-        <ul class="crumb">
-            <li class="crumb-active">
-                <span class="crumb-left"></span>
-                <span class="crumb-text">Step1<br>填写基本信息</span>
-                <span class="crumb-right"></span>
-            </li>
-            <li>
-                <span class="crumb-left"></span>
-                <span class="crumb-text">Step2<br>活动审核</span>
-                <span class="crumb-right"></span>
-            </li>
-            <li>
-                <span class="crumb-left"></span>
-                <span class="crumb-text">Step3<br>活动上线</span>
-            </li>
-        </ul>
         <div class="form">
 
             <div class="row">
@@ -124,9 +110,12 @@
                     <input data-ui="id:tags;name:tags;type:TokenField;limit:30;delimiter:,;width:600;tokens:@data.tags;required:required;" />
                 </div>
             </div>
+
+            <div class="row">
+                <div class="field-value">
+                    <button data-ui="type:Button;variants:submit;id:submit;" class="ui-large"><span class="ui-icon-check"></span>确认提交</button>
+                </div>
+            </div>
         </div>
 
-        <p class="submit">
-            <button data-ui="type:Button;variants:danger;id:submit;" class="ui-large"><span class="ui-icon-check"></span>确认提交</button>
-        </p>
     </div>

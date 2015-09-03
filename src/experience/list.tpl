@@ -1,6 +1,9 @@
 <!-- target: experienceListPage -->
+    <div class="crumb">
+        <span class="title">| 搜乐</span>
+        <button data-ui="type:Button;variants:create;id:createButton;" class="list-button-add"><span class="ui-icon-plus"></span>发布活动</button>
+    </div>
     <div class="container list">
-        <button data-ui="type:Button;variants:primary;id:createButton;" class="ui-large list-button-add"><span class="ui-icon-plus"></span> 新增活动</button>
         <!-- import: experienceList -->
     </div>
 

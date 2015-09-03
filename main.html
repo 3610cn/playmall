@@ -9,28 +9,28 @@
         <script src="src/require.js"></script>
     </head>
 <body>
-    <div class="topbar">
-        <div class="head">
-            <div class="logo"><a href="/"><img src="src/images/logo_new.png" width="202" height="60"></a></div>
-            <div class="user">
-                <ul id="userInfo" style="display:none;">
-                    <li class="usernew"><span id="username"></span><span class="ml10 mr10">|</span> <a href="/logout">退出</a></li>
-                </ul>
-            </div>
+    <div class="sidebar">
+        <div class="user">
+            <ul id="userInfo" style="display:none;">
+                <li class="usernew"><span id="username"></span><span class="ml10 mr10">|</span> <a href="/logout">退出</a></li>
+            </ul>
         </div>
+        <div id="nav" class="nav"></div>
     </div>
 
-    <div id="nav" class="nav"></div>
-
-    <div id="main" class="main">
-        <p class="loading">Loading...</p>
-    </div>
-
-    <div class="footer">
-        <ul>
-            <li>版权所有 玩猫  Copyright2015  All Rights Reserved</li>
-            <li>上海玩猫商业地产咨询公司</li>
-        </ul>
+    <div class="content">
+        <div class="header">
+            <a class="logo" href="/"><img src="src/images/logo_new.png"></a>
+        </div>
+        <div id="main" class="main">
+            <p class="loading">Loading...</p>
+        </div>
+        <div class="footer">
+            <ul>
+                <li>版权所有 玩猫  Copyright2015  All Rights Reserved</li>
+                <li>上海玩猫商业地产咨询公司</li>
+            </ul>
+        </div>
     </div>
 
     <script>

@@ -1,8 +1,6 @@
 <!-- target: freshForm -->
-    <div class="title-wrapper">
-        <div class="title">
-            <h2>发布抢鲜</h2>
-        </div>
+    <div class="crumb">
+        <span class="title">| 抢鲜 > 发布活动</span>
     </div>
 
     <div data-ui-id="form" data-ui-type="Form" data-ui-submit-button="submit" data-ui-auto-validate="true" class="container">
@@ -72,11 +70,12 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="field-value">
+                    <button data-ui="type:Button;variants:submit;id:submit;group:submit;" class="ui-large"><span class="ui-icon-check"></span>确认提交</button>
+                </div>
+            </div>
         </div>
-
-        <p class="submit">
-            <button data-ui="type:Button;variants:danger;id:submit;group:submit;" class="ui-large"><span class="ui-icon-check"></span>确认提交</button>
-        </p>
     </div>
 
 <!-- target: verifyFreshForm -->

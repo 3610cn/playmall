@@ -1,8 +1,5 @@
 <!-- target: nav -->
-<!-- if: ${xxx} === '111' -->
-<!-- else: -->
-<!-- /if -->
-<div data-ui-type="Tab" data-ui-id="nav" data-ui-height="500" data-ui-variants="align-left">
+<div data-ui-type="Tab" data-ui-id="nav" data-ui-height="500" data-ui-variants="align-left vertical">
     <ul data-role="navigator">
         <li class="experience">体验</li>
 
