@@ -18,8 +18,10 @@
                 </div>
             </div>
 
-            <p class="submit">
-                <button data-ui="type:Button;variants:danger;id:submit;" class="ui-large"><span class="ui-icon-check"></span>确认提交</button>
-            </p>
+            <div class="row">
+                <div class="field-value">
+                    <button data-ui="type:Button;variants:submit;id:submit;" class="ui-large"><span class="ui-icon-check"></span>确认提交</button>
+                </div>
+            </div>
         </div>
     </div>
