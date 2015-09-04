@@ -1,6 +1,6 @@
 <!-- target: experienceListPage -->
     <div class="crumb">
-        <span class="title">| 搜乐</span>
+        <span class="title">| ${desc}</span>
         <button data-ui="type:Button;variants:create;id:createButton;" class="list-button-add"><span class="ui-icon-plus"></span>发布活动</button>
     </div>
     <div class="container list">

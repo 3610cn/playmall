@@ -133,7 +133,8 @@ exports.init = function (config, start) {
             new LessCompiler({
                 files: [
                     // 写变量重用不太好看，所以如果改了这里，记得改下面的`CssCompressor`
-                    'src/css/main.less'
+                    'src/css/main.less',
+                    'src/css/login.less',
                 ],
                 pageFiles: [
                     'main.html',

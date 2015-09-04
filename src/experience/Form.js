@@ -22,7 +22,6 @@ define(
                 this.view.on(
                     'upload' + i,
                     (function (i) {
-                        console.log(i)
                         return function (e) {
                             var files = e.data;
                             if (files.length) {

@@ -1,14 +1,14 @@
 <!-- target: nav -->
 <div data-ui-type="Tab" data-ui-id="nav" data-ui-height="500" data-ui-variants="align-left vertical">
     <ul data-role="navigator">
-        <li class="experience">体验</li>
+        <li class="experience iconfont icon-experience"> 搜乐</li>
 
         <!-- if: ${role} === 'admin' || ${role} === 'shop' -->
-        <li class="fresh">抢鲜</li>
+        <li class="fresh iconfont icon-fresh"> 抢鲜</li>
         <!-- /if -->
 
         <!-- if: ${role} === 'admin' -->
-        <li class="bigshot">大咖</li>
+        <li class="bigshot iconfont icon-bigshot"> 大咖</li>
         <!-- /if -->
 
     </ul>

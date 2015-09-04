@@ -7,7 +7,7 @@ define(
         var u = require('underscore');
         var etpl = require('etpl');
 
-        require('etpl/tpl!common/tpl/common.tpl')
+        require('er/tpl!common/tpl/common.tpl')
 
 
         /**
@@ -54,6 +54,7 @@ define(
 
         function initializeApplication() {
             require('er/Deferred').syncModeEnabled = true;
+            require('er/config').indexURL = '/experience/list';
             require('../experience/config');
             require('../fresh/config');
             // rule

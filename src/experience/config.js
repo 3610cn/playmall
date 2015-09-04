@@ -3,7 +3,10 @@ define(
         var actions = [
             {
                 path: '/',
-                type: 'experience/List'
+                type: 'experience/List',
+                args: {
+                    desc: '搜乐'
+                }
             },
             {
                 path: '/experience/list',
@@ -48,6 +51,13 @@ define(
         var controller = require('er/controller');
         actions.forEach(
             function (action) {
+                action.args = action.args || {};
+                if (action.path.indexOf('experience') > -1) {
+                    action.args['desc'] = '搜乐';
+                }
+                else if (action.path.indexOf('bigshot') > -1) {
+                    action.args['desc'] = '大咖';
+                }
                 controller.registerAction(action);
             }
         );

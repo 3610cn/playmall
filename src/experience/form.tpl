@@ -1,6 +1,6 @@
 <!-- target: experienceForm -->
     <div class="crumb">
-        <span class="title">| 搜乐 > 发布活动</span>
+        <span class="title">| ${desc} > 发布活动</span>
     </div>
 
     <div class="wizard">
