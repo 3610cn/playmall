@@ -46,6 +46,7 @@
         "tagList": ["好玩", "美女多", "吃的便宜"],
         "content": "我们的祖国是花园",
         "startTime": "2012-05-19 09:00",
-        "endTime": "2012-05-22 15:00"
+        "endTime": "2012-05-22 15:00",
+        "videoHtml": "<iframe height=498 width=510 src=\"http://player.youku.com/embed/XMTMyNDMzMDg0MA==\" frameborder=0 allowfullscreen></iframe>"
     }
 }

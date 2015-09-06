@@ -92,6 +92,8 @@ define(
                     data.endTime = endTime.format('hh:mm A');
                 }
             }
+
+            this.set('user', GlobalData.getInstance().getUser());
         };
 
         /**

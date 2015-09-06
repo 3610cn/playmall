@@ -58,9 +58,9 @@
                             accept=".gif,.jpg,.png,.swf"
                         ></div>
                         <p class="uploader-desc">
-                            1.图片尺寸不低于200*300，推荐600*800
+                            1.图片尺寸不低于400*200，推荐800*400
                             <br>
-                            2.单张图片大小不超过1MB
+                            2.单张图片大小不超过2MB
                          </p>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                             accept=".gif,.jpg,.png,.swf"
                         ></div>
                         <p class="uploader-desc">
-                            1.图片尺寸不低于200*300，推荐600*800
+                            1.图片尺寸推荐300*240
                             <br>
                             2.单张图片大小不超过1MB
                          </p>
@@ -93,7 +93,7 @@
             <div class="row">
                 <div class="field-name">活动地点</div>
                 <div class="field-value">
-                    <div data-ui="type:Select;id:mall;name:mall;width:200;datasource:@data.mallList;"></div>
+                    <div data-ui="type:Select;id:mall;name:mall;width:200;datasource:@data.mallList;<!-- if: ${user.role} !== 'admin' -->readOnly:readOnly;<!-- /if -->"></div>
                 </div>
             </div>
 
@@ -101,6 +101,13 @@
                 <div class="field-name">活动详情</div>
                 <div class="field-value detail" style="height:auto;">
                     <div data-ui="type:UMEditor;id:content;name:content;required:required;width:90%;height:600;content:@data.content;"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="field-name">视频地址</div>
+                <div class="field-value" style="height:auto;">
+                    <textarea data-ui="type:TextBox;id:videoHtml;name:videoHtml;width:600;height:200;value:@data.videoHtml;"></textarea>
                 </div>
             </div>
 
