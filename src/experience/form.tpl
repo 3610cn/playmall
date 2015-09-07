@@ -45,7 +45,7 @@
             <div class="row">
                 <div class="field-name">活动图片(大图)</div>
                 <div class="field-value" style="height:auto;">
-                    <div id="preview1" class="preview"></div>
+                    <div id="preview1" class="preview preview-horizontal"></div>
                     <div class="uploader-detail">
                         <div type="file"
                             data-ui-id="uploader1"
@@ -69,7 +69,7 @@
             <div class="row">
                 <div class="field-name">活动图片(小图)</div>
                 <div class="field-value" style="height:auto;">
-                    <div id="preview2" class="preview"></div>
+                    <div id="preview2" class="preview preview-vertical"></div>
                     <div class="uploader-detail">
                         <div type="file"
                             data-ui-id="uploader2"
@@ -82,7 +82,7 @@
                             accept=".gif,.jpg,.png,.swf"
                         ></div>
                         <p class="uploader-desc">
-                            1.图片尺寸推荐300*240
+                            1.图片尺寸推荐240*300
                             <br>
                             2.单张图片大小不超过1MB
                          </p>

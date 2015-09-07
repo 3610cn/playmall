@@ -13,9 +13,6 @@ define(
 
         var u = require('underscore');
 
-        // css
-        require('css!./css/form.less');
-
         var BaseFormView = require('common/FormView');
 
         function ExperienceFormView() {

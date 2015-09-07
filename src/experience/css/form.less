@@ -6,13 +6,23 @@
 
 .preview {
     display: inline-block;
-    width: 164px;
-    height: 208px;
-    background: url(/src/images/uploader-default.png);
+    background-size: contain;
 
     img {
         width: 100%;
     }
+}
+
+.preview-vertical {
+    background-image: url(/src/images/uploader-default-vertical.jpg);
+    width: 160px;
+    height: 200px;
+}
+
+.preview-horizontal {
+    background-image: url(/src/images/uploader-default-horizontal.jpg);
+    width: 250px;
+    height: 200px;
 }
 
 .wizard {
