@@ -498,7 +498,7 @@ define(
                             }
                             file.status = File.UPLOADING;
                             var data = u.clone(me.extraArgs);
-                            data[file.name] = file;
+                            data['filename'] = file;
 
                             var xhr = getXhr();
                             xhr.open('POST', me.action);

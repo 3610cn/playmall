@@ -1,8 +1,8 @@
 var fs = require('fs');
 
 // 后端服务器地址和端口
-var proxyTarget = '10.46.131.26';
-var proxyTargetPort = 8082;
+var proxyTarget = '120.26.76.247';
+var proxyTargetPort = 8080;
 // mockup开关
 var MOCKUP = true;
 // mockup目录
@@ -43,27 +43,15 @@ exports.getLocations = function () {
             ]
         },
         {
+            location: /^\/api\/editUpload/,
+            handler: [
+                file('./mockup/editUpload.json')
+            ]
+        },
+        {
             location: /^\/api\/upload/,
             handler: [
                 file('./mockup/upload.json')
-            ]
-        },
-        {
-            location: /^\/api\/getFresh/,
-            handler: [
-                file('./mockup/getFresh.json')
-            ]
-        },
-        {
-            location: /^\/api\/getBigshot/,
-            handler: [
-                file('./mockup/getBigshot.json')
-            ]
-        },
-        {
-            location: /^\/api\/getExperience/,
-            handler: [
-                file('./mockup/getExperience.json')
             ]
         },
         {

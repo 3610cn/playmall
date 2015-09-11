@@ -3,9 +3,11 @@
         <span class="title">| ${desc} > 发布活动</span>
     </div>
 
-    <div class="wizard">
-        <img src="src/images/wizard.png" />
-    </div>
+    <ol data-ui-type="Wizard" data-ui-active-index="1">
+        <li data-node-number="1">基本信息</li>
+        <li data-node-number="2">活动审核</li>
+        <li data-node-number="3">活动上线</li>
+    </ol>
 
     <div data-ui-id="form" data-ui-type="Form" data-ui-submit-button="submit" data-ui-auto-validate="true" class="container">
         <div class="form">
@@ -52,7 +54,7 @@
                             data-ui-type="Uploader"
                             data-ui-action="@data.uploadUrl1"
                             data-ui-file-type="auto"
-                            data-ui-name="upload1"
+                            data-ui-name="pic1"
                             data-ui-text="&lt;span class='ui-icon-upload'&gt;&lt;/span&gt; 上传文件"
                             title="上传图片或Flash"
                             accept=".gif,.jpg,.png,.swf"
@@ -76,7 +78,7 @@
                             data-ui-type="Uploader"
                             data-ui-action="@data.uploadUrl2"
                             data-ui-file-type="auto"
-                            data-ui-name="upload2"
+                            data-ui-name="pic2"
                             data-ui-text="&lt;span class='ui-icon-upload'&gt;&lt;/span&gt; 上传文件"
                             title="上传图片或Flash"
                             accept=".gif,.jpg,.png,.swf"

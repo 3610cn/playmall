@@ -34,12 +34,14 @@ define(
          * @return {er.Promise}
          */
         FreshData.prototype.search = function (query) {
+            var entityName = this.getEntityName();
+            var pascalEntityName = entityName.charAt(0).toUpperCase() + entityName.slice(1);
             return this.request(
                 'fresh/list',
                 query,
                 {
                     method: 'GET',
-                    url: '/api/' + this.getEntityName() + '/list'
+                    url: '/api/get' + pascalEntityName + 'List'
                 }
             );
         };

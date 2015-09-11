@@ -29,6 +29,54 @@
     }
   ```
 
+### 获取系统信息
+
+    * URL: /api/getConst
+    * METHOD: GET
+    * PARAM: 
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": {},
+        "data": {
+            "mallList": [
+                {
+                   "text": "杭州",
+                   "value": "1",
+                   "children": [
+                        {
+                           "text": "百联商场",
+                           "value": "1"
+                        },
+                        {
+                           "text": "瑞都国际",
+                           "value": "2"
+                        },
+                        ...
+                   ]
+                },
+                {
+                   "text": "上海",
+                   "value": "2",
+                   "children": [
+                        {
+                           "text": "中环百货",
+                           "value": "3"
+                        },
+                        {
+                           "text": "南都商城",
+                           "value": "4"
+                        },
+                        ...
+                   ]
+                }
+            ]
+        }
+    }
+  ```
+
 ### 获取用户信息
 
     * URL: /api/getUser
@@ -67,7 +115,7 @@
                 "startTime": "2015-03-08 17:00",
                 "endTime": "2015-03-09 17:00",
                 "mall": "正大广场",
-                "coupleId": "32" // 仅针对已绑定优惠信息的体验
+                "couponId": "32" // 仅针对已绑定优惠信息的体验
             },
             {
                 "id": "2",
@@ -115,16 +163,41 @@
     }
   ```
 
+### 获取指定mall下的优惠列表
+
+
+    * URL: /api/getCouponList
+    * METHOD: GET
+    * PARAM: 
+        * mall // 指定mall的id
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": "",
+        "data": [
+            {
+                "text": "快来抢免费更衣间",
+                "value": "1"
+            },
+            {
+                "text": "夏季大坑宾",
+                "value": "2"
+            },
+            ...
+        ]
+    }
+  ```
+
 ### 体验 / 大咖绑定优惠信息
 
 
-    * URL: /api/addCouple
+    * URL: /api/addCoupon
     * METHOD: POST
     * PARAM: 
-        * id // 可选，如果存在表示修改
-        * eid // 可选，如果存在表示体验 / 大咖的id
-        * content 优惠内容
-        * count 优惠名额
+        * id // 搜乐或者大咖id
+        * cid // 优惠信息id
     * RESPONSE: 
 
   ```
@@ -138,7 +211,7 @@
 
 ### 获取体验 / 大咖优惠信息
 
-    * URL: /api/getCouple
+    * URL: /api/getCoupon
     * METHOD: GET
     * PARAM: 
         * id
@@ -167,6 +240,7 @@
         "status": 0,
         "msg": {},
         "data": {
+            "id": "123",
             "name": "横溪西瓜节",
             "categoryList": [
                 {
@@ -209,7 +283,11 @@
                 }
             ],
             "tagList": ["好玩", "美女多", "吃的便宜"],
-            "content": "我们的祖国是花园"
+            "content": "我们的祖国是花园",
+            "category": "1",
+            "mall": "1",
+            "pic1": "http://www.xxx.com/xx.png",
+            "pic2": "http://www.xxx.com/xx2.png"
         }
     }
   ```

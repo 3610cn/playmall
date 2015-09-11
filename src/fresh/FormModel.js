@@ -40,7 +40,7 @@ define(
                     function (item) {
                         if (item.url) {
                             item.content = '<img src="' + item.url + '" />';
-                            item.value = item.id;
+                            item.value = item.url;
                         }
                     }
                 );

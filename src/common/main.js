@@ -39,17 +39,23 @@ define(
          * @ignore
          */
         function start() {
-            // 初始化流程：
-            //
-            // 1. 并行加载：
-            //     - 当前用户信息，用户未登录会返回403，失败就跳回首页
-            //     - 系统静态资源
-            //     - 用户处理模块和系统常量模块
-            // 2. 开始用户和系统信息初始化
-            // 3. 加载依赖基础库（moment, esui, er, ef, common, bizpkg）
-            // 4. 初始化应用系统其它部分
+            overrideControlDefaults();
             initializeUserAndSystem()
                 .then(initializeApplication, redirectToIndex);
+        }
+
+        /**
+         * 重写控件默认属性
+         *
+         * @private
+         * @method common.Main#overrideControlDefaults
+         * @return {er.meta.Promise}
+         */
+        function overrideControlDefaults() {
+            var esui = require('esui');
+            var OverrideDefaults = require('ub-ria/ui/extension/OverrideDefaults');
+            var defaults = require('common/uiDefaults');
+            esui.attachExtension('OverrideDefaults', {overrides: defaults});
         }
 
         function initializeApplication() {
@@ -72,6 +78,9 @@ define(
 
             // 显示用户信息
             var user = GlobalData.getInstance().getUser();
+            if (!user.role) {
+                user.role = 'admin';
+            }
             $('#username').html(user['username'])
             $('#userInfo').show();
 

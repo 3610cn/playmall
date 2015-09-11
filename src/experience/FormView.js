@@ -6,6 +6,7 @@ define(
         require('esui/Select');
         require('esui/TextBox');
         require('esui/BoxGroup');
+        require('esui/Wizard');
         require('ub-ria-ui/TokenField');
         require('esui/Calendar');
         require('ui/uploader/Uploader');
@@ -46,11 +47,11 @@ define(
          */
         ExperienceFormView.prototype.getEntity = function () {
             var entity = BaseFormView.prototype.getEntity.apply(this, arguments);
-            if (u.isObject(entity.upload1)) {
-                entity.upload1 = entity.upload1.data.id;
+            if (u.isObject(entity.pic1)) {
+                entity.pic1 = entity.pic1.data.url;
             }
-            if (u.isObject(entity.upload2)) {
-                entity.upload2 = entity.upload2.data.id;
+            if (u.isObject(entity.pic2)) {
+                entity.pic2 = entity.pic2.data.url;
             }
             return entity;
         };

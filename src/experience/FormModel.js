@@ -33,7 +33,14 @@ define(
             data.uploadUrl1 = '/api/upload/1';
             data.uploadUrl2 = '/api/upload/2';
             if (this.get('formType') === 'update') {
+                data.tagList = data.tagList || [];
                 data.tags = data.tagList.join(',');
+                data.pic1 = {
+                    url: data.pic1
+                };
+                data.pic2 = {
+                    url: data.pic2
+                };
             }
             this.set('data', data);
         }
@@ -43,7 +50,7 @@ define(
 
             // 验证逻辑示例
             u.each(
-                ['upload1', 'upload2'],
+                ['pic1', 'pic2'],
                 function (item){
                     if (!entity[item]) {
                         errorMsg.push(
