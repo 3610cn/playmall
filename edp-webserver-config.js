@@ -62,7 +62,7 @@ exports.getLocations = function () {
                     var method = context.request.method;
                     var conf = context.conf;
                     var docRoot  = conf.documentRoot;
-                    var prefix = docRoot + mockupDir + pathname.replace(/^\/api/, '');
+                    var prefix = docRoot + mockupDir + pathname.replace(/^\/api/, '').replace(/\/\d+$/g, '');
                     var filePath = prefix;
                     if (MOCKUP) {
                         addJSONSuffix();

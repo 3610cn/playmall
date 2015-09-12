@@ -36,10 +36,14 @@ define(
                 data.tagList = data.tagList || [];
                 data.tags = data.tagList.join(',');
                 data.pic1 = {
-                    url: data.pic1
+                    data: {
+                        url: data.pic1
+                    }
                 };
                 data.pic2 = {
-                    url: data.pic2
+                    data: {
+                        url: data.pic2
+                    }
                 };
             }
             this.set('data', data);

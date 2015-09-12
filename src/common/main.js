@@ -17,7 +17,7 @@ define(
          */
         function initializeUserAndSystem() {
             var data = GlobalData.getInstance();
-            return Deferred.all(data.loadUser());
+            return Deferred.all(data.loadUser(), data.loadSystem());
         }
 
         /**

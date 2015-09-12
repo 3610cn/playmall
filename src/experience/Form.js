@@ -35,8 +35,9 @@ define(
                         };
                     }(i))
                 );
+                var uploader = this.view.get('uploader' + i);
+                uploader.setRawValue(this.model.get('data')['pic' + i]);
             }
-
         };
 
         require('er/util').inherits(ExperienceForm, Action);

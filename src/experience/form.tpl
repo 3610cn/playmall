@@ -116,7 +116,7 @@
             <div class="row">
                 <div class="field-name">活动标签</div>
                 <div class="field-value fee-detail" style="height:auto;">
-                    <input data-ui="id:tags;name:tags;type:TokenField;limit:30;delimiter:,;width:600;tokens:@data.tags;required:required;" />
+                    <input data-ui="id:tags;name:tags;type:TokenField;limit:30;delimiter:,;width:600;tokens:@data.tags;" />
                 </div>
             </div>
 

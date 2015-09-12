@@ -89,14 +89,14 @@ define(
                 null,
                 {
                     method: 'GET',
-                    url: '/system/const'
+                    url: '/api/getConst'
                 }
             );
             return loading.then(
-                function (systemInfo) {
-                    if (u.isObject(systemInfo)) {
+                function (info) {
+                    if (u.isObject(info)) {
                     }
-                    return systemInfo;
+                    return info;
                 }
             );
         };
