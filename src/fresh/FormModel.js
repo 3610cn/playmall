@@ -34,16 +34,22 @@ define(
             var data = this.get('data');
             data.uploadUrl = '/api/upload/3';
 
-            if (data.imageList) {
+            if (u.isString(data.imageList)) {
+                var imageList = [];
                 u.each(
-                    data.imageList,
+                    data.imageList.split(','),
                     function (item) {
-                        if (item.url) {
-                            item.content = '<img src="' + item.url + '" />';
-                            item.value = item.url;
+                        if (item) {
+                            imageList.push(
+                                {
+                                    content: '<img src="' + item + '" />',
+                                    value: item
+                                }
+                            );
                         }
                     }
                 );
+                data.imageList = imageList;
             }
 
             this.set('data', data);
