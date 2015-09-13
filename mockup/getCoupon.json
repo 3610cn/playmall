@@ -1,0 +1,16 @@
+{
+    "status": 0,
+    "msg": {},
+    "data": {
+        "couponList": [
+            {
+                "text": "快来抢免费更衣间",
+                "value": "1"
+            },
+            {
+                "text": "夏季大坑宾",
+                "value": "2"
+            }
+        ]
+    }
+}
