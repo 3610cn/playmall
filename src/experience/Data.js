@@ -125,7 +125,7 @@ define(
                 null,
                 {
                     method: 'GET',
-                    url: '/api/getCoupon?mallId=' + id
+                    url: '/api/getCouponList?mallId=' + id
                 }
             );
         };

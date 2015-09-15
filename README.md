@@ -170,7 +170,7 @@
 ### 获取指定mall下的优惠列表
 
 
-    * URL: /api/getCoupon
+    * URL: /api/getCouponList
     * METHOD: GET
     * PARAM: 
         * mallId // 指定mall的id
