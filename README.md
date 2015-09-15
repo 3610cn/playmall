@@ -203,6 +203,7 @@
     * PARAM: 
         * id // 搜乐或者大咖id
         * cid // 优惠信息id
+        * type // experience / bigshot
     * RESPONSE: 
 
   ```
