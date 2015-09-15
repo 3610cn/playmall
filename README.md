@@ -115,6 +115,7 @@
                 "startTime": "2015-03-08 17:00",
                 "endTime": "2015-03-09 17:00",
                 "mall": "正大广场",
+                "mallId": "2",
                 "couponId": "32" // 仅针对已绑定优惠信息的体验
             },
             {
@@ -123,7 +124,8 @@
                 "category": "旅游",
                 "startTime": "2015-03-08 17:00",
                 "endTime": "2015-03-09 17:00",
-                "mall": "悉尼歌剧院"
+                "mall": "悉尼歌剧院",
+                "mallId": "3"
             },
             {
                 "id": "3",
@@ -131,7 +133,8 @@
                 "category": "亲子",
                 "startTime": "2015-03-08 17:00",
                 "endTime": "2015-03-09 17:00",
-                "mall": "正大广场"
+                "mall": "正大广场",
+                "mallId": "4"
             },
             {
                 "id": "4",
@@ -139,7 +142,8 @@
                 "category": "展览",
                 "startTime": "2015-03-08 17:00",
                 "endTime": "2015-03-09 17:00",
-                "mall": "世贸广场"
+                "mall": "世贸广场",
+                "mallId": "2"
             }
         ]
     }
@@ -166,27 +170,28 @@
 ### 获取指定mall下的优惠列表
 
 
-    * URL: /api/getCouponList
+    * URL: /api/getCoupon
     * METHOD: GET
     * PARAM: 
-        * mall // 指定mall的id
+        * mallId // 指定mall的id
     * RESPONSE: 
 
   ```
     {
         "status": 0,
-        "msg": "",
-        "data": [
-            {
-                "text": "快来抢免费更衣间",
-                "value": "1"
-            },
-            {
-                "text": "夏季大坑宾",
-                "value": "2"
-            },
-            ...
-        ]
+        "msg": {},
+        "data": {
+            "couponList": [
+                {
+                    "text": "快来抢免费更衣间",
+                    "value": "1"
+                },
+                {
+                    "text": "夏季大坑宾",
+                    "value": "2"
+                }
+            ]
+        }
     }
   ```
 
@@ -205,25 +210,6 @@
         "status": 0,
         "msg": {
             "global": "添加优惠成功"
-        }
-    }
-  ```
-
-### 获取体验 / 大咖优惠信息
-
-    * URL: /api/getCoupon
-    * METHOD: GET
-    * PARAM: 
-        * id
-    * RESPONSE: 
-
-  ```
-    {
-        "status": 0,
-        "msg": {},
-        "data": {
-            "count": "100",
-            "content": "全场8折"
         }
     }
   ```
@@ -268,24 +254,11 @@
                     "value": "6"
                 }
             ],
-            "mallList": [
-                {
-                    "text": "正大广场",
-                    "value": "1"
-                },
-                {
-                    "text": "世贸广场",
-                    "value": "2"
-                },
-                {
-                    "text": "长泰广场",
-                    "value": "3"
-                }
-            ],
             "tagList": ["好玩", "美女多", "吃的便宜"],
             "content": "我们的祖国是花园",
             "category": "1",
-            "mall": "1",
+            "city": "1",
+            "mall": "2",
             "pic1": "http://www.xxx.com/xx.png",
             "pic2": "http://www.xxx.com/xx2.png"
         }

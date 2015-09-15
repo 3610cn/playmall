@@ -18,6 +18,11 @@ define(
 
         function ExperienceFormView() {
             BaseFormView.apply(this, arguments);
+
+            var uiEvents = {
+                'city:change': onCityChange,
+            };
+            this.addUIEvents(uiEvents);
         }
 
         ExperienceFormView.prototype.template = 'experienceForm';
@@ -55,6 +60,10 @@ define(
             }
             return entity;
         };
+
+        function onCityChange(event) {
+            this.fire('citychange', event)
+        }
 
         require('er/util').inherits(ExperienceFormView, BaseFormView);
         return ExperienceFormView;

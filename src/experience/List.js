@@ -38,7 +38,7 @@ define(
                 }
             );
             this.view.on(
-                'bindCouple',
+                'bindCoupon',
                 function (event) {
                     var id = event.args;
                     var items = me.model.get('list').data;
@@ -48,12 +48,9 @@ define(
                             return item.id == id;
                         }
                     );
-                    var url = '/couple/';
-                    if (item.coupleId) {
-                        url += 'update~id=' + item.coupleId;
-                    }
-                    else {
-                        url += 'create~eid=' + item.id;
+                    var url = '/coupon/update~id=' + item.id + '&mallId=' + item.mallId;
+                    if (item.couponId) {
+                        url += '&couponId=' + item.couponId;
                     }
 
                     var options = {

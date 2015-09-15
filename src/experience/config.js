@@ -37,13 +37,13 @@ define(
                 args: { formType: 'update' }
             },
             {
-                path: '/couple/update',
-                type: 'experience/CoupleForm',
+                path: '/coupon/update',
+                type: 'experience/CouponForm',
                 args: { formType: 'update' }
             },
             {
-                path: '/couple/create',
-                type: 'experience/CoupleForm',
+                path: '/coupon/create',
+                type: 'experience/CouponForm',
                 args: { formType: 'create' }
             }
         ];

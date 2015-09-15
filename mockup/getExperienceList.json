@@ -9,7 +9,8 @@
             "startTime": "2015-03-08 15:00",
             "endTime": "2015-03-08 17:00",
             "mall": "正大广场",
-            "coupleId": "1"
+            "mallId": "2",
+            "couponId": "1"
         },
         {
             "id": "2",
@@ -17,7 +18,9 @@
             "category": "旅游",
             "startTime": "2015-03-08 15:00",
             "endTime": "2015-03-08 17:00",
-            "mall": "悉尼歌剧院"
+            "mall": "悉尼歌剧院",
+            "mallId": "3",
+            "couponId": "2"
         },
         {
             "id": "3",
@@ -25,7 +28,9 @@
             "category": "亲子",
             "startTime": "2015-03-08 15:00",
             "endTime": "2015-03-08 17:00",
-            "mall": "正大广场"
+            "mall": "正大广场",
+            "mallId": "2",
+            "couponId": "1"
         },
         {
             "id": "4",
@@ -33,7 +38,9 @@
             "category": "展览",
             "startTime": "2015-03-08 15:00",
             "endTime": "2015-03-08 17:00",
-            "mall": "世贸广场"
+            "mall": "世贸广场",
+            "mallId": "1",
+            "couponId": "2"
         }
     ]
 }

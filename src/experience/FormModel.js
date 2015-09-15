@@ -2,9 +2,11 @@ define(
     function (require) {
         var BaseFormModel = require('common/FormModel');
         var Data = require('./Data');
+        var GlobalData = require('common/GlobalData');
         var datasource = require('er/datasource');
         var m = require('moment');
         var u = require('underscore');
+        var system = GlobalData.getInstance().getSystem();
 
         function ExperienceFormModel() {
             BaseFormModel.apply(this, arguments);
@@ -25,7 +27,18 @@ define(
                     }
                 );
             }
+            var cityList = u.map(system.mallList, function (item) {return u.omit(item, 'children')});
+            this.datasource.push(
+                {
+                    cityList: datasource.constant(cityList)
+                }
+            );
         }
+
+        ExperienceFormModel.prototype.getMallList = function (city) {
+            var mallList = u.findWhere(system.mallList, {value: city});
+            return mallList && mallList.children || [];
+        };
 
         ExperienceFormModel.prototype.prepare = function () {
             BaseFormModel.prototype.prepare.call(this);
@@ -46,7 +59,13 @@ define(
                     }
                 };
             }
+
+            if (data.categoryList) {
+                data.categoryList = [{value: '', text: '请选择'}].concat(data.categoryList);
+            }
             this.set('data', data);
+
+            this.set('mallList', this.getMallList(data.city));
         }
 
         ExperienceFormModel.prototype.validateEntity = function (entity) {

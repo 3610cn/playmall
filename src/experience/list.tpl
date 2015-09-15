@@ -12,13 +12,13 @@
 </div>
 
 
-<!-- target: coupleAction -->
+<!-- target: couponAction -->
  <div data-ui-type="Panel" 
-    data-ui-id="couple-action-wrapper"
+    data-ui-id="coupon-action-wrapper"
     data-ui-hidden="hidden">
     <div data-ui-type="ActionPanel"
         data-ui-action-options="@actionOptions"
-        data-ui-id="couple-binder" 
+        data-ui-id="coupon-binder" 
         data-ui-url="@url"></div>
     <button id="actionAddSubmit" data-ui-type="Button"
         data-ui-skin="spring" data-ui-id="addSubmit" type="submit">提交</button>

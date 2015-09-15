@@ -94,8 +94,7 @@ define(
             );
             return loading.then(
                 function (info) {
-                    if (u.isObject(info)) {
-                    }
+                    u.extend(system, info.data);
                     return info;
                 }
             );

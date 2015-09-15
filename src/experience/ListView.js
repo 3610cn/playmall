@@ -76,7 +76,7 @@ define(
                 content: function (item) {
                     return [
                         '<span class="list-link" data-command-args="' + item.id + '" data-command="delete">删除</a></span>',
-                        '<span class="list-link" data-command-args="' + item.id + '" data-command="bindCouple">优惠</a></span>'
+                        '<span class="list-link" data-command-args="' + item.id + '" data-command="bindCoupon">优惠</a></span>'
                     ].join('');
                 }
             }

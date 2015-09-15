@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="field-name">活动分类</div>
                 <div class="field-value">
-                    <div data-ui="type:Select;id:category;width:120;datasource:@data.categoryList;" name="category">
+                    <div data-ui="type:Select;id:category;width:120;datasource:@data.categoryList;value:@data.category;" name="category">
                     </div>
                 </div>
             </div>
@@ -95,7 +95,8 @@
             <div class="row">
                 <div class="field-name">活动地点</div>
                 <div class="field-value">
-                    <div data-ui="type:Select;id:mall;name:mall;width:200;datasource:@data.mallList;<!-- if: ${user.role} !== 'admin' -->readOnly:readOnly;<!-- /if -->"></div>
+                    <div data-ui="type:Select;id:city;width:200;datasource:@cityList;<!-- if: ${user.role} !== 'admin' -->readOnly:readOnly;<!-- /if -->value:@data.city"></div>
+                    <div data-ui="type:Select;id:mall;name:mall;width:200;datasource:@mallList;<!-- if: ${user.role} !== 'admin' -->readOnly:readOnly;<!-- /if -->value:@data.mall"></div>
                 </div>
             </div>
 

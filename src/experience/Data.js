@@ -119,13 +119,13 @@ define(
          *
          * @return {er.Promise}
          */
-        ExperienceData.prototype.findCoupleById = function (id) {
+        ExperienceData.prototype.findCouponByMallId = function (id) {
             return this.request(
-                'couple/detail',
+                'coupon/detail',
                 null,
                 {
                     method: 'GET',
-                    url: '/api/getCouple?id=' + id
+                    url: '/api/getCoupon?mallId=' + id
                 }
             );
         };
