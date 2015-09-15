@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="field-name">活动分类</div>
                 <div class="field-value">
-                    <div data-ui="type:Select;id:category;width:120;datasource:@data.categoryList;value:@data.category;" name="category">
+                    <div data-ui="type:Select;id:category;width:120;datasource:@data.categoryList;value:@data.category;required:required;" name="category">
                     </div>
                 </div>
             </div>

@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="field-name">选择优惠</div>
                 <div class="field-value">
-                    <div data-ui="type:Select;id:couponList;width:250;datasource:@data.couponList;value:@couponId" name="cid">
+                    <div data-ui="type:Select;id:couponList;width:250;datasource:@data.couponList;value:@couponId;required:required;" name="cid">
                     </div>
                 </div>
             </div>

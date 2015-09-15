@@ -48,7 +48,7 @@ define(
                             return item.id == id;
                         }
                     );
-                    var url = '/coupon/update~id=' + item.id + '&mallId=' + item.mallId;
+                    var url = '/coupon/update~id=' + item.id + '&mallId=' + item.mallId + '&type=' + type;
                     if (item.couponId) {
                         url += '&couponId=' + item.couponId;
                     }

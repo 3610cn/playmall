@@ -32,6 +32,10 @@ define(
             if (eid) {
                 entity.eid = eid;
             }
+            var type = this.model.get('type');
+            if (type) {
+                entity.type = type;
+            }
             return entity;
         };
 
