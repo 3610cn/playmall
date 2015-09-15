@@ -47,7 +47,7 @@ define(
                     var cityValue = city.getValue();
                     mall.setProperties(
                         {
-                            datasource: me.model.getMallList(cityValue)
+                            datasource: me.model.getMallList(parseInt(cityValue, 10))
                         }
                     );
                 }

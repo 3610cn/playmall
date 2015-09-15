@@ -4,7 +4,7 @@ var fs = require('fs');
 var proxyTarget = '120.26.76.247';
 var proxyTargetPort = 8080;
 // mockup开关
-var MOCKUP = true;
+var MOCKUP = false;
 // mockup目录
 var mockupDir = '/mockup';
 
@@ -42,6 +42,7 @@ exports.getLocations = function () {
                 less()
             ]
         },
+        /**
         {
             location: /^\/api\/editUpload/,
             handler: [
@@ -54,6 +55,7 @@ exports.getLocations = function () {
                 file('./mockup/upload.json')
             ]
         },
+        */
         {
             location: /^\/api\/.*$/,
             handler: [

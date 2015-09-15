@@ -65,7 +65,7 @@ define(
             }
             this.set('data', data);
 
-            this.set('mallList', this.getMallList(data.city));
+            this.set('mallList', this.getMallList(data.city || system.mallList[0].value));
         }
 
         ExperienceFormModel.prototype.validateEntity = function (entity) {

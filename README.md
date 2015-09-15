@@ -203,7 +203,7 @@
     * PARAM: 
         * id // 搜乐或者大咖id
         * cid // 优惠信息id
-        * type // experience / bigshot
+        * type // 1: experience / 2: bigshot
     * RESPONSE: 
 
   ```
@@ -435,6 +435,27 @@
             "startTime": "2012-05-21 10:00",
             "endTime": "2012-05-22 10:00"
         }
+    }
+  ```
+
+### 获取店铺列表
+
+    * URL: /api/getShop
+    * METHOD: GET
+    * PARAM: 
+        * mall // 商场id
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": null,
+        "data":[
+            {"value": 1, "text": "星巴克"},
+            {"value": 3, "text": "哈根达斯"},
+            {"value": 6, "text": "克里斯丁"},
+            {"value": 18, "text": "SPOONCHEL"}
+        ]
     }
   ```
 

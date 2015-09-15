@@ -34,7 +34,7 @@ define(
             }
             var type = this.model.get('type');
             if (type) {
-                entity.type = type;
+                entity.type = type === 'experience' ? 1 : 2;
             }
             return entity;
         };
