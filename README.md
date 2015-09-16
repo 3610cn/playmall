@@ -331,6 +331,22 @@
     }
   ```
 
+### 富媒体编辑器上传接口
+
+    * 该接口不符合通用接口规范，目的是为了开源编辑器ueditor
+    * URL: /api/editUpload
+    * METHOD: POST
+    * PARAM: 
+        * filename: 文件数据
+    *RESPONSE
+
+  ```
+    {
+        "url":"http://img.playmall.cn.com/336eba80b4d3ac466e8d4f068c490558/6eb21c482b50318f4f97721150f483e1.jpg",
+        "state":"SUCCESS"
+    }
+  ```
+
 ### 抢鲜列表
 
 
