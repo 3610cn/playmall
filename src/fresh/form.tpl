@@ -68,7 +68,7 @@
             <div class="row">
                 <div class="field-name">活动详情</div>
                 <div class="field-value detail" style="height:auto;">
-                    <div data-ui="type:UMEditor;id:content;name:content;required:required;width:90%;height:600;content:@data.content;"></div>
+                    <div data-ui="type:UMEditor;id:content;name:content;width:90%;height:600;content:@data.content;"></div>
                 </div>
             </div>
 

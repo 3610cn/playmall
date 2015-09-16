@@ -2,9 +2,9 @@ var fs = require('fs');
 
 // 后端服务器地址和端口
 var proxyTarget = '120.26.76.247';
-var proxyTargetPort = 8080;
+var proxyTargetPort = 8090;
 // mockup开关
-var MOCKUP = true;
+var MOCKUP = false;
 // mockup目录
 var mockupDir = '/mockup';
 

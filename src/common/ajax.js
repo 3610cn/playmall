@@ -103,10 +103,10 @@ define(
 
             ajax.hooks.afterParse = function (data, fakeXHR, options) {
                 if (data.status !== 0) {
-                    if (data.status === 1) {
+                    if (data.status === 2) {
                         fakeXHR.status = 403;
                     }
-                    else if (data.status === 2) {
+                    else if (data.status === 3) {
                         // fakeXHR.status = 409;
                     }
                     if (u.isString(data.msg)) {

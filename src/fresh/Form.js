@@ -25,7 +25,7 @@ define(
                         imageList.addItem(
                             {
                                 content: '<img src="' + data.url + '" />',
-                                value: data.id
+                                value: data.url
                             }
                         );
                     }

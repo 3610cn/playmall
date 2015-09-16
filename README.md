@@ -438,20 +438,6 @@
         "msg": {},
         "data": {
             "title": "快来抢更衣间特权",
-            "mallList": [
-                {
-                    "text": "正大广场",
-                    "value": "1"
-                },
-                {
-                    "text": "世贸广场",
-                    "value": "2"
-                },
-                {
-                    "text": "长泰广场",
-                    "value": "3"
-                }
-            ],
             "imageList": "http://g.hiphotos.baidu.com/image/pic/item/1b4c510fd9f9d72aee889e1fd22a2834359bbbc0.jpg,http://image.tianjimedia.com/uploadImages/2011/253/5SGVFD0KYZW2.jpg,http://file.iqilu.com/upimg/userup/0810/2111313M4c.jpg,http://pic38.nipic.com/20140306/251960_131610098000_2.jpg",
             "mall": "3",
             "shop": "口渴了",
@@ -512,6 +498,27 @@
         },
         "data": {
             "id": 3
+        }
+    }
+  ```
+
+### 验证优惠码
+
+    * URL: /api/fresh/verify
+    * METHOD: POST
+    * PARAM: 
+
+  ```
+    "code": 1231u3123123
+  ```
+
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": {
+            "code": "验证码错误"
         }
     }
   ```
