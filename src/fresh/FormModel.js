@@ -10,23 +10,6 @@ define(
             BaseFormModel.apply(this, arguments);
             var entityName = this.getUrlType();
             this.addData(new Data(entityName));
-
-            if (this.get('formType') === 'create') {
-                this.datasource = this.datasource.concat(
-                    [
-                        {
-                            retrieve: function (model) {
-                                return model.data().findById().then(
-                                    function (data) {
-                                        return data;
-                                    }
-                                );
-                            },
-                            dump: true
-                        }
-                    ]
-                );
-            }
         }
 
         FreshFormModel.prototype.prepare = function () {

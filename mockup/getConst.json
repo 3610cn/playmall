@@ -5,31 +5,63 @@
         "mallList": [
             {
                "text": "杭州",
-               "value": "1",
+               "value": 1,
                "children": [
                     {
                        "text": "百联商场",
-                       "value": "1"
+                       "value": 1
                     },
                     {
                        "text": "瑞都国际",
-                       "value": "2"
+                       "value": 2
                     }
                ]
             },
             {
                "text": "上海",
-               "value": "2",
+               "value": 2,
                "children": [
                     {
                        "text": "中环百货",
-                       "value": "3"
+                       "value": 3
                     },
                     {
                        "text": "南都商城",
-                       "value": "4"
+                       "value": 4
                     }
                ]
+            }
+        ],
+        "experienceCategoryList": [
+            {
+                "text": "胃口",
+                "value": 1
+            },
+            {
+                "text": "美美",
+                "value": 2
+            },
+            {
+                "text": "童趣",
+                "value": 3
+            }
+        ],
+        "bigshotCategoryList": [
+            {
+                "text": "大咖类别胃口",
+                "value": 1
+            },
+            {
+                "text": "美美",
+                "value": 2
+            },
+            {
+                "text": "童趣",
+                "value": 3
+            },
+            {
+                "text": "奢侈",
+                "value": 4
             }
         ]
     }

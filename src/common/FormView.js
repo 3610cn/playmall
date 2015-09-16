@@ -21,6 +21,12 @@ define(
          */
         function FormView() {
             BaseFormView.apply(this, arguments);
+
+            var uiEvents = {
+                'city:change': u.partial(this.fire, 'citychange'),
+                'mall:change': u.partial(this.fire, 'mallchange')
+            };
+            this.addUIEvents(uiEvents);
         }
 
         util.inherits(FormView, BaseFormView);

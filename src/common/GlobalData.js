@@ -101,6 +101,28 @@ define(
         };
 
         /**
+         * 加载店铺列表
+         *
+         * @param {string} mallId 商场id
+         * @return {er.meta.Promise}
+         */
+        GlobalData.prototype.loadShopList = function (mallId) {
+            var loading = this.request(
+                'global/getshop',
+                null,
+                {
+                    method: 'GET',
+                    url: '/api/getShop?mall=' + mallId
+                }
+            );
+            return loading.then(
+                function (info) {
+                    return info.data;
+                }
+            );
+        };
+
+        /**
          * 获取用户信息
          *
          * @return {Object}

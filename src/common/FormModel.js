@@ -13,13 +13,7 @@ define(
         var util = require('er/util');
         var u = require('underscore');
         var moment = require('moment');
-
-        function FormModel() {
-            BaseFormModel.apply(this, arguments);
-            this.addData('global', GlobalData.getInstance());
-        }
-
-        util.inherits(FormModel, BaseFormModel);
+        var datasource = require('er/datasource');
 
         /**
          * 数据源配置
@@ -27,7 +21,7 @@ define(
          * @type {Object}
          * @override
          */
-        FormModel.prototype.defaultDatasource = {
+        var BASE = {
             base: {
                 retrieve: function(model) {
                     var url = model.get('url');
@@ -57,24 +51,42 @@ define(
                     }
                     return timeList;
                 }
+            },
+            cityList: function (model) {
+                var system = model.getSystem();
+                return u.map(system.mallList, function (item) {return u.omit(item, 'children')});
+            },
+            mallList: function (model) {
+                var data = model.get('data') || {};
+                return model.getMallList(data.city);
             }
-
         };
 
-        FormModel.prototype.getDatasource = function () {
-            return u.extend(
-                this.defaultDatasource,
-                this.datasource
-            );
+        var SHOP = {
+            shopList: function (model) {
+                return [{text: '请选择', value: ''}];
+            }
         };
+
+        function FormModel() {
+            BaseFormModel.apply(this, arguments);
+            this.addData('global', GlobalData.getInstance());
+
+            this.putDatasource(BASE);
+            this.putDatasource(SHOP);
+        }
+
+        util.inherits(FormModel, BaseFormModel);
 
         /**
          * 对数据源进行预处理
          */
         FormModel.prototype.prepare = function () {
 
-            if (this.get('formType') === 'create') {
+            this.set('user', GlobalData.getInstance().getUser());
 
+            if (this.get('formType') === 'create') {
+                this.set('data', {});
             }
             else if (this.get('formType') === 'update') {
                 var data = this.get('data');
@@ -92,8 +104,6 @@ define(
                     data.endTime = endTime.format('hh:mm A');
                 }
             }
-
-            this.set('user', GlobalData.getInstance().getUser());
         };
 
         /**
@@ -167,6 +177,17 @@ define(
                 type = type.charAt(0).toUpperCase() + type.slice(1);
             }
             return type;
+        };
+
+        FormModel.prototype.getSystem = function () {
+            var globalData = this.data('global');
+            return globalData.getSystem();
+        };
+
+        FormModel.prototype.getMallList = function (city) {
+            var system = this.getSystem();
+            var mallList = u.findWhere(system.mallList, {value: city}) || system.mallList[0];
+            return mallList && mallList.children || [];
         };
 
         return FormModel;

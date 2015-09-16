@@ -33,7 +33,9 @@
             <div class="row">
                 <div class="field-name">活动地点</div>
                 <div class="field-value">
-                    <div data-ui="type:Select;id:mall;name:mall;width:200;datasource:@data.mallList;"></div>
+                    <div data-ui="type:Select;id:city;width:200;datasource:@cityList;<!-- if: ${user.role} !== 'admin' -->readOnly:readOnly;<!-- /if -->value:@data.city"></div>
+                    <div data-ui="type:Select;id:mall;name:mall;width:200;datasource:@mallList;<!-- if: ${user.role} !== 'admin' -->readOnly:readOnly;<!-- /if -->value:@data.mall"></div>
+                    <div data-ui="type:Select;id:shop;name:shop;width:200;datasource:@shopList;<!-- if: ${user.role} !== 'admin' -->readOnly:readOnly;<!-- /if -->value:@data.shop;required:required;"></div>
                 </div>
             </div>
 

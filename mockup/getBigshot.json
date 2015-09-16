@@ -3,46 +3,8 @@
     "msg": {},
     "data": {
         "name": "范冰冰全场一折",
-        "categoryList": [
-            {
-                "text": "胃口",
-                "value": "1"
-            },
-            {
-                "text": "美美",
-                "value": "2"
-            },
-            {
-                "text": "童趣",
-                "value": "3"
-            },
-            {
-                "text": "奢侈",
-                "value": "4"
-            },
-            {
-                "text": "化妆",
-                "value": "5"
-            },
-            {
-                "text": "教育",
-                "value": "6"
-            }
-        ],
-        "mallList": [
-            {
-                "text": "正大广场",
-                "value": "1"
-            },
-            {
-                "text": "世贸广场",
-                "value": "2"
-            },
-            {
-                "text": "长泰广场",
-                "value": "3"
-            }
-        ],
+        "city": 1,
+        "mall": 2,
         "tagList": ["范冰冰", "李冰冰", "有衣裤"],
         "pic1": "http://e.hiphotos.baidu.com/image/pic/item/a50f4bfbfbedab646fa0fea7f536afc378311e82.jpg",
         "pic2": "http://d.hiphotos.baidu.com/image/pic/item/32fa828ba61ea8d3e654d409950a304e251f584c.jpg",

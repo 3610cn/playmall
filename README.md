@@ -41,6 +41,7 @@
         "status": 0,
         "msg": {},
         "data": {
+            // 商场列表
             "mallList": [
                 {
                    "text": "杭州",
@@ -71,6 +72,40 @@
                         },
                         ...
                    ]
+                }
+            ],
+            // 搜乐分类
+            "experienceCategoryList": [
+                {
+                    "text": "胃口",
+                    "value": 1
+                },
+                {
+                    "text": "美美",
+                    "value": 2
+                },
+                {
+                    "text": "童趣",
+                    "value": 3
+                }
+            ],
+            // 大咖分类
+            "bigshotCategoryList": [
+                {
+                    "text": "大咖类别胃口",
+                    "value": 1
+                },
+                {
+                    "text": "美美",
+                    "value": 2
+                },
+                {
+                    "text": "童趣",
+                    "value": 3
+                },
+                {
+                    "text": "奢侈",
+                    "value": 4
                 }
             ]
         }
@@ -229,32 +264,6 @@
         "data": {
             "id": "123",
             "name": "横溪西瓜节",
-            "categoryList": [
-                {
-                    "text": "胃口",
-                    "value": "1"
-                },
-                {
-                    "text": "美美",
-                    "value": "2"
-                },
-                {
-                    "text": "童趣",
-                    "value": "3"
-                },
-                {
-                    "text": "奢侈",
-                    "value": "4"
-                },
-                {
-                    "text": "化妆",
-                    "value": "5"
-                },
-                {
-                    "text": "教育",
-                    "value": "6"
-                }
-            ],
             "tagList": ["好玩", "美女多", "吃的便宜"],
             "content": "我们的祖国是花园",
             "category": "1",

@@ -3,35 +3,9 @@
     "msg": {},
     "data": {
         "name": "横溪西瓜节",
-        "categoryList": [
-            {
-                "text": "胃口",
-                "value": "1"
-            },
-            {
-                "text": "美美",
-                "value": "2"
-            },
-            {
-                "text": "童趣",
-                "value": "3"
-            },
-            {
-                "text": "奢侈",
-                "value": "4"
-            },
-            {
-                "text": "化妆",
-                "value": "5"
-            },
-            {
-                "text": "教育",
-                "value": "6"
-            }
-        ],
-        "city": "1",
-        "mall": "2",
-        "category": "3",
+        "city": 1,
+        "mall": 2,
+        "category": 3,
         "pic1": "http://e.hiphotos.baidu.com/image/pic/item/a50f4bfbfbedab646fa0fea7f536afc378311e82.jpg",
         "pic2": "http://d.hiphotos.baidu.com/image/pic/item/32fa828ba61ea8d3e654d409950a304e251f584c.jpg",
         "tagList": ["好玩", "美女多", "吃的便宜"],

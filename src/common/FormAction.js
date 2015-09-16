@@ -94,6 +94,53 @@ define(
          */
         FormAction.prototype.initBehavior = function () {
             BaseFormAction.prototype.initBehavior.apply(this, arguments);
+
+            var me = this;
+            this.view.on(
+                'citychange',
+                function () {
+                    var city = this.get('city');
+                    var mall = this.get('mall');
+                    if (!city || !mall) {
+                        return false;
+                    }
+                    var cityValue = city.getValue();
+                    mall.setProperties(
+                        {
+                            datasource: me.model.getMallList(parseInt(cityValue, 10))
+                        }
+                    );
+                }
+            );
+
+            this.view.on(
+                'mallchange',
+                function (event) {
+                    var mall = this.get('mall');
+                    var shop = this.get('shop');
+                    if (!mall || !shop) {
+                        return false;
+                    }
+                    var mallId = mall.getValue();
+                    require('common/GlobalData').getInstance().loadShopList(mallId).then(
+                        function (shopList) {
+                            var newProperties = {datasource: shopList};
+                            if (event.isFirst === true) {
+                                var data = me.model.get('data');
+                                u.extend(newProperties, {rawValue: data.shop})
+                            }
+                            shop.setProperties(newProperties);
+                        }
+                    );
+                }
+            );
+
+            this.on(
+                'entercomplete',
+                function () {
+                    this.view.fire('mallchange', {isFirst: true});
+                }
+            );
         };
 
         /**

@@ -1,0 +1,38 @@
+{  
+   "status": 0,
+   "msg": null,
+   "data": [  
+      {  
+         "text":"世界茶饮",
+         "value":2
+      },
+      {  
+         "text":"WAROENG IGA",
+         "value":4
+      },
+      {  
+         "text":"湘菜馆",
+         "value":5
+      },
+      {  
+         "text":"面包新语",
+         "value":7
+      },
+      {  
+         "text":"风味小厨",
+         "value":8
+      },
+      {  
+         "text":"CHILO SAZON",
+         "value":10
+      },
+      {  
+         "text":"心灵美食",
+         "value":13
+      },
+      {  
+         "text":"SAILING SHIP",
+         "value":17
+      }
+   ]
+}

@@ -39,19 +39,6 @@ define(
                 uploader.setRawValue(this.model.get('data')['pic' + i]);
             }
 
-            this.view.on(
-                'citychange',
-                function () {
-                    var city = this.get('city');
-                    var mall = this.get('mall');
-                    var cityValue = city.getValue();
-                    mall.setProperties(
-                        {
-                            datasource: me.model.getMallList(parseInt(cityValue, 10))
-                        }
-                    );
-                }
-            );
         };
 
         require('er/util').inherits(ExperienceForm, Action);
