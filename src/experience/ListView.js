@@ -74,9 +74,11 @@ define(
                 field: 'operate' ,
                 width: 60,
                 content: function (item) {
+                    var couponText = item.couponId ? '修改优惠' : '绑定优惠';
+                    var couponClass = item.couponId ? 'coupon-list-modify-coupon' : 'coupon-list-bind-coupon';
                     return [
                         '<span class="list-link" data-command-args="' + item.id + '" data-command="delete">删除</a></span>',
-                        '<span class="list-link" data-command-args="' + item.id + '" data-command="bindCoupon">优惠</a></span>'
+                        '<span class="list-link ' + couponClass + '" data-command-args="' + item.id + '" data-command="bindCoupon">' + couponText + '</a></span>'
                     ].join('');
                 }
             }

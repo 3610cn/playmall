@@ -148,7 +148,14 @@ define(
                         return;
                     }
 
+                    var globalError = u.findWhere(error.xhr.fields, {field: 'global'});
                     var config = errorCodes[error.xhr.status];
+                    if (!config && globalError) {
+                        config = {
+                            title: '错误',
+                            message: globalError.message
+                        };
+                    }
                     if (config) {
                         hasDialog = true;
                         // 避免还没登录就依赖`esui/Dialog`拉一大堆东西
@@ -165,6 +172,7 @@ define(
                                     dialog.on('ok', clearDialogReference);
                                     dialog.on('close', clearDialogReference);
                                 }
+                                dialog.on('ok', function () {hasDialog = false;})
                             }
                         );
                     }

@@ -68,7 +68,7 @@ define(
                     dialog.on(
                         'action@entitysave',
                         function () {
-                            // me.reload();
+                            me.reload();
                         }
                     );
                     return dialog;
