@@ -1,0 +1,29 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title> UEditor </title>
+        <!-- 样式文件 -->
+        <link rel="stylesheet" href="./dep/ueditor/themes/default/css/ueditor.css">
+        <!-- 配置文件 -->
+        <script type="text/javascript" src="./dep/ueditor/ueditor.config.js"></script>
+        <!-- 编辑器源码文件 -->
+        <script type="text/javascript" src="./dep/ueditor/ueditor.all.js"></script>
+        <!-- 语言包文件 -->
+        <script type="text/javascript" src="./dep/ueditor/lang/zh-cn/zh-cn.js"></script>
+    </head>
+
+    <body>
+        <script id="container" name="content" type="text/plain" style="width:90%;"></script>
+        <!-- 实例化编辑器代码 -->
+        <script type="text/javascript">
+            window.editor = UE.getEditor('container', {
+                /* 传入配置参数,可配参数列表看ueditor.config.js */
+                // toolbar: ['undo redo | bold italic underline']
+                serverUrl: '/api/editor',
+                imagePath: ''
+            });
+        </script>
+    </body>
+</html>
+

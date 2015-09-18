@@ -331,22 +331,6 @@
     }
   ```
 
-### 富媒体编辑器上传接口
-
-    * 该接口不符合通用接口规范，目的是为了开源编辑器ueditor
-    * URL: /api/editUpload
-    * METHOD: POST
-    * PARAM: 
-        * filename: 文件数据
-    *RESPONSE
-
-  ```
-    {
-        "url":"http://img.playmall.cn.com/336eba80b4d3ac466e8d4f068c490558/6eb21c482b50318f4f97721150f483e1.jpg",
-        "state":"SUCCESS"
-    }
-  ```
-
 ### 抢鲜列表
 
 
@@ -520,5 +504,35 @@
         "msg": {
             "code": "验证码错误"
         }
+    }
+  ```
+
+## 富媒体编辑器
+
+需求要求编辑器有更多功能，因此对编辑器进行了升级，相应有一些接口变化：
+
+### 获取配置项（编辑器加载时首先访问后端，获取配置文件）
+
+    * 
+    * URL: /api/editor?action=config
+    * METHOD: GET
+    * PARAM: 
+        参考 URL
+    * RESPONSE
+
+    > 读取`/mockup/editor.json`内容返回
+
+### 上传接口
+
+    * URL: /api/editor?action=uploadimage
+    * METHOD: POST
+    * PARAM: 
+        * uploadFile: 文件数据
+    *RESPONSE
+
+  ```
+    {
+        "url":"http://img.playmall.cn.com/336eba80b4d3ac466e8d4f068c490558/6eb21c482b50318f4f97721150f483e1.jpg",
+        "state":"SUCCESS"
     }
   ```

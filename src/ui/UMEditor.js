@@ -28,12 +28,19 @@ define(
         UMEditor.prototype.styleType = 'UMEditor';
 
         // UMEditor实例
-        UMEditor.prototype.um = null;
+        UMEditor.prototype.editor = null;
 
         function initEditor() {
             var frame = this.main.firstChild;
-            this.um = frame.contentWindow.um;
-            this.um.setContent(this.content || '');
+            this.editor = frame.contentWindow.editor;
+            var me = this;
+            this.editor.addListener(
+                'ready',
+                function (editor) {
+                    me.editor.setContent(me.content || '');
+                    me.editor.setHeight(me.height * 0.8);
+                }
+            );
         }
 
         /**
@@ -43,7 +50,7 @@ define(
          * @override
          */
         UMEditor.prototype.initStructure = function () {
-            this.main.innerHTML = '<iframe id="umeditor" src="/umeditor.html" width="' + this.width + '" height="' + this.height + '" vspace="0" hspace="0" allowTransparency="true" scrolling="no" marginWidth="0" marginHeight="0" frameborder="0" style="border:0; vertical-align:bottom; margin:0; display:block;"></iframe>';
+            this.main.innerHTML = '<iframe id="umeditor" src="/ueditor.html" width="' + this.width + '" height="' + this.height + '" vspace="0" hspace="0" allowTransparency="true" scrolling="no" marginWidth="0" marginHeight="0" frameborder="0" style="border:0; vertical-align:bottom; margin:0; display:block;"></iframe>';
             helper.addDOMEvent(this, this.main.firstChild, 'load', initEditor);
         }
 
@@ -72,8 +79,8 @@ define(
         );
 
         UMEditor.prototype.getRawValue = function () {
-            if (this.um) {
-                return this.um.getContent();
+            if (this.editor) {
+                return this.editor.getContent();
             }
             return null;
         };

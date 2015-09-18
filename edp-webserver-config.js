@@ -36,6 +36,20 @@ exports.getLocations = function () {
             ]
         },
         {
+            location: /uploadimage$/,
+            handler: [
+                function (context) {
+                    context.content = JSON.stringify(
+                        {
+                            "url":"http://img.playmall.cn.com/336eba80b4d3ac466e8d4f068c490558/6eb21c482b50318f4f97721150f483e1.jpg",
+                            "state":"SUCCESS"
+                        }
+                    );
+                    context.status = 200;
+                }
+            ]
+        },
+        {
             location: /\.less($|\?)/,
             handler: [
                 file(),
