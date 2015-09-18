@@ -38,7 +38,7 @@ define(
                 'ready',
                 function (editor) {
                     me.editor.setContent(me.content || '');
-                    me.editor.setHeight(me.height * 0.8);
+                    me.editor.setHeight(me.height * 0.78);
                 }
             );
         }
