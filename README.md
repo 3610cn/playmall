@@ -149,6 +149,7 @@
                 "category": "旅游",
                 "startTime": "2015-03-08 17:00",
                 "endTime": "2015-03-09 17:00",
+                "starNum": 3,
                 "mall": "正大广场",
                 "mallId": "2",
                 "couponId": "32" // 仅针对已绑定优惠信息的体验
@@ -159,6 +160,7 @@
                 "category": "旅游",
                 "startTime": "2015-03-08 17:00",
                 "endTime": "2015-03-09 17:00",
+                "starNum": 3,
                 "mall": "悉尼歌剧院",
                 "mallId": "3"
             },
@@ -168,6 +170,7 @@
                 "category": "亲子",
                 "startTime": "2015-03-08 17:00",
                 "endTime": "2015-03-09 17:00",
+                "starNum": 3,
                 "mall": "正大广场",
                 "mallId": "4"
             },
@@ -177,6 +180,7 @@
                 "category": "展览",
                 "startTime": "2015-03-08 17:00",
                 "endTime": "2015-03-09 17:00",
+                "starNum": 3,
                 "mall": "世贸广场",
                 "mallId": "2"
             }
@@ -267,6 +271,7 @@
             "tagList": ["好玩", "美女多", "吃的便宜"],
             "content": "我们的祖国是花园",
             "category": "1",
+            "starNum": 3,
             "city": "1",
             "mall": "2",
             "pic1": "http://www.xxx.com/xx.png",
@@ -289,6 +294,7 @@
         "name": "横系西瓜节", // 活动名称
         "startTime": "2012-01-01 15:00", // 开始时间
         "endTime": "2012-01-01 17:00", // 结束时间
+        "starNum": 3,
         "pic1": "123", // 图1,大图
         "pic2": "456", // 图2,小图
         "mall": "3", // 商场
