@@ -10,7 +10,8 @@
             "endTime": "2015-03-08 17:00",
             "mall": "正大广场",
             "mallId": "2",
-            "couponId": "1"
+            "couponId": "1",
+            "starNum": 3
         },
         {
             "id": "2",
@@ -19,7 +20,8 @@
             "startTime": "2015-03-08 15:00",
             "endTime": "2015-03-08 17:00",
             "mall": "悉尼歌剧院",
-            "mallId": "3"
+            "mallId": "3",
+            "starNum": 4
         },
         {
             "id": "3",
@@ -29,7 +31,8 @@
             "endTime": "2015-03-08 17:00",
             "mall": "正大广场",
             "mallId": "2",
-            "couponId": "1"
+            "couponId": "1",
+            "starNum": 2
         },
         {
             "id": "4",
@@ -39,7 +42,8 @@
             "endTime": "2015-03-08 17:00",
             "mall": "世贸广场",
             "mallId": "1",
-            "couponId": "2"
+            "couponId": "2",
+            "starNum": 0
         }
     ]
 }

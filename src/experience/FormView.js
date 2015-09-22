@@ -11,6 +11,7 @@ define(
         require('esui/Calendar');
         require('ui/uploader/Uploader');
         require('ui/UMEditor');
+        require('ui/Rating');
 
         var u = require('underscore');
 

@@ -5,6 +5,7 @@ define(
         require('esui/Button');
         require('esui/Table');
         require('esui/extension/Command');
+        require('ui/Rating');
 
         var u = require('underscore');
 
@@ -92,17 +93,35 @@ define(
 
         ExperienceListView.prototype.template = 'experienceListPage';
 
-        ExperienceListView.prototype.uiProperties = {
-            list: {
-                fields: fields,
-                sortable: false,
-                columnResizable: true,
-                subrow: false,
-                followHead: true,
-                selectMode: 'line',
-                noDataHtml: '<p style="margin:0;">暂无活动!</p>'
+        ExperienceListView.prototype.getUIProperties = function () {
+            UIView.prototype.getUIProperties.apply(this, arguments);
+            var user = this.model.get('user');
+            if (user.role === 'admin') {
+                fields.splice(2, 0,
+                    {
+                        title: '推荐级别',
+                        field: 'starNum' ,
+                        sortable: true,
+                        width: 100,
+                        content: function (item) {
+                            return '<div data-ui="name:starNum;type:Rating;value:' + item.starNum + ';readOnly:true;"></div>';
+                        }
+                    }
+                );
             }
-        };
+            return {
+                list: {
+                    fields: fields,
+                    sortable: false,
+                    columnResizable: true,
+                    subrow: false,
+                    followHead: true,
+                    selectMode: 'line',
+                    noDataHtml: '<p style="margin:0;">暂无活动!</p>'
+                }
+            };
+        }
+
 
         ExperienceListView.prototype.enterDocument = function () {
             UIView.prototype.enterDocument.apply(this, arguments);
@@ -120,6 +139,7 @@ define(
                 this.fire.bind(this, 'create')
             );
 
+            this.get('list').initChildren();
         }
 
         require('er/util').inherits(ExperienceListView, UIView);

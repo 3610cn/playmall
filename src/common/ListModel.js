@@ -62,6 +62,7 @@ define(
          * 对数据源进行预处理
          */
         ListModel.prototype.prepare = function () {
+            this.set('user', GlobalData.getInstance().getUser());
         };
 
         /**

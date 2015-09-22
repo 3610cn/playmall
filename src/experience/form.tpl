@@ -20,6 +20,15 @@
                 </div>
             </div>
 
+            <!-- if ${user.role === 'admin'} -->
+            <div class="row">
+                <div class="field-name">推荐级别</div>
+                <div class="field-value">
+                    <div data-ui="id:starNum;name:starNum;type:Rating;value:@data.starNum;"></div>
+                </div>
+            </div>
+            <!-- /if -->
+
             <div class="row">
                 <div class="field-name">活动名称</div>
                 <div class="field-value">
