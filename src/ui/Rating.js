@@ -101,6 +101,7 @@ define(
                     {
                         name: ['rawValue'],
                         paint: function (rating, rawValue) {
+                            rawValue = rawValue || 0;
                             var html = [];
                             for (var i = 1; i <= rating.total; i++) {
                                 var starClass = i <= rawValue ? 'ui-icon-star' : 'ui-icon-star-o';

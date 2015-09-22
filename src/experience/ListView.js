@@ -104,7 +104,7 @@ define(
                         sortable: true,
                         width: 100,
                         content: function (item) {
-                            return '<div data-ui="name:starNum;type:Rating;value:' + item.starNum + ';readOnly:true;"></div>';
+                            return '<div data-ui="name:starNum;type:Rating;value:' + (item.starNum || 0) + ';readOnly:true;"></div>';
                         }
                     }
                 );
