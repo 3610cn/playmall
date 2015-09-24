@@ -96,8 +96,9 @@ define(
         ExperienceListView.prototype.getUIProperties = function () {
             UIView.prototype.getUIProperties.apply(this, arguments);
             var user = this.model.get('user');
-            if (user.role === 'admin') {
-                fields.splice(2, 0,
+            var starNumIndex = 2;
+            if (user.role === 'admin'&& fields[starNumIndex].field !== 'starNum') {
+                fields.splice(starNumIndex, 0,
                     {
                         title: '推荐级别',
                         field: 'starNum' ,
