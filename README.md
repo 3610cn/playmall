@@ -586,7 +586,7 @@
     }
   ```
 
-### 删除抢鲜
+### 删除用户
 
     * URL: /api/deleteUser
     * METHOD: POST
