@@ -1,14 +1,24 @@
 <!-- target: nav -->
 <div data-ui-type="Tab" data-ui-id="nav" data-ui-height="500" data-ui-variants="align-left vertical">
     <ul data-role="navigator">
+        <!-- if: ${role} === 'ADMIN' || ${role} === 'MALL' -->
         <li class="experience iconfont icon-experience"> 搜乐</li>
+        <!-- /if -->
 
-        <!-- if: ${role} === 'admin' || ${role} === 'shop' -->
+        <!-- if: ${role} === 'ADMIN' || ${role} === 'SHOPKEEPER' -->
         <li class="fresh iconfont icon-fresh"> 抢鲜</li>
         <!-- /if -->
 
-        <!-- if: ${role} === 'admin' -->
+        <!-- if: ${role} === 'ADMIN' || ${role} === 'MALL_' -->
         <li class="bigshot iconfont icon-bigshot"> 大咖</li>
+        <!-- /if -->
+
+        <!-- if: ${role} === 'ADMIN' -->
+        <li class="coupon iconfont icon-coupon"> 优惠</li>
+        <!-- /if -->
+
+        <!-- if: ${role} === 'ADMIN' -->
+        <li class="@user iconfont icon-user"> 用户</li>
         <!-- /if -->
 
     </ul>

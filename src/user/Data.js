@@ -3,7 +3,7 @@
  * Copyright 2014 Baidu Inc. All rights reserved.
  *
  * @ignore
- * @file 体验、大咖模块数据类
+ * @file 用户模块数据类
  * @author maoquan(maoquan0515@163.com)
  */
 define(
@@ -18,12 +18,12 @@ define(
          * @constructor
          * @extends ub-ria/mvc/RequestManager
          */
-        function ExperienceData(entityName) {
+        function UserData(entityName) {
             RequestManager.call(this, entityName);
             this.setRequestStrategy(new RequestStrategy());
         }
 
-        util.inherits(ExperienceData, RequestManager);
+        util.inherits(UserData, RequestManager);
 
         var requests = {
         };
@@ -33,11 +33,11 @@ define(
          *
          * @return {er.Promise}
          */
-        ExperienceData.prototype.search = function (query) {
+        UserData.prototype.search = function (query) {
             var entityName = this.getEntityName();
             var pascalEntityName = entityName.charAt(0).toUpperCase() + entityName.slice(1);
             return this.request(
-                'experience/list',
+                'user/list',
                 query,
                 {
                     method: 'GET',
@@ -51,12 +51,12 @@ define(
          *
          * @return {er.Promise}
          */
-        ExperienceData.prototype.findById = function (id) {
+        UserData.prototype.findById = function (id) {
             var entityName = this.getEntityName();
             var pascalEntityName = entityName.charAt(0).toUpperCase() + entityName.slice(1);
             id = id ? '/' + id : '';
             return this.request(
-                'experience/detail',
+                'user/detail',
                 null,
                 {
                     method: 'GET',
@@ -71,16 +71,15 @@ define(
          * @param {entity} entity
          * @return {er.Promise}
          */
-        ExperienceData.prototype.update = function (entity) {
+        UserData.prototype.update = function (entity) {
             var entityName = this.getEntityName();
             var pascalEntityName = entityName.charAt(0).toUpperCase() + entityName.slice(1);
-            var action = entityName === 'coupon' ? 'bind' : 'add';
             return this.request(
-                'experience/update',
+                'user/update',
                 entity,
                 {
                     method: 'POST',
-                    url: '/api/' + action + pascalEntityName
+                    url: '/api/add' + pascalEntityName
                 }
             );
         };
@@ -90,7 +89,7 @@ define(
          * @param {entity} entity
          * @return {er.Promise}
          */
-        ExperienceData.prototype.save = function (entity) {
+        UserData.prototype.save = function (entity) {
             return this.update(entity);
         };
 
@@ -100,11 +99,11 @@ define(
          * @param {Number} id
          * @return {er.Promise}
          */
-        ExperienceData.prototype.deleteById = function (id) {
+        UserData.prototype.deleteById = function (id) {
             var entityName = this.getEntityName();
             var pascalEntityName = entityName.charAt(0).toUpperCase() + entityName.slice(1);
             return this.request(
-                'experience/delete',
+                'user/delete',
                 {
                     id: id
                 },
@@ -115,31 +114,14 @@ define(
             );
         };
 
-        /**
-         * 获取优惠详情
-         *
-         * @return {er.Promise}
-         */
-        ExperienceData.prototype.findCouponByMallId = function (id) {
-            return this.request(
-                'coupon/detail',
-                null,
-                {
-                    method: 'GET',
-                    url: '/api/getCouponListByMallId?mallId=' + id
-                }
-            );
-        };
-
-
         u.each(
             requests,
             function (config) {
                 var RequestManager = require('ub-ria/mvc/RequestManager');
-                RequestManager.register(ExperienceData, config.name, config);
+                RequestManager.register(UserData, config.name, config);
             }
         );
 
-        return ExperienceData;
+        return UserData;
     }
 );

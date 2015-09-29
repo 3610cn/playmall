@@ -63,6 +63,9 @@ define(
             require('er/config').indexURL = '/experience/list';
             require('../experience/config');
             require('../fresh/config');
+            require('../user/config');
+            require('../coupon/config');
+
             // rule
             require('esui/validator/MaxRule');
             require('esui/validator/MinRule');
@@ -79,7 +82,7 @@ define(
             // 显示用户信息
             var user = GlobalData.getInstance().getUser();
             if (!user.role) {
-                user.role = 'admin';
+                user.role = 'ADMIN';
             }
             $('#username').html(user['username'])
             $('#userInfo').show();
@@ -111,7 +114,7 @@ define(
                         'activate',
                         function (e) {
                             var tab = this.getActiveTab();
-                            var type = tab.classes[0];
+                            var type = tab.classes[0].replace('@', '');
                             require('er/locator').redirect('/' + type + '/list');
                         }
                     );

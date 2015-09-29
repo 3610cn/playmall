@@ -1,0 +1,24 @@
+{
+    "status": 0,
+    "msg": "",
+    "data": [
+        {
+            "id": "1",
+            "username": "dandanmao",
+            "phone": "18612290791",
+            "role": "MALL"
+        },
+        {
+            "id": "2",
+            "username": "panzhexu",
+            "phone": "18612290792",
+            "role": "SHOP"
+        },
+        {
+            "id": "3",
+            "username": "loki",
+            "phone": "18612290793",
+            "role": "ADMIN"
+        }
+    ]
+}

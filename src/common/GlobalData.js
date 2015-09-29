@@ -62,7 +62,7 @@ define(
                 null,
                 {
                     method: 'GET',
-                    url: '/api/getUser'
+                    url: '/api/getCurrentUser'
                 }
             );
             return loading.then(

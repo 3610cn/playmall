@@ -125,8 +125,7 @@
                 {
                     "text": "SHOPKEEPER",
                     "value": "SHOPKEEPER"
-                },
-                ...
+                }
             ]
         }
     }
@@ -134,7 +133,7 @@
 
 ### 获取用户信息
 
-    * URL: /api/getUser
+    * URL: /api/getCurrentUser
     * METHOD: GET
     * PARAM: 
     * RESPONSE: 
@@ -567,22 +566,50 @@
                 "id": "1",
                 "username": "dandanmao",
                 "phone": "18612290791",
-                "role": 1
+                "role": "ADMIN"
             },
             {
                 "id": "2",
                 "username": "panzhexu",
                 "phone": "18612290792",
-                "role": 2
+                "role": "SHOP"
             },
             {
                 "id": "3",
                 "username": "loki",
                 "phone": "18612290793",
-                "role": 3
+                "role": "MALL"
             },
             ...
         ]
+    }
+  ```
+
+### 增加 / 编辑用户
+
+    * URL: /api/addUser
+    * METHOD: POST
+    * PARAM: 
+
+  ```
+    "id": 3,
+    "username": "dandanmao",
+    "phone": "18622271876",
+    "role": "ADMIN",
+    "password": "xxxx"
+  ```
+
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": {
+            "global": "添加成功"
+        },
+        "data": {
+            "id": 3
+        }
     }
   ```
 
@@ -617,7 +644,7 @@
             "id": 3,
             "username": "loki",
             "phone": "18612290793",
-            "role": 3
+            "role": "ADMIN"
         }
     }
   ```
@@ -643,7 +670,9 @@
                 "startTime": "2016-10-07 14:00",
                 "endTime": "2016-10-17 14:00",
                 "oldPrice": "25.00",
-                "price": "12.00"
+                "price": "12.00",
+                "shop": "优衣库",
+                "count": 20
             },
             {
                 "id": 2,
@@ -652,7 +681,9 @@
                 "startTime": "2016-10-07 14:00",
                 "endTime": "2016-10-17 14:00",
                 "oldPrice": "25.00",
-                "price": "12.00"
+                "price": "12.00",
+                "shop": "优衣库",
+                "count": 20
             },
             {
                 "id": 3,
@@ -661,10 +692,36 @@
                 "startTime": "2016-10-07 14:00",
                 "endTime": "2016-10-17 14:00",
                 "oldPrice": "25.00",
-                "price": "12.00"
+                "price": "12.00",
+                "shop": "优衣库",
+                "count": 20
             },
             ...
         ]
+    }
+  ```
+
+### 获取某条优惠信息
+
+    * URL: /api/getCoupon/$id
+    * METHOD: GET
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": {},
+        "data": {
+            "id": 3,
+            "title": "快来抢优惠啦",
+            "content": "快快来抢优惠啦快来抢优惠啦快来抢优惠啦快来抢优惠啦来抢优惠啦",
+            "startTime": "2016-10-07 14:00",
+            "endTime": "2016-10-17 14:00",
+            "oldPrice": "25.00",
+            "price": "12.00",
+            "shop": "优衣库",
+            "count": 20
+        }
     }
   ```
 
@@ -681,7 +738,9 @@
     "startTime": "2016-10-07 14:00",
     "endTime": "2016-10-17 14:00",
     "oldPrice": "25.00",
-    "price": "12.00"
+    "price": "12.00",
+    "shop": "优衣库",
+    "count": 20
   ```
 
     * RESPONSE: 

@@ -18,12 +18,12 @@ define(
          * @constructor
          * @extends ub-ria/mvc/RequestManager
          */
-        function ExperienceData(entityName) {
+        function CouponData(entityName) {
             RequestManager.call(this, entityName);
             this.setRequestStrategy(new RequestStrategy());
         }
 
-        util.inherits(ExperienceData, RequestManager);
+        util.inherits(CouponData, RequestManager);
 
         var requests = {
         };
@@ -33,11 +33,11 @@ define(
          *
          * @return {er.Promise}
          */
-        ExperienceData.prototype.search = function (query) {
+        CouponData.prototype.search = function (query) {
             var entityName = this.getEntityName();
             var pascalEntityName = entityName.charAt(0).toUpperCase() + entityName.slice(1);
             return this.request(
-                'experience/list',
+                'coupon/list',
                 query,
                 {
                     method: 'GET',
@@ -51,12 +51,12 @@ define(
          *
          * @return {er.Promise}
          */
-        ExperienceData.prototype.findById = function (id) {
+        CouponData.prototype.findById = function (id) {
             var entityName = this.getEntityName();
             var pascalEntityName = entityName.charAt(0).toUpperCase() + entityName.slice(1);
             id = id ? '/' + id : '';
             return this.request(
-                'experience/detail',
+                'coupon/detail',
                 null,
                 {
                     method: 'GET',
@@ -71,16 +71,15 @@ define(
          * @param {entity} entity
          * @return {er.Promise}
          */
-        ExperienceData.prototype.update = function (entity) {
+        CouponData.prototype.update = function (entity) {
             var entityName = this.getEntityName();
             var pascalEntityName = entityName.charAt(0).toUpperCase() + entityName.slice(1);
-            var action = entityName === 'coupon' ? 'bind' : 'add';
             return this.request(
-                'experience/update',
+                'coupon/update',
                 entity,
                 {
                     method: 'POST',
-                    url: '/api/' + action + pascalEntityName
+                    url: '/api/add' + pascalEntityName
                 }
             );
         };
@@ -90,7 +89,7 @@ define(
          * @param {entity} entity
          * @return {er.Promise}
          */
-        ExperienceData.prototype.save = function (entity) {
+        CouponData.prototype.save = function (entity) {
             return this.update(entity);
         };
 
@@ -100,11 +99,11 @@ define(
          * @param {Number} id
          * @return {er.Promise}
          */
-        ExperienceData.prototype.deleteById = function (id) {
+        CouponData.prototype.deleteById = function (id) {
             var entityName = this.getEntityName();
             var pascalEntityName = entityName.charAt(0).toUpperCase() + entityName.slice(1);
             return this.request(
-                'experience/delete',
+                'coupon/delete',
                 {
                     id: id
                 },
@@ -115,31 +114,14 @@ define(
             );
         };
 
-        /**
-         * 获取优惠详情
-         *
-         * @return {er.Promise}
-         */
-        ExperienceData.prototype.findCouponByMallId = function (id) {
-            return this.request(
-                'coupon/detail',
-                null,
-                {
-                    method: 'GET',
-                    url: '/api/getCouponListByMallId?mallId=' + id
-                }
-            );
-        };
-
-
         u.each(
             requests,
             function (config) {
                 var RequestManager = require('ub-ria/mvc/RequestManager');
-                RequestManager.register(ExperienceData, config.name, config);
+                RequestManager.register(CouponData, config.name, config);
             }
         );
 
-        return ExperienceData;
+        return CouponData;
     }
 );

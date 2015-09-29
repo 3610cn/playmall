@@ -63,6 +63,24 @@
                 "text": "奢侈",
                 "value": 4
             }
+        ],
+        "roleList": [
+            {
+                "text": "ADMIN",
+                "value": "ADMIN"
+            },
+            {
+                "text": "MALL",
+                "value": "MALL"
+            },
+            {
+                "text": "SHOP",
+                "value": "SHOP"
+            },
+            {
+                "text": "SHOPKEEPER",
+                "value": "SHOPKEEPER"
+            }
         ]
     }
 }
