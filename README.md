@@ -107,6 +107,26 @@
                     "text": "奢侈",
                     "value": 4
                 }
+            ],
+            // 角色列表
+            "roleList": [
+                {
+                    "text": "ADMIN",
+                    "value": "ADMIN"
+                },
+                {
+                    "text": "MALL",
+                    "value": "MALL"
+                },
+                {
+                    "text": "SHOP",
+                    "value": "SHOP"
+                },
+                {
+                    "text": "SHOPKEEPER",
+                    "value": "SHOPKEEPER"
+                },
+                ...
             ]
         }
     }
@@ -188,7 +208,7 @@
     }
   ```
 
-### 删除体验 / 大咖
+### 删除体验 / 大咖 / 评论
 
     * URL: /api/deleteExperience (体验)
     * URL: /api/deleteBigshot (大咖)
@@ -202,54 +222,6 @@
         "status": 0,
         "msg": {
             "global": "删除成功"
-        }
-    }
-  ```
-
-### 获取指定mall下的优惠列表
-
-
-    * URL: /api/getCouponList
-    * METHOD: GET
-    * PARAM: 
-        * mallId // 指定mall的id
-    * RESPONSE: 
-
-  ```
-    {
-        "status": 0,
-        "msg": {},
-        "data": {
-            "couponList": [
-                {
-                    "text": "快来抢免费更衣间",
-                    "value": "1"
-                },
-                {
-                    "text": "夏季大坑宾",
-                    "value": "2"
-                }
-            ]
-        }
-    }
-  ```
-
-### 体验 / 大咖绑定优惠信息
-
-
-    * URL: /api/addCoupon
-    * METHOD: POST
-    * PARAM: 
-        * id // 搜乐或者大咖id
-        * cid // 优惠信息id
-        * type // 1: experience / 2: bigshot
-    * RESPONSE: 
-
-  ```
-    {
-        "status": 0,
-        "msg": {
-            "global": "添加优惠成功"
         }
     }
   ```
@@ -513,6 +485,39 @@
     }
   ```
 
+### 评论列表
+
+    * URL: /api/getCommentList
+    * METHOD: GET
+    * PARAM: 
+
+    * RESPONSE: 
+
+  ```
+{
+    "status": 0,
+    "msg": "",
+    "data": [
+        {
+            "id": "1",
+            "username": "panzhexu",
+            "content": "快来抢免费更衣间"
+        },
+        {
+            "id": "2",
+            "username": "zhoutianli",
+            "content": "快来抢免费更衣间"
+        },
+        {
+            "id": "3",
+            "username": "panzhexu",
+            "content": "快来抢免费更衣间"
+        },
+        ...
+    ]
+}
+  ```
+
 ## 富媒体编辑器
 
 需求要求编辑器有更多功能，因此对编辑器进行了升级，相应有一些接口变化：
@@ -542,3 +547,219 @@
         "state":"SUCCESS"
     }
   ```
+
+
+## 用户管理
+
+### 用户列表
+
+    * URL: /api/getUserList
+    * METHOD: GET
+    * PARAM: 
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": "",
+        "data": [
+            {
+                "id": "1",
+                "username": "dandanmao",
+                "phone": "18612290791",
+                "role": 1
+            },
+            {
+                "id": "2",
+                "username": "panzhexu",
+                "phone": "18612290792",
+                "role": 2
+            },
+            {
+                "id": "3",
+                "username": "loki",
+                "phone": "18612290793",
+                "role": 3
+            },
+            ...
+        ]
+    }
+  ```
+
+### 删除抢鲜
+
+    * URL: /api/deleteUser
+    * METHOD: POST
+    * PARAM: 
+        * id
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": {
+            "global": "删除成功"
+        }
+    }
+  ```
+
+### 获取某个用户信息
+
+    * URL: /api/getUser/$id
+    * METHOD: GET
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": {},
+        "data": {
+            "id": 3,
+            "username": "loki",
+            "phone": "18612290793",
+            "role": 3
+        }
+    }
+  ```
+
+## 优惠管理
+
+### 获取优惠列表
+
+    * URL: /api/getCouponList
+    * METHOD: GET
+    * PARAM: 
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": {},
+        "data": [
+            {
+                "id": 1,
+                "title": "快来抢优惠啦",
+                "content": "快快来抢优惠啦快来抢优惠啦快来抢优惠啦快来抢优惠啦来抢优惠啦",
+                "startTime": "2016-10-07 14:00",
+                "endTime": "2016-10-17 14:00",
+                "oldPrice": "25.00",
+                "price": "12.00"
+            },
+            {
+                "id": 2,
+                "title": "快来抢优惠啦",
+                "content": "快快来抢优惠啦快来抢优惠啦快来抢优惠啦快来抢优惠啦来抢优惠啦",
+                "startTime": "2016-10-07 14:00",
+                "endTime": "2016-10-17 14:00",
+                "oldPrice": "25.00",
+                "price": "12.00"
+            },
+            {
+                "id": 3,
+                "title": "快来抢优惠啦",
+                "content": "快快来抢优惠啦快来抢优惠啦快来抢优惠啦快来抢优惠啦来抢优惠啦",
+                "startTime": "2016-10-07 14:00",
+                "endTime": "2016-10-17 14:00",
+                "oldPrice": "25.00",
+                "price": "12.00"
+            },
+            ...
+        ]
+    }
+  ```
+
+### 增加 / 编辑优惠
+
+    * URL: /api/addCoupon
+    * METHOD: POST
+    * PARAM: 
+
+  ```
+    "id": 3,
+    "title": "快来抢优惠啦",
+    "content": "快快来抢优惠啦快来抢优惠啦快来抢优惠啦快来抢优惠啦来抢优惠啦",
+    "startTime": "2016-10-07 14:00",
+    "endTime": "2016-10-17 14:00",
+    "oldPrice": "25.00",
+    "price": "12.00"
+  ```
+
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": {
+            "global": "添加成功"
+        },
+        "data": {
+            "id": 3
+        }
+    }
+  ```
+
+### 删除优惠
+
+    * URL: /api/deleteCoupon
+    * METHOD: POST
+    * PARAM: 
+        * id
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": {
+            "global": "删除成功"
+        }
+    }
+  ```
+
+### 获取指定mall下的优惠列表
+
+
+    * URL: /api/getCouponListByMallId
+    * METHOD: GET
+    * PARAM: 
+        * mallId // 指定mall的id
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": {},
+        "data": {
+            "couponList": [
+                {
+                    "text": "快来抢免费更衣间",
+                    "value": "1"
+                },
+                {
+                    "text": "夏季大坑宾",
+                    "value": "2"
+                }
+            ]
+        }
+    }
+  ```
+
+### 体验 / 大咖绑定优惠信息
+
+
+    * URL: /api/bindCoupon
+    * METHOD: POST
+    * PARAM: 
+        * id // 搜乐或者大咖id
+        * cid // 优惠信息id
+        * type // 1: experience / 2: bigshot
+    * RESPONSE: 
+
+  ```
+    {
+        "status": 0,
+        "msg": {
+            "global": "添加优惠成功"
+        }
+    }
+  ```
+
