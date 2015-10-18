@@ -822,3 +822,68 @@
     }
   ```
 
+  ### 新增mall
+
+    * URL: /api/mall/add
+    * METHOD: POST
+    * PARAM:
+        * name: ""
+        * logo: ""
+        * cityid: 1
+        * address: "{"name":"上海市黄浦区淮海中路1号","longitude":121.486604,"latitude":31.231058}"
+        * phone: 1887776666 
+    * RESPONSE:
+        
+
+```
+
+    {
+        "status":0,
+        "msg": {
+            "global": ""
+        }
+    }
+
+```
+
+### 新增shop
+    * URL: /api/shop/add
+    * METHOD: POST
+    * PARAM:
+        * name: ""
+        * logo: ""
+        * cityid: 1
+        * mallid: 1
+        * address: "{"name":"上海市黄浦区淮海中路1号","longitude":121.486604,"latitude":31.231058}"
+        * phone: 1887776666 
+    * RESPONSE:
+
+```
+    {
+        "status":0,
+        "msg": {
+            "global": ""
+        }
+    }
+```
+
+### 新增用户
+    * URL: /api/user/add
+    * METHOD: POST
+    * PARAM:
+        * username: ""
+        * password: ""
+        * phone: 1
+        * type: 1 // 1ADMIN 2MALL 3SHOPKEEPER 4SHOP
+        * mallid: 1 // 商城相关用户专用, optional
+        * shopid: 1 // 商户相关用户专用, optional
+    * RESPONSE:
+
+```
+    {
+        "status":0,
+        "msg": {
+            "global": ""
+        }
+    }
+```
