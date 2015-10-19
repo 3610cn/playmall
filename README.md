@@ -876,7 +876,7 @@
 
 ### 删除mall
     * URL: /api/mall/delete
-    * METHOD: GET
+    * METHOD: POST
     * PARAM: 
         * id: 123
 
@@ -890,6 +890,32 @@
         }
     }
 ```
+
+### 查单个mall
+    * URL: /api/mall/get
+    * Method: GET
+    * PARAM:
+        * id: 123
+
+    * RESPONSE:
+
+```
+    {
+        "status": 0,
+        "msg": {
+            "global": ""
+        }，
+        "data": {
+            "id": 1,
+            "name": "",
+            "logo": "",
+            "address": "{\"latitude\":31.245392,\"longitude\":121.382919,\"name\": \"普陀区真光路1288号百联购物广场店\"}",
+            "phone": 18877722211,
+            "cityid": 123            
+        }
+    }
+```
+
 
 ### 新增shop
 
@@ -943,7 +969,7 @@
 
 ### 删除shop
     * URL: /api/shop/delete
-    * METHOD: GET
+    * METHOD: POST
     * PARAM: 
         * id: 123
 
@@ -954,6 +980,32 @@
         "status":0,
         "msg": {
             "global": ""
+        }
+    }
+```
+
+### 查单个shop
+    * URL: /api/shop/get
+    * Method: GET
+    * PARAM:
+        * id: 123
+
+    * RESPONSE:
+
+```
+    {
+        "status": 0,
+        "msg": {
+            "global": ""
+        }，
+        "data": {
+            "id": 1,
+            "name": "",
+            "logo": "",
+            "address": "{\"latitude\":31.245392,\"longitude\":121.382919,\"name\": \"普陀区真光路1288号百联购物广场店\"}",
+            "phone": 18877722211,
+            "cityid": 123,
+            "mallid": 1
         }
     }
 ```
@@ -1015,7 +1067,7 @@
 
 ### 删除用户
     * URL: /api/user/delete
-    * METHOD: GET
+    * METHOD: POST
     * PARAM: 
         * id: 123
 
@@ -1026,6 +1078,32 @@
         "status":0,
         "msg": {
             "global": ""
+        }
+    }
+```
+
+### 查单个用户
+    * URL: /api/user/get
+    * METHOD: GET
+    * PARAM: 
+        * id: 123
+
+    * RESPONSE:
+
+```
+    {
+        "status": 0,
+        "msg": {
+            "global": ""
+        }，
+        "data": {
+            "id": 1,
+            "username": "",
+            "password": "",
+            "phone": 18877722211,
+            "type": "ADMIN", // ADMIN MALL SHOPKEEPER SHOP
+            "mallid": 1,
+            "shopid": 1
         }
     }
 ```
