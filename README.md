@@ -594,9 +594,11 @@
   ```
     "id": 3,
     "username": "dandanmao",
-    "phone": "18622271876",
-    "role": "ADMIN",
     "password": "xxxx"
+    "phone": "18622271876",
+    "type": 1 // 1ADMIN 2MALL 3SHOPKEEPER 4SHOP
+    "mallid": 1 // 商城相关用户专用, optional
+    "shopid": 1 // 商户相关用户专用, optional
   ```
 
     * RESPONSE: 
@@ -641,10 +643,13 @@
         "status": 0,
         "msg": {},
         "data": {
-            "id": 3,
-            "username": "loki",
-            "phone": "18612290793",
-            "role": "ADMIN"
+            "id": 1,
+            "username": "",
+            "password": "",
+            "phone": 18877722211,
+            "type": "ADMIN", // ADMIN MALL SHOPKEEPER SHOP
+            "mallid": 1,
+            "shopid": 1
         }
     }
   ```
@@ -822,15 +827,16 @@
     }
   ```
 
-  ### 新增mall
+### 新增mall
 
-    * URL: /api/mall/add
+    * URL: /api/addMall
     * METHOD: POST
     * PARAM:
-        * name: ""
-        * logo: ""
+        * id: "123" // 如果id不为空则为修改
+        * name: "长泰广场"
+        * logo: "xxx.jpg"
         * cityid: 1
-        * address: "{"name":"上海市黄浦区淮海中路1号","longitude":121.486604,"latitude":31.231058}"
+        * address: "上海市黄浦区淮海中路1号",
         * phone: 1887776666 
     * RESPONSE:
         
@@ -848,7 +854,7 @@
 
 ### 列表mall
 
-    * URL: /api/shop/list
+    * URL: /api/getShopList
     * METHOD: GET
     * PARAM:        
     * RESPONSE:
@@ -859,23 +865,22 @@
         "msg": {
             "global": ""
         },
-        "data": {
-            "result": [
-                {
-                    "id": 1,
-                    "name": "",
-                    "logo": "",
-                    "address": "{\"latitude\":31.245392,\"longitude\":121.382919,\"name\": \"普陀区真光路1288号百联购物广场店\"}",
-                    "phone": 18877722211,
-                    "cityid": 123                    
-                }
-            ]
-        }
+        "data": [
+            {
+                "id": 1,
+                "name": "百联中环购物中心",
+                "logo": "xxx.png",
+                "address": "普陀区真光路1288号百联购物广场店",
+                "phone": 18877722211,
+                "cityid": 123                    
+            },
+            ...
+        ]
     }
 ```
 
 ### 删除mall
-    * URL: /api/mall/delete
+    * URL: /api/deleteMall
     * METHOD: POST
     * PARAM: 
         * id: 123
@@ -892,7 +897,7 @@
 ```
 
 ### 查单个mall
-    * URL: /api/mall/get
+    * URL: /api/getMall/$id
     * Method: GET
     * PARAM:
         * id: 123
@@ -917,16 +922,17 @@
 ```
 
 
-### 新增shop
+### 新增 / 修改shop
 
-    * URL: /api/shop/add
+    * URL: /api/addShop
     * METHOD: POST
     * PARAM:
+        * id: "123" // 如果id不为空，则修改
         * name: ""
         * logo: ""
         * cityid: 1
         * mallid: 1
-        * address: "{\"name\":\"上海市黄浦区淮海中路1号\",\"longitude\":121.486604,\"latitude\":31.231058}"
+        * address: "上海市黄浦区淮海中路1号",
         * phone: 1887776666 
     * RESPONSE:
 
@@ -934,13 +940,13 @@
     {
         "status":0,
         "msg": {
-            "global": ""
+            "global": "添加成功"
         }
     }
 ```
 
 ### 列表shop
-    * URL: /api/shop/list
+    * URL: /api/getShopList
     * METHOD: GET
     * PARAM:        
     * RESPONSE:
@@ -951,24 +957,23 @@
         "msg": {
             "global": ""
         },
-        "data": {
-            "result": [
-                {
-                    "id": 1,
-                    "name": "",
-                    "logo": "",
-                    "address": "{\"latitude\":31.245392,\"longitude\":121.382919,\"name\": \"普陀区真光路1288号百联购物广场店\"}",
-                    "phone": 18877722211,
-                    "cityid": 123,
-                    "mallid": 1
-                }
-            ]
-        }
+        "data": [
+            {
+                "id": 1,
+                "name": "",
+                "logo": "",
+                "address": "{\"latitude\":31.245392,\"longitude\":121.382919,\"name\": \"普陀区真光路1288号百联购物广场店\"}",
+                "phone": 18877722211,
+                "cityid": 123,
+                "mallid": 1
+            },
+            ...
+        ]
     }
 ```
 
 ### 删除shop
-    * URL: /api/shop/delete
+    * URL: /api/deleteShop
     * METHOD: POST
     * PARAM: 
         * id: 123
@@ -979,13 +984,13 @@
     {
         "status":0,
         "msg": {
-            "global": ""
+            "global": "删除成功"
         }
     }
 ```
 
 ### 查单个shop
-    * URL: /api/shop/get
+    * URL: /api/getShop/$id
     * Method: GET
     * PARAM:
         * id: 123
@@ -1006,104 +1011,6 @@
             "phone": 18877722211,
             "cityid": 123,
             "mallid": 1
-        }
-    }
-```
-
-### 新增用户
-    * URL: /api/user/add
-    * METHOD: POST
-    * PARAM:
-        * username: ""
-        * password: ""
-        * phone: 1
-        * type: 1 // 1ADMIN 2MALL 3SHOPKEEPER 4SHOP
-        * mallid: 1 // 商城相关用户专用, optional
-        * shopid: 1 // 商户相关用户专用, optional
-    * RESPONSE:
-
-```
-    {
-        "status":0,
-        "msg": {
-            "global": ""
-        }
-    }
-```
-
-### 用户列表
-    * URL: /api/user/list
-    * METHOD: GET
-    * PARAM:
-        * username: ""
-        * password: ""
-        * phone: 1
-        * type: "ADMIN" // ADMIN MALL SHOPKEEPER SHOP
-        * mallid: 1 // 商城相关用户专用, optional
-        * shopid: 1 // 商户相关用户专用, optional
-    * RESPONSE:
-
-```
-    {
-        "status":0,
-        "msg": {
-            "global": ""
-        },
-        "data": {
-            "result": [
-                {
-                    "id": 1,
-                    "username": "",
-                    "password": "",
-                    "phone": 18877722211,
-                    "type": "ADMIN", // ADMIN MALL SHOPKEEPER SHOP
-                    "mallid": 1,
-                    "shopid": 1
-                }
-            ]
-        }
-    }
-```
-
-### 删除用户
-    * URL: /api/user/delete
-    * METHOD: POST
-    * PARAM: 
-        * id: 123
-
-    * RESPONSE:
-
-```
-    {
-        "status":0,
-        "msg": {
-            "global": ""
-        }
-    }
-```
-
-### 查单个用户
-    * URL: /api/user/get
-    * METHOD: GET
-    * PARAM: 
-        * id: 123
-
-    * RESPONSE:
-
-```
-    {
-        "status": 0,
-        "msg": {
-            "global": ""
-        }，
-        "data": {
-            "id": 1,
-            "username": "",
-            "password": "",
-            "phone": 18877722211,
-            "type": "ADMIN", // ADMIN MALL SHOPKEEPER SHOP
-            "mallid": 1,
-            "shopid": 1
         }
     }
 ```
