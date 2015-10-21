@@ -2,13 +2,10 @@
     "status": 0,
     "msg": {},
     "data": {
-        "id": 3,
-        "name": "果然点",
+        "id": "1",
+        "name": "dandanmao",
         "logo": "http://img.liansuo.com/html/images//i/logo_14252668779133.jpg",
         "cityid": 2,
-        "mallid": 4,
-        "cityname": "上海",
-        "mallname": "百联中环",
         "address": "纳贤路701号",
         "phone": "18612290790"
     }

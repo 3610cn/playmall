@@ -65,6 +65,8 @@ define(
             require('../fresh/config');
             require('../user/config');
             require('../coupon/config');
+            require('../shop/config');
+            require('../mall/config');
 
             // rule
             require('esui/validator/MaxRule');

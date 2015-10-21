@@ -1,0 +1,33 @@
+{
+    "status": 0,
+    "msg": "",
+    "data": [
+        {
+            "id": "1",
+            "name": "百联购物中心 ",
+            "logo": "http://img.liansuo.com/html/images//i/logo_14252668779133.jpg",
+            "cityid": 2,
+            "cityname": "杭州 ",
+            "address": "纳贤路701号",
+            "phone": "18612290790"
+        },
+        {
+            "id": "2",
+            "name": "百联购物中心 ",
+            "logo": "http://img.liansuo.com/html/images//i/logo_14252668779133.jpg",
+            "cityid": 2,
+            "cityname": "杭州 ",
+            "address": "纳贤路701号",
+            "phone": "18612290790"
+        },
+        {
+            "id": "3",
+            "name": "百联购物中心 ",
+            "logo": "http://img.liansuo.com/html/images//i/logo_14252668779133.jpg",
+            "cityid": 2,
+            "cityname": "杭州 ",
+            "address": "纳贤路701号",
+            "phone": "18612290790"
+        }
+    ]
+}

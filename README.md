@@ -854,7 +854,7 @@
 
 ### 列表mall
 
-    * URL: /api/getShopList
+    * URL: /api/getMallList
     * METHOD: GET
     * PARAM:        
     * RESPONSE:
@@ -872,7 +872,8 @@
                 "logo": "xxx.png",
                 "address": "普陀区真光路1288号百联购物广场店",
                 "phone": 18877722211,
-                "cityid": 123                    
+                "cityid": 123,
+                "cityname": "杭州"
             },
             ...
         ]
@@ -962,8 +963,10 @@
                 "id": 1,
                 "name": "",
                 "logo": "",
-                "address": "{\"latitude\":31.245392,\"longitude\":121.382919,\"name\": \"普陀区真光路1288号百联购物广场店\"}",
+                "address": "普陀区真光路1288号百联购物广场店",
                 "phone": 18877722211,
+                "cityname": "杭州",
+                "mallname": "百联中环",
                 "cityid": 123,
                 "mallid": 1
             },

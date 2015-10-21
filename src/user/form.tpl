@@ -30,6 +30,15 @@
         </div>
 
         <div class="row">
+            <div class="field-name">单位</div>
+            <div class="field-value">
+                <div data-ui="type:Select;id:city;width:200;datasource:@cityList;value:@data.city"></div>
+                <div data-ui="type:Select;id:mall;name:mallid;width:200;datasource:@mallList;value:@data.mall"></div>
+                <div data-ui="type:Select;id:shop;name:shopid;width:200;datasource:@shopList;value:@data.shop;required:required;"></div>
+            </div>
+        </div>
+
+        <div class="row">
             <div class="field-name">密码</div>
             <div class="field-value">
                 <input type="password" class="ui-textbox" data-ui="id:password;name:password;type:TextBox;width:200;value:@data.password;required:required;" />

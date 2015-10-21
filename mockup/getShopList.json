@@ -1,0 +1,50 @@
+{
+    "status": 0,
+    "msg": "",
+    "data": [
+        {
+            "id": 3,
+            "name": "果然点",
+            "logo": "loki.png",
+            "cityid": 2,
+            "mallid": 4,
+            "cityname": "上海",
+            "mallname": "百联中环",
+            "address": "纳贤路701号",
+            "phone": "18612290790"
+        },
+        {
+            "id": 3,
+            "name": "以为寻仙",
+            "logo": "loki.png",
+            "cityid": 2,
+            "mallid": 4,
+            "cityname": "上海",
+            "mallname": "百联中环",
+            "address": "纳贤路701号",
+            "phone": "18612290790"
+        },
+        {
+            "id": 3,
+            "name": "真滋味",
+            "logo": "loki.png",
+            "cityid": 2,
+            "mallid": 4,
+            "cityname": "上海",
+            "mallname": "百联中环",
+            "address": "纳贤路701号",
+            "phone": "18612290790"
+        },
+        {
+            "id": 3,
+            "name": "好再来",
+            "logo": "loki.png",
+            "cityid": 2,
+            "mallid": 4,
+            "cityname": "上海",
+            "mallname": "百联中环",
+            "address": "纳贤路701号",
+            "phone": "18612290790"
+        }
+    ]
+}

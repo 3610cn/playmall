@@ -21,6 +21,14 @@
         <li class="@user iconfont icon-user"> 用户</li>
         <!-- /if -->
 
+        <!-- if: ${role} === 'ADMIN' -->
+        <li class="mall iconfont icon-mall"> 购物中心</li>
+        <!-- /if -->
+
+        <!-- if: ${role} === 'ADMIN' -->
+        <li class="shop iconfont icon-shop"> 店铺</li>
+        <!-- /if -->
+
     </ul>
 </div>
 <!--
