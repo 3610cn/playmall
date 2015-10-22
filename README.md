@@ -566,19 +566,31 @@
                 "id": "1",
                 "username": "dandanmao",
                 "phone": "18612290791",
-                "role": "ADMIN"
+                "role": "ADMIN",
+                "mallid": 1, // 可选，针对购物中心用户
+                "mallname": "百联南方购物中心", // 可选，针对购物中心用户
+                "shopid": 1, // 或mallid、无
+                "shopname": "果然点" // 或mallid、无
             },
             {
                 "id": "2",
                 "username": "panzhexu",
                 "phone": "18612290792",
-                "role": "SHOP"
+                "role": "SHOP",
+                "mallid": 1, // 可选，针对购物中心用户
+                "mallname": "百联南方购物中心", // 可选，针对购物中心用户
+                "shopid": 1, // 可选，针对店铺用户
+                "shopname": "真滋味" // 可选，针对店铺用户
             },
             {
                 "id": "3",
                 "username": "loki",
                 "phone": "18612290793",
-                "role": "MALL"
+                "role": "MALL",
+                "mallid": 1, // 可选，针对购物中心用户
+                "mallname": "百联南方购物中心", // 可选，针对购物中心用户
+                "shopid": 1, // 可选，针对店铺用户
+                "shopname": "真滋味" // 可选，针对店铺用户
             },
             ...
         ]
@@ -648,8 +660,10 @@
             "password": "",
             "phone": 18877722211,
             "type": "ADMIN", // ADMIN MALL SHOPKEEPER SHOP
-            "mallid": 1,
-            "shopid": 1
+            "mallid": 1, // 可选，针对购物中心用户
+            "mallname": "百联南方购物中心", // 可选，针对购物中心用户
+            "shopid": 1, // 可选，针对店铺用户
+            "shopname": "真滋味" // 可选，针对店铺用户
         }
     }
   ```

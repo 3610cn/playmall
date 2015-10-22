@@ -112,7 +112,7 @@ define(
                 null,
                 {
                     method: 'GET',
-                    url: '/api/getShop?mall=' + mallId
+                    url: '/api/getShopByMall?mall=' + mallId
                 }
             );
             return loading.then(

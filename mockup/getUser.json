@@ -2,9 +2,11 @@
     "status": 0,
     "msg": {},
     "data": {
-        "id": 3,
-        "username": "loki",
-        "phone": "18612290793",
-        "role": "ADMIN"
+        "id": 1,
+        "username": "dandanmap",
+        "password": "xxxx",
+        "phone": 18877722211,
+        "role": "ADMIN",
+        "shopid": 1
     }
 }

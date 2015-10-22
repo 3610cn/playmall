@@ -47,6 +47,16 @@ define(
                 }
             },
             {
+                title: '单位',
+                field: 'belong' ,
+                sortable: true,
+                resizable : true,
+                width: 100,
+                content: function (item) {
+                    return item.shopname || item.mallname || 'N / A';
+                }
+            },
+            {
                 title: '操作',
                 field: 'operate' ,
                 width: 60,

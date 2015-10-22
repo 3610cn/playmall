@@ -1,0 +1,10 @@
+{
+    "status": 0,
+    "msg": null,
+    "data":[
+        {"value": 1, "text": "星巴克"},
+        {"value": 3, "text": "哈根达斯"},
+        {"value": 6, "text": "克里斯丁"},
+        {"value": 18, "text": "SPOONCHEL"}
+    ]
+}
